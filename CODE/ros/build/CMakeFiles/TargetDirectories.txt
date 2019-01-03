@@ -33,6 +33,7 @@
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/test.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/install/local.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/install/strip.dir
+/home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/server.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/client_server_genpy.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/client_server_generate_messages_py.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/client_server_gennodejs.dir
@@ -58,6 +59,7 @@
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/std_msgs_generate_messages_eus.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/std_msgs_generate_messages_lisp.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/rebuild_cache.dir
+/home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/client.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/_client_server_generate_messages_check_deps_action.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/client_server_generate_messages_eus.dir
 /home/complubot/Documents/POLLOTRON/CODE/ros/build/client_server/CMakeFiles/client_server_generate_messages_cpp.dir

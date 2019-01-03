@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+client_server/CMakeFiles/server.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f CMakeFiles/Makefile2 client_server/CMakeFiles/server.dir/rule
+.PHONY : client_server/CMakeFiles/server.dir/rule
+
+# Convenience name for target.
+server: client_server/CMakeFiles/server.dir/rule
+
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/server.dir/build.make client_server/CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+# Convenience name for target.
 client_server/CMakeFiles/client_server_genpy.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f CMakeFiles/Makefile2 client_server/CMakeFiles/client_server_genpy.dir/rule
 .PHONY : client_server/CMakeFiles/client_server_genpy.dir/rule
@@ -511,6 +526,21 @@ std_msgs_generate_messages_lisp/fast:
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+client_server/CMakeFiles/client.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f CMakeFiles/Makefile2 client_server/CMakeFiles/client.dir/rule
+.PHONY : client_server/CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: client_server/CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/client.dir/build.make client_server/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+# Convenience name for target.
 client_server/CMakeFiles/_client_server_generate_messages_check_deps_action.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f CMakeFiles/Makefile2 client_server/CMakeFiles/_client_server_generate_messages_check_deps_action.dir/rule
 .PHONY : client_server/CMakeFiles/_client_server_generate_messages_check_deps_action.dir/rule
@@ -585,6 +615,60 @@ client_server_geneus/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/client_server_geneus.dir/build.make client_server/CMakeFiles/client_server_geneus.dir/build
 .PHONY : client_server_geneus/fast
 
+src/client.o: src/client.cpp.o
+
+.PHONY : src/client.o
+
+# target to build an object file
+src/client.cpp.o:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/client.dir/build.make client_server/CMakeFiles/client.dir/src/client.cpp.o
+.PHONY : src/client.cpp.o
+
+src/client.i: src/client.cpp.i
+
+.PHONY : src/client.i
+
+# target to preprocess a source file
+src/client.cpp.i:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/client.dir/build.make client_server/CMakeFiles/client.dir/src/client.cpp.i
+.PHONY : src/client.cpp.i
+
+src/client.s: src/client.cpp.s
+
+.PHONY : src/client.s
+
+# target to generate assembly for a file
+src/client.cpp.s:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/client.dir/build.make client_server/CMakeFiles/client.dir/src/client.cpp.s
+.PHONY : src/client.cpp.s
+
+src/server.o: src/server.cpp.o
+
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.cpp.o:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/server.dir/build.make client_server/CMakeFiles/server.dir/src/server.cpp.o
+.PHONY : src/server.cpp.o
+
+src/server.i: src/server.cpp.i
+
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.cpp.i:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/server.dir/build.make client_server/CMakeFiles/server.dir/src/server.cpp.i
+.PHONY : src/server.cpp.i
+
+src/server.s: src/server.cpp.s
+
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.cpp.s:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f client_server/CMakeFiles/server.dir/build.make client_server/CMakeFiles/server.dir/src/server.cpp.s
+.PHONY : src/server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -596,6 +680,7 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... server"
 	@echo "... client_server_genpy"
 	@echo "... client_server_generate_messages_py"
 	@echo "... client_server_gennodejs"
@@ -621,11 +706,18 @@ help:
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... rebuild_cache"
+	@echo "... client"
 	@echo "... _client_server_generate_messages_check_deps_action"
 	@echo "... client_server_generate_messages_eus"
 	@echo "... client_server_generate_messages_cpp"
 	@echo "... client_server_generate_messages_lisp"
 	@echo "... client_server_geneus"
+	@echo "... src/client.o"
+	@echo "... src/client.i"
+	@echo "... src/client.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
 .PHONY : help
 
 
