@@ -902,12 +902,14 @@ clean: client_server/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 # Directory level rules for directory pub_sub
 
 # Convenience name for "all" pass in the directory.
-pub_sub/all:
+pub_sub/all: pub_sub/CMakeFiles/pub.dir/all
+pub_sub/all: pub_sub/CMakeFiles/sub.dir/all
 
 .PHONY : pub_sub/all
 
 # Convenience name for "clean" pass in the directory.
-pub_sub/clean:
+pub_sub/clean: pub_sub/CMakeFiles/pub.dir/clean
+pub_sub/clean: pub_sub/CMakeFiles/sub.dir/clean
 
 .PHONY : pub_sub/clean
 
@@ -915,6 +917,108 @@ pub_sub/clean:
 pub_sub/preinstall:
 
 .PHONY : pub_sub/preinstall
+
+#=============================================================================
+# Target rules for target pub_sub/CMakeFiles/pub.dir
+
+# All Build rule for target.
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_eus.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_py.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_py.dir/all
+pub_sub/CMakeFiles/pub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+	$(MAKE) -f pub_sub/CMakeFiles/pub.dir/build.make pub_sub/CMakeFiles/pub.dir/depend
+	$(MAKE) -f pub_sub/CMakeFiles/pub.dir/build.make pub_sub/CMakeFiles/pub.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/build/CMakeFiles --progress-num=12,13 "Built target pub"
+.PHONY : pub_sub/CMakeFiles/pub.dir/all
+
+# Include target in all.
+all: pub_sub/CMakeFiles/pub.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+pub_sub/CMakeFiles/pub.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/complubot/Documents/POLLOTRON/CODE/ros/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub/CMakeFiles/pub.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/complubot/Documents/POLLOTRON/CODE/ros/build/CMakeFiles 0
+.PHONY : pub_sub/CMakeFiles/pub.dir/rule
+
+# Convenience name for target.
+pub: pub_sub/CMakeFiles/pub.dir/rule
+
+.PHONY : pub
+
+# clean rule for target.
+pub_sub/CMakeFiles/pub.dir/clean:
+	$(MAKE) -f pub_sub/CMakeFiles/pub.dir/build.make pub_sub/CMakeFiles/pub.dir/clean
+.PHONY : pub_sub/CMakeFiles/pub.dir/clean
+
+# clean rule for target.
+clean: pub_sub/CMakeFiles/pub.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target pub_sub/CMakeFiles/sub.dir
+
+# All Build rule for target.
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_eus.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/roscpp_generate_messages_py.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/std_msgs_generate_messages_py.dir/all
+pub_sub/CMakeFiles/sub.dir/all: client_server/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+	$(MAKE) -f pub_sub/CMakeFiles/sub.dir/build.make pub_sub/CMakeFiles/sub.dir/depend
+	$(MAKE) -f pub_sub/CMakeFiles/sub.dir/build.make pub_sub/CMakeFiles/sub.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/build/CMakeFiles --progress-num=14,15 "Built target sub"
+.PHONY : pub_sub/CMakeFiles/sub.dir/all
+
+# Include target in all.
+all: pub_sub/CMakeFiles/sub.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+pub_sub/CMakeFiles/sub.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/complubot/Documents/POLLOTRON/CODE/ros/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub/CMakeFiles/sub.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/complubot/Documents/POLLOTRON/CODE/ros/build/CMakeFiles 0
+.PHONY : pub_sub/CMakeFiles/sub.dir/rule
+
+# Convenience name for target.
+sub: pub_sub/CMakeFiles/sub.dir/rule
+
+.PHONY : sub
+
+# clean rule for target.
+pub_sub/CMakeFiles/sub.dir/clean:
+	$(MAKE) -f pub_sub/CMakeFiles/sub.dir/build.make pub_sub/CMakeFiles/sub.dir/clean
+.PHONY : pub_sub/CMakeFiles/sub.dir/clean
+
+# clean rule for target.
+clean: pub_sub/CMakeFiles/sub.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

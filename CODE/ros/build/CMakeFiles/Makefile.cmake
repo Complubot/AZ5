@@ -187,4 +187,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "client_server/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "client_server/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake"
   "client_server/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "pub_sub/CMakeFiles/pub.dir/DependInfo.cmake"
+  "pub_sub/CMakeFiles/sub.dir/DependInfo.cmake"
   )

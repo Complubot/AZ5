@@ -477,6 +477,32 @@ rosgraph_msgs_generate_messages_py/fast:
 	$(MAKE) -f client_server/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make client_server/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named pub
+
+# Build rule for target.
+pub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub
+.PHONY : pub
+
+# fast build rule for target.
+pub/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/pub.dir/build.make pub_sub/CMakeFiles/pub.dir/build
+.PHONY : pub/fast
+
+#=============================================================================
+# Target rules for targets named sub
+
+# Build rule for target.
+sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sub
+.PHONY : sub
+
+# fast build rule for target.
+sub/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/sub.dir/build.make pub_sub/CMakeFiles/sub.dir/build
+.PHONY : sub/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -514,6 +540,8 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... pub"
+	@echo "... sub"
 .PHONY : help
 
 

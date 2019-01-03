@@ -89,28 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -132,6 +110,28 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -165,6 +165,90 @@ depend:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+pub_sub/CMakeFiles/pub.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f CMakeFiles/Makefile2 pub_sub/CMakeFiles/pub.dir/rule
+.PHONY : pub_sub/CMakeFiles/pub.dir/rule
+
+# Convenience name for target.
+pub: pub_sub/CMakeFiles/pub.dir/rule
+
+.PHONY : pub
+
+# fast build rule for target.
+pub/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f pub_sub/CMakeFiles/pub.dir/build.make pub_sub/CMakeFiles/pub.dir/build
+.PHONY : pub/fast
+
+# Convenience name for target.
+pub_sub/CMakeFiles/sub.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f CMakeFiles/Makefile2 pub_sub/CMakeFiles/sub.dir/rule
+.PHONY : pub_sub/CMakeFiles/sub.dir/rule
+
+# Convenience name for target.
+sub: pub_sub/CMakeFiles/sub.dir/rule
+
+.PHONY : sub
+
+# fast build rule for target.
+sub/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f pub_sub/CMakeFiles/sub.dir/build.make pub_sub/CMakeFiles/sub.dir/build
+.PHONY : sub/fast
+
+src/pub.o: src/pub.cpp.o
+
+.PHONY : src/pub.o
+
+# target to build an object file
+src/pub.cpp.o:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f pub_sub/CMakeFiles/pub.dir/build.make pub_sub/CMakeFiles/pub.dir/src/pub.cpp.o
+.PHONY : src/pub.cpp.o
+
+src/pub.i: src/pub.cpp.i
+
+.PHONY : src/pub.i
+
+# target to preprocess a source file
+src/pub.cpp.i:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f pub_sub/CMakeFiles/pub.dir/build.make pub_sub/CMakeFiles/pub.dir/src/pub.cpp.i
+.PHONY : src/pub.cpp.i
+
+src/pub.s: src/pub.cpp.s
+
+.PHONY : src/pub.s
+
+# target to generate assembly for a file
+src/pub.cpp.s:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f pub_sub/CMakeFiles/pub.dir/build.make pub_sub/CMakeFiles/pub.dir/src/pub.cpp.s
+.PHONY : src/pub.cpp.s
+
+src/sub.o: src/sub.cpp.o
+
+.PHONY : src/sub.o
+
+# target to build an object file
+src/sub.cpp.o:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f pub_sub/CMakeFiles/sub.dir/build.make pub_sub/CMakeFiles/sub.dir/src/sub.cpp.o
+.PHONY : src/sub.cpp.o
+
+src/sub.i: src/sub.cpp.i
+
+.PHONY : src/sub.i
+
+# target to preprocess a source file
+src/sub.cpp.i:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f pub_sub/CMakeFiles/sub.dir/build.make pub_sub/CMakeFiles/sub.dir/src/sub.cpp.i
+.PHONY : src/sub.cpp.i
+
+src/sub.s: src/sub.cpp.s
+
+.PHONY : src/sub.s
+
+# target to generate assembly for a file
+src/sub.cpp.s:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/build && $(MAKE) -f pub_sub/CMakeFiles/sub.dir/build.make pub_sub/CMakeFiles/sub.dir/src/sub.cpp.s
+.PHONY : src/sub.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,10 +258,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... pub"
+	@echo "... edit_cache"
+	@echo "... sub"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... test"
-	@echo "... edit_cache"
+	@echo "... src/pub.o"
+	@echo "... src/pub.i"
+	@echo "... src/pub.s"
+	@echo "... src/sub.o"
+	@echo "... src/sub.i"
+	@echo "... src/sub.s"
 .PHONY : help
 
 
