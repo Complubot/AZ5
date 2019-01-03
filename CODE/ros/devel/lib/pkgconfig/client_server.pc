@@ -3,6 +3,6 @@ prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/devel
 Name: client_server
 Description: Description of client_server
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/devel/lib 
-Requires: 
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/devel/include -I/home/complubot/Documents/POLLOTRON/CODE/ros/src/client_server/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/devel/lib -lclient_server
+Requires: roscpp rospy std_msgs message_runtime

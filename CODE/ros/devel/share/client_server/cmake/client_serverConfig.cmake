@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(client_server_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/complubot/Documents/POLLOTRON/CODE/ros/devel/include;/home/complubot/Documents/POLLOTRON/CODE/ros/src/client_server/include " STREQUAL " ")
   set(client_server_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/complubot/Documents/POLLOTRON/CODE/ros/devel/include;/home/complubot/Documents/POLLOTRON/CODE/ros/src/client_server/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://www.mrblissfulgrin.com " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT " " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "")
+set(libraries "client_server")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -152,7 +152,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(client_server_EXPORTED_TARGETS "")
+set(client_server_EXPORTED_TARGETS "client_server_generate_messages_cpp;client_server_generate_messages_eus;client_server_generate_messages_lisp;client_server_generate_messages_nodejs;client_server_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${client_server_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -160,7 +160,7 @@ foreach(t ${client_server_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "")
+set(depends "roscpp;rospy;std_msgs;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -189,7 +189,7 @@ foreach(depend ${depends})
   list(APPEND client_server_EXPORTED_TARGETS ${${client_server_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "client_server-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${client_server_DIR}/${extra})

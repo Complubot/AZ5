@@ -8,3 +8,4 @@
 
 # modified environment variables
 export PWD="/home/complubot/Documents/POLLOTRON/CODE/ros/build"
+export PYTHONPATH="/home/complubot/Documents/POLLOTRON/CODE/ros/devel/lib/python2.7/dist-packages:$PYTHONPATH"
