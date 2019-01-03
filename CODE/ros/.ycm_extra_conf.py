@@ -19,9 +19,13 @@ flags = [
 '-isystem',
 '/opt/ros/' + os.getenv('ROS_DISTRO') + '/include',
 '-isystem',
-'/home/complubot/Documentos/POLLOTRON/CODE/ARDUINO_PUB_SUB/devel/include',
+'/home/complubot/Documents/POLLOTRON/CODE/ros/devel/include',
 '-isystem',
-'/home/complubot/Documentos/POLLOTRON/CODE/ARDUINO_PUB_SUB/src/CMakeLists.txt/include'
+'/home/complubot/Documents/POLLOTRON/CODE/ros/src/CMakeLists.txt/include',
+'-isystem',
+'/home/complubot/Documents/POLLOTRON/CODE/ros/src/client_server/include',
+'-isystem',
+'/home/complubot/Documents/POLLOTRON/CODE/ros/src/pub_sub/include'
 ]
 
 compilation_database_folder = ''

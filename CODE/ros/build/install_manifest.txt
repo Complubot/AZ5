@@ -1,0 +1,14 @@
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/_setup_util.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/env.sh
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/setup.bash
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/setup.sh
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/setup.zsh
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/.rosinstall
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/lib/pkgconfig/client_server.pc
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/share/client_server/cmake/client_serverConfig.cmake
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/share/client_server/cmake/client_serverConfig-version.cmake
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/share/client_server/package.xml
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/lib/pkgconfig/pub_sub.pc
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/share/pub_sub/cmake/pub_subConfig.cmake
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/share/pub_sub/cmake/pub_subConfig-version.cmake
+/home/complubot/Documents/POLLOTRON/CODE/ros/install/share/pub_sub/package.xml

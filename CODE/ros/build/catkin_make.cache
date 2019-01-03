@@ -1,0 +1,2 @@
+client_server:pub_sub
+-DCATKIN_DEVEL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/devel -DCMAKE_INSTALL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/install -G Unix Makefiles

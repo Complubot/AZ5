@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/install
+
+Name: client_server
+Description: Description of client_server
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/install/lib 
+Requires: 
