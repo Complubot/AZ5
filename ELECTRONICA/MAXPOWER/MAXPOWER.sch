@@ -1,0 +1,302 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATmega:ATmega2560-16AU U1
+U 1 1 5C2FB5B7
+P 5400 3700
+F 0 "U1" H 5400 714 50  0000 C CNN
+F 1 "ATmega2560-16AU" H 5400 623 50  0000 C CNN
+F 2 "Package_QFP:TQFP-100_14x14mm_P0.5mm" H 5400 3700 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2549-8-bit-AVR-Microcontroller-ATmega640-1280-1281-2560-2561_datasheet.pdf" H 5400 3700 50  0001 C CNN
+	1    5400 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Crystal 16MHz1
+U 1 1 5C2FB841
+P 1900 1400
+F 0 "16MHz1" V 1854 1531 50  0000 L CNN
+F 1 "Crystal" V 1945 1531 50  0000 L CNN
+F 2 "" H 1900 1400 50  0001 C CNN
+F 3 "~" H 1900 1400 50  0001 C CNN
+	1    1900 1400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5C2FB90B
+P 1450 1100
+F 0 "C1" V 1198 1100 50  0000 C CNN
+F 1 "22pF" V 1289 1100 50  0000 C CNN
+F 2 "" H 1488 950 50  0001 C CNN
+F 3 "~" H 1450 1100 50  0001 C CNN
+	1    1450 1100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5C2FB98C
+P 1450 1650
+F 0 "C2" V 1702 1650 50  0000 C CNN
+F 1 "22pF" V 1611 1650 50  0000 C CNN
+F 2 "" H 1488 1500 50  0001 C CNN
+F 3 "~" H 1450 1650 50  0001 C CNN
+	1    1450 1650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1600 1650 1900 1650
+Wire Wire Line
+	1900 1650 1900 1550
+Wire Wire Line
+	1600 1100 1900 1100
+Wire Wire Line
+	1900 1100 1900 1250
+Wire Wire Line
+	1300 1100 1300 1350
+$Comp
+L power:Earth #PWR01
+U 1 1 5C2FBC31
+P 1050 1450
+F 0 "#PWR01" H 1050 1200 50  0001 C CNN
+F 1 "Earth" H 1050 1300 50  0001 C CNN
+F 2 "" H 1050 1450 50  0001 C CNN
+F 3 "~" H 1050 1450 50  0001 C CNN
+	1    1050 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 1450 1050 1350
+Wire Wire Line
+	1050 1350 1300 1350
+Connection ~ 1300 1350
+Wire Wire Line
+	1300 1350 1300 1650
+Text GLabel 2400 1100 2    50   Output ~ 0
+CLK1
+Text GLabel 2400 1650 2    50   Output ~ 0
+CLK2
+Wire Wire Line
+	1900 1100 2400 1100
+Connection ~ 1900 1100
+Wire Wire Line
+	2400 1650 1900 1650
+Connection ~ 1900 1650
+Text GLabel 4400 1300 0    50   Input ~ 0
+CLK1
+Text GLabel 4400 1500 0    50   Input ~ 0
+CLK2
+Wire Wire Line
+	4400 1300 4600 1300
+Wire Wire Line
+	4400 1500 4600 1500
+$Comp
+L power:Earth #PWR05
+U 1 1 5C2FC4F1
+P 5400 6950
+F 0 "#PWR05" H 5400 6700 50  0001 C CNN
+F 1 "Earth" H 5400 6800 50  0001 C CNN
+F 2 "" H 5400 6950 50  0001 C CNN
+F 3 "~" H 5400 6950 50  0001 C CNN
+	1    5400 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 6600 5400 6950
+$Comp
+L Device:LED D1
+U 1 1 5C2FCEF1
+P 1900 750
+F 0 "D1" H 1892 495 50  0000 C CNN
+F 1 "LED" H 1892 586 50  0000 C CNN
+F 2 "" H 1900 750 50  0001 C CNN
+F 3 "~" H 1900 750 50  0001 C CNN
+	1    1900 750 
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5C2FD0FA
+P 2350 750
+F 0 "R1" V 2143 750 50  0000 C CNN
+F 1 "330" V 2234 750 50  0000 C CNN
+F 2 "" V 2280 750 50  0001 C CNN
+F 3 "~" H 2350 750 50  0001 C CNN
+	1    2350 750 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2050 750  2200 750 
+$Comp
+L power:Earth #PWR03
+U 1 1 5C2FD28A
+P 2650 750
+F 0 "#PWR03" H 2650 500 50  0001 C CNN
+F 1 "Earth" H 2650 600 50  0001 C CNN
+F 2 "" H 2650 750 50  0001 C CNN
+F 3 "~" H 2650 750 50  0001 C CNN
+	1    2650 750 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 750  2650 750 
+$Comp
+L power:+5V #PWR02
+U 1 1 5C2FD465
+P 1650 750
+F 0 "#PWR02" H 1650 600 50  0001 C CNN
+F 1 "+5V" H 1665 923 50  0000 C CNN
+F 2 "" H 1650 750 50  0001 C CNN
+F 3 "" H 1650 750 50  0001 C CNN
+	1    1650 750 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 750  1750 750 
+$Comp
+L power:+5V #PWR04
+U 1 1 5C2FD643
+P 5400 700
+F 0 "#PWR04" H 5400 550 50  0001 C CNN
+F 1 "+5V" H 5415 873 50  0000 C CNN
+F 2 "" H 5400 700 50  0001 C CNN
+F 3 "" H 5400 700 50  0001 C CNN
+	1    5400 700 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 700  5400 750 
+$Comp
+L Connector_Generic:Conn_01x05 J1
+U 1 1 5C2FDA5C
+P 1250 2600
+F 0 "J1" H 1170 2175 50  0000 C CNN
+F 1 "Conn_01x05" H 1170 2266 50  0000 C CNN
+F 2 "" H 1250 2600 50  0001 C CNN
+F 3 "~" H 1250 2600 50  0001 C CNN
+	1    1250 2600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5400 750  5500 750 
+Wire Wire Line
+	5500 750  5500 800 
+Connection ~ 5400 750 
+Wire Wire Line
+	5400 750  5400 800 
+$Comp
+L Connector_Generic:Conn_01x05 J2
+U 1 1 5C2FE275
+P 1250 3450
+F 0 "J2" H 1170 3025 50  0000 C CNN
+F 1 "Conn_01x05" H 1170 3116 50  0000 C CNN
+F 2 "" H 1250 3450 50  0001 C CNN
+F 3 "~" H 1250 3450 50  0001 C CNN
+	1    1250 3450
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR06
+U 1 1 5C2FE499
+P 2350 2400
+F 0 "#PWR06" H 2350 2250 50  0001 C CNN
+F 1 "+5V" H 2365 2573 50  0000 C CNN
+F 2 "" H 2350 2400 50  0001 C CNN
+F 3 "" H 2350 2400 50  0001 C CNN
+	1    2350 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR07
+U 1 1 5C2FE56D
+P 2350 2500
+F 0 "#PWR07" H 2350 2250 50  0001 C CNN
+F 1 "Earth" H 2350 2350 50  0001 C CNN
+F 2 "" H 2350 2500 50  0001 C CNN
+F 3 "~" H 2350 2500 50  0001 C CNN
+	1    2350 2500
+	1    0    0    -1  
+$EndComp
+Text GLabel 2800 3250 2    50   BiDi ~ 0
+RX0
+Text GLabel 2800 2950 2    50   BiDi ~ 0
+TX0
+Text GLabel 2350 2850 2    50   Output ~ 0
+RESET
+Text GLabel 4400 1100 0    50   Input ~ 0
+RESET
+Wire Wire Line
+	4400 1100 4600 1100
+Wire Wire Line
+	2350 2400 2050 2400
+Wire Wire Line
+	1450 3250 1650 3250
+Wire Wire Line
+	1650 3250 1650 2400
+Connection ~ 1650 2400
+Wire Wire Line
+	1650 2400 1450 2400
+Wire Wire Line
+	2350 2500 1800 2500
+Wire Wire Line
+	1600 2500 1600 3350
+Wire Wire Line
+	1600 3350 1450 3350
+Connection ~ 1600 2500
+Wire Wire Line
+	1600 2500 1450 2500
+$Comp
+L Device:R R3
+U 1 1 5C2FF865
+P 2050 2700
+F 0 "R3" H 2120 2746 50  0000 L CNN
+F 1 "10K" H 2120 2655 50  0000 L CNN
+F 2 "" V 1980 2700 50  0001 C CNN
+F 3 "~" H 2050 2700 50  0001 C CNN
+	1    2050 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5C2FFB03
+P 1800 2700
+F 0 "R2" H 1870 2746 50  0000 L CNN
+F 1 "10K" H 1870 2655 50  0000 L CNN
+F 2 "" V 1730 2700 50  0001 C CNN
+F 3 "~" H 1800 2700 50  0001 C CNN
+	1    1800 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 2850 2050 2850
+Wire Wire Line
+	1800 2550 1800 2500
+Connection ~ 1800 2500
+Wire Wire Line
+	1800 2500 1600 2500
+Wire Wire Line
+	2050 2550 2050 2400
+Connection ~ 2050 2400
+Wire Wire Line
+	2050 2400 1650 2400
+Wire Wire Line
+	2050 2850 2350 2850
+Connection ~ 2050 2850
+Wire Wire Line
+	1450 3450 2050 3450
+Wire Wire Line
+	2050 3450 2050 2850
+$EndSCHEMATC
