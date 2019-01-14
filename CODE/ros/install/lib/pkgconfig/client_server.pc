@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/install
+
+Name: client_server
+Description: Description of client_server
+Version: 0.0.0
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/install/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/install/lib -lclient_server
+Requires: roscpp rospy std_msgs message_runtime

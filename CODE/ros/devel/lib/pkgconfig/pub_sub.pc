@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/devel
+
+Name: pub_sub
+Description: Description of pub_sub
+Version: 0.0.1
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/src/pub_sub/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/devel/lib -lpub_sub
+Requires: roscpp rospy std_msgs
