@@ -1,0 +1,3 @@
+[submodule "CODE/PRUEBAS/opencv"]
+	path = CODE/PRUEBAS/opencv
+	url = https://github.com/JuanCasado/opencv.git
