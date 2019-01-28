@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (module Clema (layer F.Cu) (tedit 5721EF13)
   (fp_text reference REF** (at -0.1905 -5.5071) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
@@ -12,3 +13,19 @@
   (pad 1 thru_hole circle (at -2.5 0) (size 1.75 1.75) (drill 1.15) (layers *.Cu *.Mask F.SilkS))
   (pad 2 thru_hole circle (at 2.5 0) (size 1.75 1.75) (drill 1.15) (layers *.Cu *.Mask F.SilkS))
 )
+=======
+(module Clema (layer F.Cu) (tedit 5721EF13)
+  (fp_text reference REF** (at -0.1905 -5.5071) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value Clema (at -0.1905 -6.5071) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_line (start 5 -4.1) (end 5 3) (layer F.SilkS) (width 0.15))
+  (fp_line (start -5 -4.1) (end -5 3) (layer F.SilkS) (width 0.15))
+  (fp_line (start -5 3) (end 5 3) (layer F.SilkS) (width 0.15))
+  (fp_line (start -5 -4.1) (end 5 -4.1) (layer F.SilkS) (width 0.15))
+  (pad 1 thru_hole circle (at -2.5 0) (size 1.75 1.75) (drill 1.15) (layers *.Cu *.Mask F.SilkS))
+  (pad 2 thru_hole circle (at 2.5 0) (size 1.75 1.75) (drill 1.15) (layers *.Cu *.Mask F.SilkS))
+)
+>>>>>>> 7c89f1f7f786967adc2f4e6e77def3f1ca4058f8

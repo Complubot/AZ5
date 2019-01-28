@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (module LDR (layer F.Cu) (tedit 5721EFB7)
   (fp_text reference REF** (at 0.1524 -3.5259) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
@@ -12,3 +13,19 @@
   (pad 1 thru_hole circle (at -1.7 0) (size 1.35 1.35) (drill 0.75) (layers *.Cu *.Mask F.SilkS))
   (pad 2 thru_hole circle (at 1.7 0) (size 1.35 1.35) (drill 0.75) (layers *.Cu *.Mask F.SilkS))
 )
+=======
+(module LDR (layer F.Cu) (tedit 5721EFB7)
+  (fp_text reference REF** (at 0.1524 -3.5259) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value LDR (at 0.1524 -4.5259) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_arc (start -0.0254 -0.0127) (end -2.166426 1.657565) (angle 75.5) (layer F.SilkS) (width 0.15))
+  (fp_arc (start 0.0254 0.0127) (end 2.166426 -1.695665) (angle 75.5) (layer F.SilkS) (width 0.15))
+  (fp_line (start -2.159 1.651) (end 2.141 1.651) (layer F.SilkS) (width 0.15))
+  (fp_line (start -2.159 -1.7018) (end 2.141 -1.7018) (layer F.SilkS) (width 0.15))
+  (pad 1 thru_hole circle (at -1.7 0) (size 1.35 1.35) (drill 0.75) (layers *.Cu *.Mask F.SilkS))
+  (pad 2 thru_hole circle (at 1.7 0) (size 1.35 1.35) (drill 0.75) (layers *.Cu *.Mask F.SilkS))
+)
+>>>>>>> 7c89f1f7f786967adc2f4e6e77def3f1ca4058f8

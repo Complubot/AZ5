@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (module Altavoz (layer F.Cu) (tedit 577E371D)
   (fp_text reference REF** (at -0.1778 -2.7512) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
@@ -9,3 +10,16 @@
   (pad 2 thru_hole circle (at 5.13 0) (size 1.65 1.65) (drill 1.05) (layers *.Cu *.Mask F.SilkS))
   (pad 1 thru_hole circle (at -5.13 0) (size 1.65 1.65) (drill 1.05) (layers *.Cu *.Mask F.SilkS))
 )
+=======
+(module Altavoz (layer F.Cu) (tedit 577E371D)
+  (fp_text reference REF** (at -0.1778 -2.7512) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value Altavoz (at -0.1778 -3.7512) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_circle (center 0 0) (end 8.5 1) (layer F.SilkS) (width 0.15))
+  (pad 2 thru_hole circle (at 5.13 0) (size 1.65 1.65) (drill 1.05) (layers *.Cu *.Mask F.SilkS))
+  (pad 1 thru_hole circle (at -5.13 0) (size 1.65 1.65) (drill 1.05) (layers *.Cu *.Mask F.SilkS))
+)
+>>>>>>> 7c89f1f7f786967adc2f4e6e77def3f1ca4058f8
