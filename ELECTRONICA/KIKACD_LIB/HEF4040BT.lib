@@ -1,0 +1,42 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# HEF4040BT
+#
+DEF HEF4040BT U 0 40 Y Y 1 L N
+F0 "U" -215 719 50 H V L BNN
+F1 "HEF4040BT" -186 -1078 50 H V L BNN
+F2 "SOIC127P600X175-16N" 0 0 50 H I L BNN
+F3 "Unavailable" 0 0 50 H I L BNN
+F4 "HEF4040BT" 0 0 50 H I L BNN
+F5 "None" 0 0 50 H I L BNN
+F6 "NXP Semiconductors" 0 0 50 H I L BNN
+F7 "Counter/Divider Single 12-Bit Binary UP 16-Pin SO" 0 0 50 H I L BNN
+F8 "None" 0 0 50 H I L BNN
+DRAW
+P 2 0 0 16 -500 600 -500 -900 N
+P 2 0 0 16 -500 -900 500 -900 N
+P 2 0 0 16 500 -900 500 600 N
+P 2 0 0 16 500 600 -500 600 N
+X VDD 16 -700 400 200 R 40 40 0 0 W 
+X ~CP 10 -700 200 200 R 40 40 0 0 I 
+X MR 11 -700 100 200 R 40 40 0 0 I 
+X VSS 8 -700 -100 200 R 40 40 0 0 P 
+X Q0 9 700 400 200 L 40 40 0 0 O 
+X Q1 7 700 300 200 L 40 40 0 0 O 
+X Q2 6 700 200 200 L 40 40 0 0 O 
+X Q3 5 700 100 200 L 40 40 0 0 O 
+X Q4 3 700 0 200 L 40 40 0 0 O 
+X Q5 2 700 -100 200 L 40 40 0 0 O 
+X Q6 4 700 -200 200 L 40 40 0 0 O 
+X Q7 13 700 -300 200 L 40 40 0 0 O 
+X Q8 12 700 -400 200 L 40 40 0 0 O 
+X Q9 14 700 -500 200 L 40 40 0 0 O 
+X Q10 15 700 -600 200 L 40 40 0 0 O 
+X Q11 1 700 -700 200 L 40 40 0 0 O 
+ENDDRAW
+ENDDEF
+#
+# End Library
