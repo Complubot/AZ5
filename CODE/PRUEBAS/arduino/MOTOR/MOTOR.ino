@@ -29,6 +29,6 @@ void loop() {
     _break = 0;
   } else {
     motor.setSpeeds(v, v, v, v);
-    delay (10);
+    delay (20);
   }
 }
