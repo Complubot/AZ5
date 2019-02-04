@@ -7,6 +7,8 @@ bool up = 1;
 bool _break = 0;
 void setup() {
   motor.init();
+  motor.setSpeeds(255, 255, 255, 255);
+  while(1);
 }
 
 void loop() {
