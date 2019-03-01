@@ -1,23 +1,22 @@
-#define LED A3
-#define IN 6
 volatile byte state = 0;
 
-#include "avr/interrupt.h"
+#include "attiny1634.h"
 
 
 void setup() { 
-  cli();
-  MCUCR |= (1 << 0);
-  GIMSK |= (1 << 3);
-  PCMSK0 |= (1 << 3);
-  sei();
-  pinMode(LED, OUTPUT);
+  interruptionSetup();
+  pwmSetup();
+  ledSetup ();
+  setPWM(255);
+  setPIN(PORTA, 4, 0);
+  setPIN(PORTA, 3, 1);
 }
 
 void loop() {
-  digitalWrite(LED, state);
+   setPIN (PORTA, LED, state);
 }
 
-ISR(PCINT0_vect){
+
+void interruption1() {
   state = !state;
 }
