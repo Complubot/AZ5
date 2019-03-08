@@ -5,11 +5,11 @@ volatile byte state = 0;
 
 void setup() { 
   interruptionSetup();
-  pwmSetup();
+  //pwmSetup();
   ledSetup ();
-  setPWM(255);
-  setPIN(PORTA, 4, 0);
-  setPIN(PORTA, 3, 1);
+  //setPWM(255);
+  //setPIN(PORTA, 4, 0);
+  //setPIN(PORTA, 3, 1);
 }
 
 void loop() {
@@ -17,6 +17,6 @@ void loop() {
 }
 
 
-void interruption1() {
+ISR (PCINT1_vect) {
   state = !state;
 }
