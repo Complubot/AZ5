@@ -16,16 +16,21 @@ void setup() {
   memset(encoder2, 0, sizeof(unsigned long)*PRECISION);
   interruptionSetup();
   ledSetup();
+  pwmSetup();
   setPIN (PORTA, LED, 1);
   delay (1000);
   setPIN (PORTA, LED, 0);
+  setPWM(127);
+  Serial.begin(115200);
 }
 
 void loop() {
   if ((time_m()-last_read)>MAX_READ) {
     last_read = time_m();
-    calcular_media(encoder1);
-    calcular_media(encoder2);
+    Serial.print("E1: ");
+    Serial.print(calcular_media(encoder1));
+    Serial.print("    E2: ");
+    Serial.println(calcular_media(encoder2));
     setPIN (PORTA, LED, state);
     state = !state;
   }
