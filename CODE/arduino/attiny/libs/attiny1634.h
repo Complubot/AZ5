@@ -11,3 +11,7 @@ void ledSetup ();
 unsigned long time_u ();
 unsigned long time_m ();
 unsigned long time_s ();
+void forward ();
+void forward (int pwm);
+void backwards ();
+void backwards (int pwm);

@@ -8,13 +8,13 @@ void setup() {
 
   setPIN(PORTA, 3, 1);
   setPIN(PORTA, 4, 0);
+
+  
 }
 
 void loop() {
-  setPWM(127);
-  setPIN (PORTA, LED, state);
-}
-
-ISR(PCINT0_vect) {
-  state = !state;
+  forward (127);
+  delay (1000);
+  backwards (127);
+  delay (1000);
 }

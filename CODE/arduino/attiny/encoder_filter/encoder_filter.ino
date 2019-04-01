@@ -20,7 +20,7 @@ void setup() {
   setPIN (PORTA, LED, 1);
   delay (1000);
   setPIN (PORTA, LED, 0);
-  setPWM(127);
+  forward (127);
   Serial.begin(115200);
 }
 
