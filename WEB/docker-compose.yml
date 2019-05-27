@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  arduino:
+    build: ./arduino
+    volumes:
+      - ./arduino/src:/arduino/src
+    ports:
+      - 8082:80
+
+  webpage:
+    build: ./webpage
+    volumes:
+      - ./webpage/src:/webpage/src
+      - ./webpage/public:/webpage/public
+    ports:
+      - 8081:80
+
