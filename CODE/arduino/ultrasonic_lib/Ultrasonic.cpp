@@ -4,23 +4,28 @@
 Ultrasonic::Ultrasonic (int trigger, int echo){
   this->trigger = trigger;
   this->echo = echo;
-  if (trigger!=echo){
-    pinMode(trigger, OUTPUT);
-    pinMode(echo, INPUT);
+  if (this->trigger!=this->echo){
+    pinMode(this->trigger, OUTPUT);
+    pinMode(this->echo, INPUT);
   }
 }
 
+Ultrasonic::Ultrasonic (int single_pin){
+  this->trigger = single_pin;
+  this->echo = single_pin;
+}
+
 int Ultrasonic::read(){
-  if (trigger==echo){
-    pinMode(trigger, OUTPUT);
+  if (this->trigger==this->echo){
+    pinMode(this->trigger, OUTPUT);
   }
-  digitalWrite(trigger, LOW);
+  digitalWrite(this->trigger, LOW);
   delayMicroseconds(2);
-  digitalWrite(trigger, HIGH);
+  digitalWrite(this->trigger, HIGH);
   delayMicroseconds(10);
-  digitalWrite(trigger, LOW);
-  if (trigger==echo){
-    pinMode(echo, INPUT);
+  digitalWrite(this->trigger, LOW);
+  if (this->trigger==this->echo){
+    pinMode(this->echo, INPUT);
   }
-  return int(pulseIn(echoPin, HIGH)/58);
+  return int(pulseIn(this->echo, HIGH)/58);
 }
