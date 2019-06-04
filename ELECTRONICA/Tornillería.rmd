@@ -1,0 +1,27 @@
+---
+title : "Tornillería"
+---
+
+## Tornillos
+
+|Nombre              |Métrica |Longitud |Cantidad |Cabeza    |
+|--------------------|-------:|--------:|--------:|----------|
+|Rodamientos         |5       |25       |16       |CON SOLAPA|
+|Motores             |4       |16       |16       |AVELLANADO|
+|Placas intermedias  |4       |10       |112      |CON SOLAPA|
+|Panel madera motores|4       |20       |8        |CON SOLAPA|
+|Perfil aluminio     |8       |40       |12       |CON SOLAPA|
+|Placas electrónica  |3       |8        |20       |ALOMADA   |
+
+## Tuercas
+
+|Nombre              |Métrica |Cantidad |Tipo         |
+|--------------------|-------:|--------:|-------------|
+|Rodamientos         |5       |16       |AUTOFRENABLES|
+|Panel madera motores|4       |24       |PLANA        |
+
+## Arandelas
+
+|Nombre     |Métrica |Cantidad |
+|-----------|-------:|--------:|
+|Rodamientos|5       |16       |

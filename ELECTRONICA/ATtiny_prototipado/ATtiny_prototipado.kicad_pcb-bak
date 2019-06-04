@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 4)
+    (drawings 5)
     (tracks 78)
     (zones 0)
     (modules 5)
@@ -418,6 +418,9 @@
     )
   )
 
+  (gr_text "ATtiny\nPrototipado \n1.0" (at 41.402 29.21) (layer F.Cu)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
   (gr_line (start 30.607 25.781) (end 52.0065 25.781) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 30.6705 52.197) (end 30.607 25.781) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 52.0065 52.197) (end 30.6705 52.197) (layer Edge.Cuts) (width 0.15))

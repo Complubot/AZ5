@@ -1,36 +1,17 @@
-#include "Motor.h"
+#include "MotorPlatform.h"
 
-Motor motor {};
+MotorPlatform pollotron {};
 
-int v = 0;
-bool up = 1;
-bool _break = 0;
+int  direction = 0;
 void setup() {
-  motor.init();
-  motor.setSpeeds(255, 255, 255, 255);
-  while(1);
+  pollotron.init();
 }
 
 void loop() {
-  if (up) {
-    ++v;
-    if (v == 255) {
-      up = 0;
-      _break = 1;
-    }
-  } else {
-    --v;
-    if (v == -255) {
-      up = 1;
-      _break = 1;
-    }
-  }
-  if (_break){
-    motor.setBrakes(v, v, v, v);
-    delay (500);
-    _break = 0;
-  } else {
-    motor.setSpeeds(v, v, v, v);
-    delay (10);
+  pollotron.go(direction);
+  delay(1000);
+  ++direction;
+  if (direction >= MotorPlatform::DIRECTION_LEN){
+    direction = 0;
   }
 }
