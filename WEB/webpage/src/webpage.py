@@ -1,29 +1,42 @@
 
-from flask import Flask, send_from_directory
-from flask_restful import Resource, Api
 
-app = Flask(__name__)
+import json
+import bottle
+from bottle import Bottle, request, response, static_file
 
-@app.route('/')
+server = Bottle()
+URL_ENDPOINT = '/'
+
+@server.hook('after_request')
+def enable_cors():
+  response.headers['Access-Control-Allow-Origin'] = '*'
+  response.headers['Access-Control-Allow-Methods'] = 'PUT, GET, POST, DELETE, OPTIONS'
+  response.headers['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
+
+@server.route(URL_ENDPOINT, method=['OPTIONS'])
+def cors_handler():
+  return {}
+
+@server.route('/')
 def home():
-  return send_from_directory('/webpage/public','index.html')
+  return static_file('index.html', root='/webpage/public')
 
-@app.route('/icons/<path:path>')
+@server.route('/icons/<path>')
 def icons(path):
-  return send_from_directory('/webpage/public/icons',path)
+  return static_file(path, root='/webpage/public/icons')
 
-@app.route('/js/<path:path>')
+@server.route('/js/<path>')
 def js(path):
-  return send_from_directory('/webpage/public/js',path)
+  return static_file(path, root='/webpage/public/js')
 
-@app.route('/css/<path:path>')
+@server.route('/css/<path>')
 def css(path):
-  return send_from_directory('/webpage/public/css',path)
+  return static_file(path, root='/webpage/public/css')
 
-@app.route('/html/<path:path>')
+@server.route('/html/<path>')
 def html(path):
-  return send_from_directory('/webpage/public/html',path)
+  return static_file(path, root='/webpage/public/html')
+
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=80, debug=True)
-
+  server.run(host='0.0.0.0', port=80, server='gunicorn', workers=4, debug=True)

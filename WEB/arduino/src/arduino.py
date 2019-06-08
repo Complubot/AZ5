@@ -1,23 +1,22 @@
 
 import json
 import bottle
-from bottle import route, run, request, response, hook
+from bottle import Bottle, request, response, static_file
 
-# Base Endpoint
+server = Bottle()
 URL_ENDPOINT = '/'
 
-@hook('after_request')
+@server.hook('after_request')
 def enable_cors():
   response.headers['Access-Control-Allow-Origin'] = '*'
   response.headers['Access-Control-Allow-Methods'] = 'PUT, GET, POST, DELETE, OPTIONS'
   response.headers['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
 
-# For CORS
-@route(URL_ENDPOINT, method=['OPTIONS'])
+@server.route(URL_ENDPOINT, method=['OPTIONS'])
 def cors_handler():
   return {}
 
-@route(URL_ENDPOINT, method=['GET'])
+@server.route(URL_ENDPOINT, method=['GET'])
 def get_lookup():
   return {
     'configuration':[
@@ -28,5 +27,5 @@ def get_lookup():
   }
 
 if __name__ == "__main__":
-  run(host='0.0.0.0', port=80, server='gunicorn', workers=4, debug=True)
+  server.run(host='0.0.0.0', port=80, server='gunicorn', workers=4, debug=True)
 
