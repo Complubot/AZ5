@@ -1,0 +1,2 @@
+controller
+-DCATKIN_DEVEL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel -DCMAKE_INSTALL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/install
+
+Name: controller
+Description: Description of controller
+Version: 0.0.1
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/controller/install/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/controller/install/lib 
+Requires: message_runtime
