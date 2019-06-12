@@ -1,4 +1,4 @@
-int8 RX
-int8 RY
-int8 LX
-int8 LY
+int32 RX
+int32 RY
+int32 LX
+int32 LY

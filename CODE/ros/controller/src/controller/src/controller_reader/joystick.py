@@ -3,7 +3,7 @@ import time
 from controller_reader.axis import Axis 
 
 class Joystick ():
-    def __init__ (self, name, type, codex, codey, min_time=1):
+    def __init__ (self, name, type, codex, codey, min_time=0):
         self.name = name
         self.min_time = min_time
         self.axis = [Axis(name, type, code) for name, code in zip(['X', 'Y'], [codex, codey])]

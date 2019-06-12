@@ -45,58 +45,54 @@
   (:serialization-length
    ()
    (+
-    ;; int8 _RX
-    1
-    ;; int8 _RY
-    1
-    ;; int8 _LX
-    1
-    ;; int8 _LY
-    1
+    ;; int32 _RX
+    4
+    ;; int32 _RY
+    4
+    ;; int32 _LX
+    4
+    ;; int32 _LY
+    4
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int8 _RX
-       (write-byte _RX s)
-     ;; int8 _RY
-       (write-byte _RY s)
-     ;; int8 _LX
-       (write-byte _LX s)
-     ;; int8 _LY
-       (write-byte _LY s)
+     ;; int32 _RX
+       (write-long _RX s)
+     ;; int32 _RY
+       (write-long _RY s)
+     ;; int32 _LX
+       (write-long _LX s)
+     ;; int32 _LY
+       (write-long _LY s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int8 _RX
-     (setq _RX (sys::peek buf ptr- :char)) (incf ptr- 1)
-     (if (> _RX 127) (setq _RX (- _RX 256)))
-   ;; int8 _RY
-     (setq _RY (sys::peek buf ptr- :char)) (incf ptr- 1)
-     (if (> _RY 127) (setq _RY (- _RY 256)))
-   ;; int8 _LX
-     (setq _LX (sys::peek buf ptr- :char)) (incf ptr- 1)
-     (if (> _LX 127) (setq _LX (- _LX 256)))
-   ;; int8 _LY
-     (setq _LY (sys::peek buf ptr- :char)) (incf ptr- 1)
-     (if (> _LY 127) (setq _LY (- _LY 256)))
+   ;; int32 _RX
+     (setq _RX (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _RY
+     (setq _RY (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _LX
+     (setq _LX (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _LY
+     (setq _LY (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get controller::raw_controller :md5sum-) "261f1b7f011b5fc47b397e357aa3b674")
+(setf (get controller::raw_controller :md5sum-) "28b3e8ea28833e842fbdd2e937cb7542")
 (setf (get controller::raw_controller :datatype-) "controller/raw_controller")
 (setf (get controller::raw_controller :definition-)
-      "int8 RX
-int8 RY
-int8 LX
-int8 LY
+      "int32 RX
+int32 RY
+int32 LX
+int32 LY
 ")
 
 
 
-(provide :controller/raw_controller "261f1b7f011b5fc47b397e357aa3b674")
+(provide :controller/raw_controller "28b3e8ea28833e842fbdd2e937cb7542")
 
 

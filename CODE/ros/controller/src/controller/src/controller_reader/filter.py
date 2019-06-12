@@ -1,6 +1,6 @@
 
 class Filter ():
-    def __init__(self, in_min=0, in_max=255, out_min=-100, out_max=100, precission=10, default_value=127, low_filter = 15):
+    def __init__(self, in_min=0, in_max=255, out_min=-255, out_max=255, precission=1, default_value=127, low_filter = 20):
         self.index = 0
         self.default_value = default_value
         self.values = [self.default_value for _ in range(precission)]
@@ -40,4 +40,10 @@ class Filter ():
         }
 
 def scale(val, in_min, in_max, out_min, out_max):
-    return round(float(val - in_min) / float(in_max - in_min) * float(out_max - out_min) + out_min, -1)
+    scale = round(float(val - in_min) / float(in_max - in_min) * float(out_max - out_min) + out_min, -1)
+    if scale > 255:
+        return 255
+    elif scale < -255:
+        return -255
+    else:
+        return scale 

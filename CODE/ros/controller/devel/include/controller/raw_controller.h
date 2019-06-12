@@ -39,16 +39,16 @@ struct raw_controller_
 
 
 
-   typedef int8_t _RX_type;
+   typedef int32_t _RX_type;
   _RX_type RX;
 
-   typedef int8_t _RY_type;
+   typedef int32_t _RY_type;
   _RY_type RY;
 
-   typedef int8_t _LX_type;
+   typedef int32_t _LX_type;
   _LX_type LX;
 
-   typedef int8_t _LY_type;
+   typedef int32_t _LY_type;
   _LY_type LY;
 
 
@@ -129,12 +129,12 @@ struct MD5Sum< ::controller::raw_controller_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "261f1b7f011b5fc47b397e357aa3b674";
+    return "28b3e8ea28833e842fbdd2e937cb7542";
   }
 
   static const char* value(const ::controller::raw_controller_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x261f1b7f011b5fc4ULL;
-  static const uint64_t static_value2 = 0x7b397e357aa3b674ULL;
+  static const uint64_t static_value1 = 0x28b3e8ea28833e84ULL;
+  static const uint64_t static_value2 = 0x2fbdd2e937cb7542ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,10 +153,10 @@ struct Definition< ::controller::raw_controller_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int8 RX\n\
-int8 RY\n\
-int8 LX\n\
-int8 LY\n\
+    return "int32 RX\n\
+int32 RY\n\
+int32 LX\n\
+int32 LY\n\
 ";
   }
 
@@ -198,13 +198,13 @@ struct Printer< ::controller::raw_controller_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::controller::raw_controller_<ContainerAllocator>& v)
   {
     s << indent << "RX: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.RX);
+    Printer<int32_t>::stream(s, indent + "  ", v.RX);
     s << indent << "RY: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.RY);
+    Printer<int32_t>::stream(s, indent + "  ", v.RY);
     s << indent << "LX: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.LX);
+    Printer<int32_t>::stream(s, indent + "  ", v.LX);
     s << indent << "LY: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.LY);
+    Printer<int32_t>::stream(s, indent + "  ", v.LY);
   }
 };
 

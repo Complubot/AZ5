@@ -9,7 +9,7 @@ class Sender(threading.Thread):
         rospy.init_node('raw_controller_reader', anonymous=False)
         self.emiter = emiter
         self.running = True
-        self.pub = rospy.Publisher('raw_controller_msg', raw_controller)
+        self.pub = rospy.Publisher('raw_controller_msg', raw_controller, queue_size=10)
         self.rate = rospy.Rate(interval)
 
     def run(self):

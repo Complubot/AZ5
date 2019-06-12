@@ -3,9 +3,17 @@
 import evdev
 import controller_reader.ps3Keys as ps3
 from controller_reader.sender import Sender
+import os
 
 #xinput set-prop "PLAYSTATION(R)3 Controller" "Device Enabled" 0 #(BASH) TO DISABLE CONTROLLER TO MESS WITH THE CURSOR
 target_device = 'PLAYSTATION(R)3 Controller'
+
+def disableController (controller):
+    if controller == target_device:
+        try:
+            os.system('xinput set-prop "'+target_device+'" "Device Enabled" 0')
+        except Exception:
+            pass
 
 def connect (device, gamepad, rate):
     print ('connecting to: ',device)
@@ -24,6 +32,7 @@ def connect (device, gamepad, rate):
         sender.join()
 
 def main (target_device=target_device, rate=10):
+    disableController(target_device)
     devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
     device_to_connect = False
     for device in devices:

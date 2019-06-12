@@ -7,15 +7,15 @@ import struct
 
 
 class raw_controller(genpy.Message):
-  _md5sum = "261f1b7f011b5fc47b397e357aa3b674"
+  _md5sum = "28b3e8ea28833e842fbdd2e937cb7542"
   _type = "controller/raw_controller"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """int8 RX
-int8 RY
-int8 LX
-int8 LY"""
+  _full_text = """int32 RX
+int32 RY
+int32 LX
+int32 LY"""
   __slots__ = ['RX','RY','LX','LY']
-  _slot_types = ['int8','int8','int8','int8']
+  _slot_types = ['int32','int32','int32','int32']
 
   def __init__(self, *args, **kwds):
     """
@@ -61,7 +61,7 @@ int8 LY"""
     """
     try:
       _x = self
-      buff.write(_get_struct_4b().pack(_x.RX, _x.RY, _x.LX, _x.LY))
+      buff.write(_get_struct_4i().pack(_x.RX, _x.RY, _x.LX, _x.LY))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -74,8 +74,8 @@ int8 LY"""
       end = 0
       _x = self
       start = end
-      end += 4
-      (_x.RX, _x.RY, _x.LX, _x.LY,) = _get_struct_4b().unpack(str[start:end])
+      end += 16
+      (_x.RX, _x.RY, _x.LX, _x.LY,) = _get_struct_4i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -89,7 +89,7 @@ int8 LY"""
     """
     try:
       _x = self
-      buff.write(_get_struct_4b().pack(_x.RX, _x.RY, _x.LX, _x.LY))
+      buff.write(_get_struct_4i().pack(_x.RX, _x.RY, _x.LX, _x.LY))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -103,8 +103,8 @@ int8 LY"""
       end = 0
       _x = self
       start = end
-      end += 4
-      (_x.RX, _x.RY, _x.LX, _x.LY,) = _get_struct_4b().unpack(str[start:end])
+      end += 16
+      (_x.RX, _x.RY, _x.LX, _x.LY,) = _get_struct_4i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -113,9 +113,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_4b = None
-def _get_struct_4b():
-    global _struct_4b
-    if _struct_4b is None:
-        _struct_4b = struct.Struct("<4b")
-    return _struct_4b
+_struct_4i = None
+def _get_struct_4i():
+    global _struct_4i
+    if _struct_4i is None:
+        _struct_4i = struct.Struct("<4i")
+    return _struct_4i

@@ -1,2 +1,2 @@
-controller
+controller:rosserial/rosserial:rosserial/rosserial_arduino:rosserial/rosserial_client:rosserial/rosserial_embeddedlinux:rosserial/rosserial_mbed:rosserial/rosserial_msgs:rosserial/rosserial_python:rosserial/rosserial_server:rosserial/rosserial_test:rosserial/rosserial_tivac:rosserial/rosserial_vex_cortex:rosserial/rosserial_vex_v5:rosserial/rosserial_windows:rosserial/rosserial_xbee
 -DCATKIN_DEVEL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel -DCMAKE_INSTALL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/install -G Unix Makefiles

@@ -54,13 +54,13 @@ class raw_controller {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type raw_controller
     // Serialize message field [RX]
-    bufferOffset = _serializer.int8(obj.RX, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.RX, buffer, bufferOffset);
     // Serialize message field [RY]
-    bufferOffset = _serializer.int8(obj.RY, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.RY, buffer, bufferOffset);
     // Serialize message field [LX]
-    bufferOffset = _serializer.int8(obj.LX, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.LX, buffer, bufferOffset);
     // Serialize message field [LY]
-    bufferOffset = _serializer.int8(obj.LY, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.LY, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -69,18 +69,18 @@ class raw_controller {
     let len;
     let data = new raw_controller(null);
     // Deserialize message field [RX]
-    data.RX = _deserializer.int8(buffer, bufferOffset);
+    data.RX = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [RY]
-    data.RY = _deserializer.int8(buffer, bufferOffset);
+    data.RY = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [LX]
-    data.LX = _deserializer.int8(buffer, bufferOffset);
+    data.LX = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [LY]
-    data.LY = _deserializer.int8(buffer, bufferOffset);
+    data.LY = _deserializer.int32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 4;
+    return 16;
   }
 
   static datatype() {
@@ -90,16 +90,16 @@ class raw_controller {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '261f1b7f011b5fc47b397e357aa3b674';
+    return '28b3e8ea28833e842fbdd2e937cb7542';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int8 RX
-    int8 RY
-    int8 LX
-    int8 LY
+    int32 RX
+    int32 RY
+    int32 LX
+    int32 LY
     `;
   }
 

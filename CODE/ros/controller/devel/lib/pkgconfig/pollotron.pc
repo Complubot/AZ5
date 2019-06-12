@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel
+
+Name: pollotron
+Description: Description of pollotron
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib 
+Requires: 
