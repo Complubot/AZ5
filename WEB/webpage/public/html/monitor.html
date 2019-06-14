@@ -47,9 +47,14 @@
 <body onload="javascript:main()">      
   <div class="container">
     <div class="jumbotron">
-      <div class="row">
-        <div class="col">
-            <h1>Monitor</<h1>
+      <div class="row" style="padding-bottom: 10px">
+        <div class="col text-left">
+            <h1>Monitor<h1>
+        </div>
+        <div class="col text-center" id="connection-state">
+          <span class="badge badge-warning">
+              <h1>Connecting...</h1>
+          </span>
         </div>
         <div class="col text-right">
             <a class="btn btn-info btn-lg" href="http://0.0.0.0:8081/" role="button">BACK</a>

@@ -17,6 +17,7 @@ class RosReader (threading.Thread):
     
     def run(self):
         rospy.spin()
+        self.sender.stop()
     
     def callback(self, data):
         rospy.loginfo(data)
@@ -31,14 +32,16 @@ class WebSender ():
         self.last_recived.RY = 0
         self.last_recived.LY = 0
         self.last_recived.LX = 0
+        self.event_loop = asyncio.get_event_loop()
 
     def run(self):
         self.running = True
-        asyncio.get_event_loop().run_until_complete(self.server)
-        asyncio.get_event_loop().run_forever()
+        self.event_loop.run_until_complete(self.server)
+        self.event_loop.run_forever()
 
     def stop(self):
         self.running = False
+        self.event_loop.stop()
 
     def update(self, data):
         self.lock.acquire()
@@ -48,15 +51,20 @@ class WebSender ():
             self.lock.release()
     
     async def server_callback(self, websocket, path):
-        self.lock.acquire()
         try:
-            msg = json.dumps({  'RX' : self.last_recived.RX,
-                                'RY' : self.last_recived.RY,
-                                'LX' : self.last_recived.LX,
-                                'LY' : self.last_recived.LY})
+            while self.running:
+                self.lock.acquire()
+                try:
+                    msg = json.dumps({  'RX' : self.last_recived.RX,
+                                        'RY' : self.last_recived.RY,
+                                        'LX' : self.last_recived.LX,
+                                        'LY' : self.last_recived.LY})
+                finally:
+                    self.lock.release()
+                await websocket.send(msg)
+                time.sleep(0.05)
         finally:
-            self.lock.release()
-        await websocket.send(msg)
+            websocket.colse()
 
 
 def main():

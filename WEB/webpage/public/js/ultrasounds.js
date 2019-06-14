@@ -42,26 +42,6 @@ class Ultrasounds {
   }
 
   update () {
-    for (const i in this.offsets){
-      if (i%2?this.up:!this.up){
-        this.offsets[i] += this.speed
-      } else {
-        this.offsets[i] -= this.speed
-      }
-    }
-    if (this.offsets[this.bounds < 20? 1: 0] > this.bounds){
-      this.up = false
-    }
-    if (this.offsets[this.bounds < 20? 1: 0] < -this.bounds){
-      this.up = true
-      this.bounds ++ 
-    }
-    this.speed+= this.bounds < 24? 0.04 : -0.1
-
-    if (Math.abs(this.speed) > 10){
-      this.up = true
-      this.bounds = 1
-      this.speed = 0
-    }
+    
   }
 }

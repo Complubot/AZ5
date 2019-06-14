@@ -46,16 +46,12 @@ class Controller {
     this.p.circle(this.centerL.x + this.offsetL.x, this.centerL.y + this.offsetL.y, this.radiusS)
   }
 
-  update () {
-    const angle = 2 * Math.PI / 100 * this.i - Math.PI/2
-    const x = Math.cos(angle)*this.radiusS
-    const y = Math.sin(angle)*this.radiusS
-    this.offsetR = {x:x,y:y}
-    this.offsetL = {x:-x,y:-y}
-    if (this.i < 100){
-      ++this.i
-    }else{
-      this.i = 0
+  update (_data) {
+    if (_data.controller){
+      const data = _data.controller
+      const format = (value)=>{return map(value, -255,255,-this.radiusS,this.radiusS)}
+      this.offsetR = {x:format(data.RX),y:format(data.RY)}
+      this.offsetL = {x:format(data.LX),y:format(data.LY)}
     }
   }
 }
