@@ -4,31 +4,34 @@ function main () {
 }
 
 function sketch (p) {
-  let width
-  let height
-  const controller = new Controller(p)
+  let width = 0
+  let height = 0
+  const elements = [new Controller(p), new Ultrasounds(p, 16)]
+  const parent = document.getElementById('monitor');
   
-  updateSize = ()=>{
-    const parent = document.getElementById('monitor');
-    width = parent.offsetWidth
-    height = parent.offsetHeight
-    p.createCanvas(width, height)
+  resize = ()=>{
+    if ((parent.offsetWidth!=width) || (parent.offsetHeight!=height)){
+      width = parent.offsetWidth
+      height = parent.offsetHeight
+      p.createCanvas(width, height)
+      for (const element of elements){element.resize(width,height)}
+    }
   }
 
   p.setup = ()=>{
-    updateSize ()
     p.background(0)
-    controller.setup()
+    for (const element of elements){element.setup()}
+    resize ()
   }
 
   update = ()=>{
-    updateSize()
-    controller.update()
+    for (const element of elements){element.update()}
   }
 
   p.draw = ()=>{
     update()
+    resize()
     p.clear()
-    controller.draw(width, height)
+    for (const element of elements){element.draw()}
   }
 }
