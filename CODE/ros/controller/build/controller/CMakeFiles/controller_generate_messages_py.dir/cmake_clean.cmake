@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/controller_generate_messages_py"
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_buttons.py"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_raw_controller.py"
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_ultrasounds.py"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/__init__.py"
 )
 

@@ -1,32 +1,31 @@
 
 let last_recived = {}
+let ok = false
+
+function connectionUP () {
+  const parent = document.getElementById('connection-state')
+  parent.innerHTML = ''+
+  '<span class="badge badge-success">'+
+    '<h1>Connected</h1>' +
+  '</span>'
+  ok = true
+}
+
+function connectionDown(){
+  const parent = document.getElementById('connection-state')
+  parent.innerHTML = ''+
+  '<span class="badge badge-danger">'+
+    '<h1>Connection Failed</h1>' +
+  '</span>'
+  ok = false
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function main () {
-  const socket = new WebSocket('ws://localhost:9090')
-  socket.onopen = () => {
-    const parent = document.getElementById('connection-state')
-    parent.innerHTML = ''+
-    '<span class="badge badge-success">'+
-      '<h1>Connected</h1>' +
-    '</span>'
-  }
-  socket.onclose = () => {
-    const parent = document.getElementById('connection-state')
-    parent.innerHTML = ''+
-    '<span class="badge badge-danger">'+
-      '<h1>Connection Closed</h1>' +
-    '</span>'
-  }
-  socket.onerror = () => {
-    const parent = document.getElementById('connection-state')
-    parent.innerHTML = ''+
-    '<span class="badge badge-danger">'+
-      '<h1>Connection Closed</h1>' +
-    '</span>'
-  }
-  socket.onmessage = (event) => { 
-    last_recived.controller = JSON.parse(event.data)
-  }
+  connectionDown()
   new p5(sketch, 'monitor');
 }
 
@@ -51,8 +50,20 @@ function sketch (p) {
     resize ()
   }
 
-  update = ()=>{
+  update = async ()=>{
+    try {
+      const response = await axios.get('http://10.42.0.1:9090');
+      last_recived = response.data
+      if (!ok){
+        connectionUP()
+      }
+    } catch (error) {
+      if (ok){
+        connectionDown()
+      }
+    }
     for (const element of elements){element.update(last_recived)}
+    await sleep(50)
   }
 
   p.draw = ()=>{
@@ -63,6 +74,16 @@ function sketch (p) {
   }
 }
 
-function map (value, min_in, max_in, min_out, max_out) {
-  return  (value - min_in) * (max_out - min_out) / (max_in - min_in) + min_out
+function map (value, in_min, in_max, out_min, out_max) {
+  return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+}
+
+function constrain (value, min, max){
+  if(value > max){
+    return max
+  } else if (value < min){
+    return min
+  }else{
+    return value
+  }
 }

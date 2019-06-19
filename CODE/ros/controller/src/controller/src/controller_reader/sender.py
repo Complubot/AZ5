@@ -1,6 +1,6 @@
 
 import rospy
-from controller.msg import raw_controller
+from controller.msg import raw_controller, buttons
 import threading
 
 class Sender(threading.Thread):
@@ -10,13 +10,15 @@ class Sender(threading.Thread):
         self.emiter = emiter
         self.running = True
         self.pub = rospy.Publisher('raw_controller_msg', raw_controller, queue_size=10)
+        self.pub_b = rospy.Publisher('buttons', buttons, queue_size=10)
         self.rate = rospy.Rate(interval)
 
     def run(self):
         while self.running and not rospy.is_shutdown():
             msg = self.emiter.getValues()
-            rospy.loginfo(msg)
+            buttons = self.emiter.getButtons()
             self.pub.publish(msg)
+            self.pub_b.publish(buttons)
             self.rate.sleep()
         self.running = False
         print('sender down')

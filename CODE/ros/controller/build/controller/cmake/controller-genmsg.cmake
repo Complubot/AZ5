@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "controller: 1 messages, 0 services")
+message(STATUS "controller: 3 messages, 0 services")
 
 set(MSG_I_FLAGS "-Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -17,9 +17,19 @@ add_custom_target(controller_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg" NAME_WE)
+add_custom_target(_controller_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "controller" "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg" ""
+)
+
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg" NAME_WE)
 add_custom_target(_controller_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "controller" "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg" ""
+)
+
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg" NAME_WE)
+add_custom_target(_controller_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "controller" "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg" ""
 )
 
 #
@@ -29,7 +39,19 @@ add_custom_target(_controller_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/controller
+)
+_generate_msg_cpp(controller
   "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/controller
+)
+_generate_msg_cpp(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/controller
@@ -49,7 +71,11 @@ add_custom_target(controller_generate_messages_cpp
 add_dependencies(controller_generate_messages controller_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg" NAME_WE)
+add_dependencies(controller_generate_messages_cpp _controller_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg" NAME_WE)
+add_dependencies(controller_generate_messages_cpp _controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(controller_generate_messages_cpp _controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +88,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS controller_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/controller
+)
+_generate_msg_eus(controller
   "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/controller
+)
+_generate_msg_eus(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/controller
@@ -82,7 +120,11 @@ add_custom_target(controller_generate_messages_eus
 add_dependencies(controller_generate_messages controller_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg" NAME_WE)
+add_dependencies(controller_generate_messages_eus _controller_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg" NAME_WE)
+add_dependencies(controller_generate_messages_eus _controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(controller_generate_messages_eus _controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +137,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS controller_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/controller
+)
+_generate_msg_lisp(controller
   "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/controller
+)
+_generate_msg_lisp(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/controller
@@ -115,7 +169,11 @@ add_custom_target(controller_generate_messages_lisp
 add_dependencies(controller_generate_messages controller_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg" NAME_WE)
+add_dependencies(controller_generate_messages_lisp _controller_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg" NAME_WE)
+add_dependencies(controller_generate_messages_lisp _controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(controller_generate_messages_lisp _controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +186,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS controller_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/controller
+)
+_generate_msg_nodejs(controller
   "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/controller
+)
+_generate_msg_nodejs(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/controller
@@ -148,7 +218,11 @@ add_custom_target(controller_generate_messages_nodejs
 add_dependencies(controller_generate_messages controller_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg" NAME_WE)
+add_dependencies(controller_generate_messages_nodejs _controller_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg" NAME_WE)
+add_dependencies(controller_generate_messages_nodejs _controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(controller_generate_messages_nodejs _controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +235,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS controller_generate_messages_nodejs
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/controller
+)
+_generate_msg_py(controller
   "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/controller
+)
+_generate_msg_py(controller
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/controller
@@ -181,7 +267,11 @@ add_custom_target(controller_generate_messages_py
 add_dependencies(controller_generate_messages controller_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg" NAME_WE)
+add_dependencies(controller_generate_messages_py _controller_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg" NAME_WE)
+add_dependencies(controller_generate_messages_py _controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(controller_generate_messages_py _controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

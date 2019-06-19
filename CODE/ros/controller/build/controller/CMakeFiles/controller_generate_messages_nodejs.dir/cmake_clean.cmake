@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/controller_generate_messages_nodejs"
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/buttons.js"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/raw_controller.js"
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/ultrasounds.js"
 )
 
 # Per-language clean rules from dependency scanning.

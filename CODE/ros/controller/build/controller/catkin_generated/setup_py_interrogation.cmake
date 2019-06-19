@@ -1,6 +1,6 @@
 set(controller_SETUP_PY_VERSION "0.0.1")
 set(controller_SETUP_PY_SCRIPTS "")
-set(controller_SETUP_PY_PACKAGES "controller_reader")
-set(controller_SETUP_PY_PACKAGE_DIRS "src/controller_reader")
+set(controller_SETUP_PY_PACKAGES "robot_monitor")
+set(controller_SETUP_PY_PACKAGE_DIRS "src/robot_monitor")
 set(controller_SETUP_PY_MODULES "")
 set(controller_SETUP_PY_MODULE_DIRS "")

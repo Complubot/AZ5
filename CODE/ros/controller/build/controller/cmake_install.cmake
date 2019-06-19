@@ -37,7 +37,11 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/controller/msg" TYPE FILE FILES "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/controller/msg" TYPE FILE FILES
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -89,9 +93,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/controller" TYPE PROGRAM FILES
-    "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/scripts/webpage_controller"
-    "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/scripts/pollotron_controller"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/scripts/controller_reader"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/scripts/us_filter"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/scripts/pollotron"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/scripts/robot_monitor"
     )
 endif()
 

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg"
+messages_str = "/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg;/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg;/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg"
 services_str = ""
 pkg_name = "controller"
 dependencies_str = "std_msgs"

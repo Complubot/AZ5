@@ -27,5 +27,5 @@ int Ultrasonic::read(){
   if (this->trigger==this->echo){
     pinMode(this->echo, INPUT);
   }
-  return int(pulseIn(this->echo, HIGH)/58);
+  return int(pulseIn(this->echo, HIGH, 17492)/58);
 }

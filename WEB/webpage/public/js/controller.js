@@ -47,7 +47,7 @@ class Controller {
   }
 
   update (_data) {
-    if (_data.controller){
+    if (_data && _data.controller){
       const data = _data.controller
       const format = (value)=>{return map(value, -255,255,-this.radiusS,this.radiusS)}
       this.offsetR = {x:format(data.RX),y:format(data.RY)}

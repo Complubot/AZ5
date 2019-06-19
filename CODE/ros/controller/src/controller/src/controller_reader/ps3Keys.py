@@ -1,78 +1,115 @@
-from controller_reader.joystick import Joystick
-from controller.msg import raw_controller
+from controller_reader.axis import Axis
+from controller.msg import raw_controller, buttons
 
-none = 'NONE'
-down = 1
-up = 0
+xState = False
+squareState = False
+circleState = False
+triangleState = False
+upState = False
+downState = False
+rightState = False
+leftState = False
+RUState = False
+RDState = False
+LUState = False
+LDState = False
+
+skip = 'Skip'
+axis = [Axis(3,code) for code in [0,1,3,4]]
+btt = buttons()
 
 def buttonEvent (event, evnt_type,  event_code):
-    if event.type == evnt_type and event.code == event_code:
-        return event.value
-    else:
-        return none
+        if event.type == evnt_type and event.code == event_code:
+                return event.value == 1
+        else:
+                return skip
 
 def xButton(event):
-    return buttonEvent(event, 1,304)
+        answ = buttonEvent(event, 1,304)
+        if answ != skip:
+                btt.CROSS = answ
 
 def squareButton(event):
-    return buttonEvent(event, 1,308)
+        answ = buttonEvent(event, 1,308)
+        if answ != skip:
+                btt.SQUARE = answ
 
 def circleButton(event):
-    return buttonEvent(event, 1,305)
+        answ = buttonEvent(event, 1,305)
+        if answ != skip:
+                btt.CIRCLE = answ
 
 def triangleButton(event):
-    return buttonEvent(event, 1,307)
+        answ = buttonEvent(event, 1,307)
+        if answ != skip:
+                btt.TRIANGLE = answ
 
 def leftButton(event):
-    return buttonEvent(event, 1,546)
+        answ = buttonEvent(event, 1,546)
+        if answ != skip:
+                btt.LEFT = answ
 
 def rightButton(event):
-    return buttonEvent(event, 1,547)
+        answ = buttonEvent(event, 1,547)
+        if answ != skip:
+                btt.RIGHT = answ
 
 def upButton(event):
-    return buttonEvent(event, 1,544)
+        answ = buttonEvent(event, 1,544)
+        if answ != skip:
+                btt.UP = answ
 
 def downButton(event):
-    return buttonEvent(event, 1,545)
-
-def RButton(event):
-    return buttonEvent(event, 1,318)
-
-def LButton(event):
-    return buttonEvent(event, 1,317)
+        answ = buttonEvent(event, 1,545)
+        if answ != skip:
+                btt.DOWN = answ
 
 def LDButton(event):
-    return buttonEvent(event, 1,313)
+        answ = buttonEvent(event, 1,312)
+        if answ != skip:
+                btt.L2 = answ
 
 def LUButton(event):
-    return buttonEvent(event, 1,311)
+        answ = buttonEvent(event, 1,310)
+        if answ != skip:
+                btt.L1 = answ
 
 def RDButton(event):
-    return buttonEvent(event, 1,312)
+        answ = buttonEvent(event, 1,313)
+        if answ != skip:
+                btt.R2 = answ
 
 def RUButton(event):
-    return buttonEvent(event, 1,310)
+        answ = buttonEvent(event, 1,311)
+        if answ != skip:
+                btt.R1 = answ
 
 def isDigital (event):
-    return event.type == 1
-
-joysticks = [Joystick(name,3,code[0],code[1]) for name, code in zip(['L', 'R'],[(0,1),(3,4)])]
+        return event.type == 1
 
 def updateJoysticks (event):
-    for joystic in joysticks:
-        joystic.update(event)
-
-def toString ():
-    string = ''
-    for joystic in joysticks:
-        value = joystic.getValue()
-        string += joystic.name + ': (x:' + str(value['x']) + ', y:' + str(value['y'])  + ') | '
-    return string
+        for ax in axis:
+                ax.update(event)
+        xButton(event)
+        squareButton(event)
+        circleButton(event)
+        triangleButton(event)
+        upButton(event)
+        downButton(event)
+        rightButton(event)
+        leftButton(event)
+        RUButton(event)
+        RDButton(event)
+        LUButton(event)
+        LDButton(event)
 
 def getValues ():
-    msg = raw_controller()
-    msg.LX = int(joysticks[0].getValue()['x'])
-    msg.LY = int(joysticks[0].getValue()['y'])
-    msg.RX = int(joysticks[1].getValue()['x'])
-    msg.RY = int(joysticks[1].getValue()['y'])
-    return msg
+        msg = raw_controller()
+        msg.LX = int(axis[0].getValue())
+        msg.LY = int(axis[1].getValue())
+        msg.RX = int(axis[2].getValue())
+        msg.RY = int(axis[3].getValue())
+        return msg
+
+def getButtons():
+        return btt

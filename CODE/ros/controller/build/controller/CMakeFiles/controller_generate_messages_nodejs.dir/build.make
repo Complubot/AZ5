@@ -53,16 +53,30 @@ CMAKE_BINARY_DIR = /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build
 # Include the progress variables for this target.
 include controller/CMakeFiles/controller_generate_messages_nodejs.dir/progress.make
 
+controller/CMakeFiles/controller_generate_messages_nodejs: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/buttons.js
 controller/CMakeFiles/controller_generate_messages_nodejs: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/raw_controller.js
+controller/CMakeFiles/controller_generate_messages_nodejs: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/ultrasounds.js
 
+
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/buttons.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/buttons.js: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from controller/buttons.msg"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/raw_controller.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/raw_controller.js: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from controller/raw_controller.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from controller/raw_controller.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/ultrasounds.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/ultrasounds.js: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from controller/ultrasounds.msg"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg
+
 controller_generate_messages_nodejs: controller/CMakeFiles/controller_generate_messages_nodejs
+controller_generate_messages_nodejs: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/buttons.js
 controller_generate_messages_nodejs: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/raw_controller.js
+controller_generate_messages_nodejs: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/gennodejs/ros/controller/msg/ultrasounds.js
 controller_generate_messages_nodejs: controller/CMakeFiles/controller_generate_messages_nodejs.dir/build.make
 
 .PHONY : controller_generate_messages_nodejs

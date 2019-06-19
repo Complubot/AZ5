@@ -1,21 +1,21 @@
 
-from controller_reader.filter import Filter
 
 class Axis() :
-    def __init__ (self, name, type, code):
-        self.name = name
+    def __init__ (self, type, code):
         self.type = type
         self.code = code
-        self.filter = Filter()
-    
+        self.value = 0
+
     def update (self, event):
         if event.type == self.type and event.code == self.code:
-            self.filter.addValue(event.value)
-            return True
-        return False
-    
+            value = event.value * 2 - 255
+            if abs(value) > 20:
+                self.value = value
+            else:
+                self.value = 0
+
     def reset(self):
-        self.filter.reset()
+        self.value = 0
 
     def getValue (self):
-        return self.filter.getValue()
+        return self.value

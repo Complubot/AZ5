@@ -53,22 +53,38 @@ CMAKE_BINARY_DIR = /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build
 # Include the progress variables for this target.
 include controller/CMakeFiles/controller_generate_messages_py.dir/progress.make
 
+controller/CMakeFiles/controller_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_buttons.py
 controller/CMakeFiles/controller_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_raw_controller.py
+controller/CMakeFiles/controller_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_ultrasounds.py
 controller/CMakeFiles/controller_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/__init__.py
 
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_buttons.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_buttons.py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG controller/buttons"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/buttons.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg
+
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_raw_controller.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_raw_controller.py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG controller/raw_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG controller/raw_controller"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_ultrasounds.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_ultrasounds.py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG controller/ultrasounds"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg
+
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/__init__.py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_buttons.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/__init__.py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_raw_controller.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for controller"
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/__init__.py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_ultrasounds.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for controller"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg --initpy
 
 controller_generate_messages_py: controller/CMakeFiles/controller_generate_messages_py
+controller_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_buttons.py
 controller_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_raw_controller.py
+controller_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/_ultrasounds.py
 controller_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib/python2.7/dist-packages/controller/msg/__init__.py
 controller_generate_messages_py: controller/CMakeFiles/controller_generate_messages_py.dir/build.make
 

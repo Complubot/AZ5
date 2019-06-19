@@ -89,17 +89,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -121,6 +110,17 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -211,6 +211,21 @@ controller_generate_messages_nodejs/fast:
 .PHONY : controller_generate_messages_nodejs/fast
 
 # Convenience name for target.
+controller/CMakeFiles/controller_generate_messages_lisp.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+controller_generate_messages_lisp: controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
+
+.PHONY : controller_generate_messages_lisp
+
+# fast build rule for target.
+controller_generate_messages_lisp/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_lisp.dir/build.make controller/CMakeFiles/controller_generate_messages_lisp.dir/build
+.PHONY : controller_generate_messages_lisp/fast
+
+# Convenience name for target.
 controller/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : controller/CMakeFiles/std_msgs_generate_messages_py.dir/rule
@@ -224,6 +239,21 @@ std_msgs_generate_messages_py: controller/CMakeFiles/std_msgs_generate_messages_
 std_msgs_generate_messages_py/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/std_msgs_generate_messages_py.dir/build.make controller/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+controller/CMakeFiles/_controller_generate_messages_check_deps_ultrasounds.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/_controller_generate_messages_check_deps_ultrasounds.dir/rule
+.PHONY : controller/CMakeFiles/_controller_generate_messages_check_deps_ultrasounds.dir/rule
+
+# Convenience name for target.
+_controller_generate_messages_check_deps_ultrasounds: controller/CMakeFiles/_controller_generate_messages_check_deps_ultrasounds.dir/rule
+
+.PHONY : _controller_generate_messages_check_deps_ultrasounds
+
+# fast build rule for target.
+_controller_generate_messages_check_deps_ultrasounds/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/_controller_generate_messages_check_deps_ultrasounds.dir/build.make controller/CMakeFiles/_controller_generate_messages_check_deps_ultrasounds.dir/build
+.PHONY : _controller_generate_messages_check_deps_ultrasounds/fast
 
 # Convenience name for target.
 controller/CMakeFiles/controller_genpy.dir/rule:
@@ -331,6 +361,36 @@ controller_generate_messages/fast:
 .PHONY : controller_generate_messages/fast
 
 # Convenience name for target.
+controller/CMakeFiles/controller_geneus.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_geneus.dir/rule
+.PHONY : controller/CMakeFiles/controller_geneus.dir/rule
+
+# Convenience name for target.
+controller_geneus: controller/CMakeFiles/controller_geneus.dir/rule
+
+.PHONY : controller_geneus
+
+# fast build rule for target.
+controller_geneus/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/controller_geneus.dir/build.make controller/CMakeFiles/controller_geneus.dir/build
+.PHONY : controller_geneus/fast
+
+# Convenience name for target.
+controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
 controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
@@ -359,21 +419,6 @@ std_msgs_generate_messages_cpp: controller/CMakeFiles/std_msgs_generate_messages
 std_msgs_generate_messages_cpp/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_generate_messages_lisp.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
-.PHONY : controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-controller_generate_messages_lisp: controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
-
-.PHONY : controller_generate_messages_lisp
-
-# fast build rule for target.
-controller_generate_messages_lisp/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_lisp.dir/build.make controller/CMakeFiles/controller_generate_messages_lisp.dir/build
-.PHONY : controller_generate_messages_lisp/fast
 
 # Convenience name for target.
 controller/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
@@ -466,6 +511,21 @@ std_msgs_generate_messages_lisp/fast:
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+controller/CMakeFiles/_controller_generate_messages_check_deps_buttons.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/_controller_generate_messages_check_deps_buttons.dir/rule
+.PHONY : controller/CMakeFiles/_controller_generate_messages_check_deps_buttons.dir/rule
+
+# Convenience name for target.
+_controller_generate_messages_check_deps_buttons: controller/CMakeFiles/_controller_generate_messages_check_deps_buttons.dir/rule
+
+.PHONY : _controller_generate_messages_check_deps_buttons
+
+# fast build rule for target.
+_controller_generate_messages_check_deps_buttons/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/_controller_generate_messages_check_deps_buttons.dir/build.make controller/CMakeFiles/_controller_generate_messages_check_deps_buttons.dir/build
+.PHONY : _controller_generate_messages_check_deps_buttons/fast
+
+# Convenience name for target.
 controller/CMakeFiles/controller_generate_messages_cpp.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
 .PHONY : controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
@@ -526,36 +586,6 @@ controller_gencpp/fast:
 .PHONY : controller_gencpp/fast
 
 # Convenience name for target.
-controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_geneus.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_geneus.dir/rule
-.PHONY : controller/CMakeFiles/controller_geneus.dir/rule
-
-# Convenience name for target.
-controller_geneus: controller/CMakeFiles/controller_geneus.dir/rule
-
-.PHONY : controller_geneus
-
-# fast build rule for target.
-controller_geneus/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/controller_geneus.dir/build.make controller/CMakeFiles/controller_geneus.dir/build
-.PHONY : controller_geneus/fast
-
-# Convenience name for target.
 controller/CMakeFiles/controller_generate_messages_eus.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_eus.dir/rule
 .PHONY : controller/CMakeFiles/controller_generate_messages_eus.dir/rule
@@ -579,12 +609,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... install"
 	@echo "... controller_generate_messages_py"
 	@echo "... controller_gennodejs"
 	@echo "... controller_generate_messages_nodejs"
+	@echo "... controller_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... _controller_generate_messages_check_deps_ultrasounds"
 	@echo "... controller_genpy"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... controller_genlisp"
@@ -593,21 +624,22 @@ help:
 	@echo "... _controller_generate_messages_check_deps_raw_controller"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... controller_generate_messages"
+	@echo "... controller_geneus"
+	@echo "... roscpp_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... controller_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... install/strip"
+	@echo "... _controller_generate_messages_check_deps_buttons"
 	@echo "... controller_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... controller_gencpp"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... controller_geneus"
 	@echo "... edit_cache"
 	@echo "... controller_generate_messages_eus"
 .PHONY : help

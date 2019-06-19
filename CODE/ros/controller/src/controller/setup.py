@@ -3,21 +3,27 @@
 from distutils.core import setup
 from catkin_pkg.python_setup import generate_distutils_setup
 
-pollotron_controller  = generate_distutils_setup(
-    packages=['pollotron_controller'],
-    package_dir={'': 'src'}
-)
-
-webpage_controller  = generate_distutils_setup(
-    packages=['webpage_controller'],
-    package_dir={'': 'src'}
-)
-
-controller_reader  = generate_distutils_setup(
+controller_reader = generate_distutils_setup(
     packages=['controller_reader'],
     package_dir={'': 'src'}
 )
 
-setup(**pollotron_controller)
-setup(**webpage_controller)
+us_filter = generate_distutils_setup(
+    packages=['us_filter'],
+    package_dir={'': 'src'}
+)
+
+pollotron = generate_distutils_setup(
+    packages=['pollotron'],
+    package_dir={'': 'src'}
+)
+
+robot_monitor = generate_distutils_setup(
+    packages=['robot_monitor'],
+    package_dir={'': 'src'}
+)
+
 setup(**controller_reader)
+setup(**us_filter)
+setup(**pollotron)
+setup(**robot_monitor)

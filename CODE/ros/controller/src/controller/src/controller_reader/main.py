@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import evdev
+import rospy
 import controller_reader.ps3Keys as ps3
 from controller_reader.sender import Sender
 import os
@@ -18,18 +19,15 @@ def disableController (controller):
 def connect (device, gamepad, rate):
     print ('connecting to: ',device)
     sender = Sender(gamepad, rate)
-    sender.setDaemon(False)
+    sender.setDaemon(True)
     sender.start()
     try:
         for event in device.read_loop():
             gamepad.updateJoysticks(event)
-            if gamepad.xButton(event) == gamepad.down:
-                print("X button is pressed. Stopping.")
-                sender.running = False
+            if rospy.is_shutdown():
                 break
     finally:
         sender.running = False
-        sender.join()
 
 def main (target_device=target_device, rate=10):
     disableController(target_device)
