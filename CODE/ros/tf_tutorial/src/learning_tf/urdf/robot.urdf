@@ -13,8 +13,10 @@
   <xacro:property name="height_2_first_floor" value="0.05616"/>
   <xacro:property name="height_2_second_floor" value="${height_2_first_floor + profile_height + plate_z}"/>
   <xacro:property name="mast_height" value="0.85"/>
-  <xacro:property name="sonar_radious" value="0.3">
-  <xacro:property name="light_plate" value="0.003">
+  <xacro:property name="sonar_radious" value="0.15"/>
+  <xacro:property name="sonar_height" value="0.348"/>
+  <xacro:property name="sonar_height_inc" value="0.035"/>
+  <xacro:property name="light_plate" value="0.003"/>
 
   <!--> ******************** MATERIALS ******************** <!-->
   <material name="dm">
@@ -51,7 +53,7 @@
   </xacro:macro>
 
   <xacro:macro name="plate" params="name from_floor">
-    <link name="${robot_name}_${name}_board">
+    <link name="${robot_name}_${name}_plate">
       <visual>
         <geometry>
           <box size="${plate_x} ${plate_y} ${plate_z}"/>
@@ -67,9 +69,9 @@
       </collision>
     </link>
 
-    <joint name="base_link_2_${robot_name}_${name}_board" type="fixed">
+    <joint name="base_link_2_${robot_name}_${name}_plate" type="fixed">
       <parent link="base_link"/>
-      <child link="${robot_name}_${name}_board"/>
+      <child link="${robot_name}_${name}_plate"/>
       <origin xyz="0 0 ${from_floor}" rpy="0 0 0"/>
     </joint>
 
@@ -92,8 +94,8 @@
       </collision>
     </link>
 
-    <joint name="${robot_name}_first_board_2_${robot_name}_profile_${letter}" type="fixed">
-      <parent link="${robot_name}_first_board"/>
+    <joint name="${robot_name}_first_plate_2_${robot_name}_profile_${letter}" type="fixed">
+      <parent link="${robot_name}_first_plate"/>
       <child link="${robot_name}_profile_${letter}"/>
       <origin xyz="${(plate_x/2-profile_margin-profile_dim)*reflect_x} ${(plate_y/2-profile_margin-profile_dim)*reflect_y} ${plate_z/2}" rpy="0 0 ${angle}"/>
     </joint>
@@ -116,34 +118,52 @@
       </collision>
     </link>
 
-    <joint name="${robot_name}_first_board_2_${robot_name}_mast" type="fixed">
-      <parent link="${robot_name}_first_board"/>
+    <joint name="${robot_name}_first_plate_2_${robot_name}_mast" type="fixed">
+      <parent link="${robot_name}_first_plate"/>
       <child link="${robot_name}_mast"/>
       <origin xyz="0 0 ${plate_z/2}" rpy="0 0 0"/>
     </joint>
   </xacro:macro>
 
-  <xacro:macro name="sonar">
-    <link name="${robot_name}_sonar">
+  <xacro:macro name="sonar_plate" params="name z">
+    <link name="${robot_name}_sonar_plate_${name}">
       <visual>
         <geometry>
-          
+          <cylinder radius="${sonar_radious}" length="${light_plate}"/>
         </geometry>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <material name="aluminium"/>
+        <material name="dm"/>
       </visual>
       <collision>
         <geometry>
-          
+          <cylinder radius="${sonar_radious}" length="${light_plate}"/>
         </geometry>
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </collision>
     </link>
 
-    <joint>
-      <parent link="${robot_name}_second_floor_2_${robot_name}_sonar"/>
-      <child link="${robot_name}_sonar"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <joint name="${robot_name}_second_plate_2_${robot_name}_sonar_plate_${name}" type="fixed">
+      <parent link="${robot_name}_second_plate"/>
+      <child link="${robot_name}_sonar_plate_${name}"/>
+      <origin xyz="0 0 ${z-light_plate/2}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="sonar_sensor" params="number">
+    <link name="${robot_name}_sonar_sensor_${number}">
+      <visual>
+        <geometry>
+          <cylinder radius="${sonar_radious}" length="${light_plate}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="dm"/>
+      </visual>
+    </link>
+
+    <joint name="${robot_name}_sonar_plate_bottom_2_${robot_name}_sonar_sensor_${number}" type="fixed">
+      <parent link="${robot_name}_sonar_plate_bottom"/>
+      <child link="${robot_name}_sonar_sensor_${number}"/>
+      <origin xyz="0 0 ${sonar_height_inc-light_plate/2}" rpy="0 0 0"/>
     </joint>
   </xacro:macro>
 
@@ -160,6 +180,8 @@
   <xacro:profile letter="G" reflect_x="-1" reflect_y="1" angle="${pi*3/4}"/>
   <xacro:profile letter="H" reflect_x="0" reflect_y="1" angle="${pi/2}"/>
   <xacro:mast/>
+  <xacro:sonar_plate name="bottom" z="${sonar_height}"/>
+  <xacro:sonar_plate name="top" z="${sonar_height+sonar_height_inc+light_plate}"/>
 
 </robot>
 

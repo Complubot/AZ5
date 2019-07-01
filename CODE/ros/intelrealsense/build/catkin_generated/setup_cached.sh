@@ -12,5 +12,6 @@ export LD_LIBRARY_PATH="/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealse
 export PATH="/opt/ros/kinetic/bin:/home/complubot/.npm-global/bin:/home/complubot/bin:/home/complubot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PKG_CONFIG_PATH="/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/build"
+export PYTHONPATH="/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/src:$ROS_PACKAGE_PATH"
