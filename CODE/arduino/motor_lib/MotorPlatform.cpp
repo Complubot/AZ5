@@ -41,8 +41,8 @@ void MotorPlatform::go (int direction){
 }
 
 void MotorPlatform::go (int x, int y, int theta){
-  this->setSpeeds(x+y-theta,
+  this->setSpeeds(-x-y+theta,
                   -x+y+theta,
-                  -x-y-theta,
+                  x+y+theta,
                   x-y+theta);
 }

@@ -1,0 +1,2 @@
+ddynamic_reconfigure:realsense-ros/realsense2_camera:realsense-ros/realsense2_description
+-DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DCATKIN_DEVEL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/devel -DCMAKE_INSTALL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/install -G Unix Makefiles

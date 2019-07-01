@@ -1,0 +1,62 @@
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Monitor - POLLOTRON</title>
+    <!--Icons-->
+    <link rel="icon" href="../icons/zebra.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="../icons/zebra57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icons/zebra114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icons/zebra72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icons/zebra144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icons/zebra60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icons/zebra120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icons/zebra76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icons/zebra152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/zebra180.png">
+    <link rel="icon" type="image/png" href="../icons/zebra192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="../icons/zebra160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="../icons/zebra96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="../icons/zebra16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../icons/zebra32.png" sizes="32x32">
+    <link rel="mask-icon" href="../icons/zebrasvg.svg" color="#5bbad5">
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./icons/zebra144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--js-->
+    <script src="../js/faces.js"></script>
+    <script src="../js/assistant.js"></script>
+    <!--css-->
+    <link rel="stylesheet" href="./css/button.css">
+</head>
+<body onload="javascript:main()">      
+    <div class="container" style="padding-top: 30px">
+        <div class="jumbotron">
+            <div class="row" style="padding-bottom: 10px">
+                <div class="col text-left">
+                    <h1>Asistant<h1>
+                </div>
+                <div class="col text-right">
+                    <a class="btn btn-info btn-lg" id="back" role="button">BACK</a>
+                </div>
+                <div style="height: 200px">
+                    <div id="assistant" class="resizable-canvas-big"></div>
+                <div>
+            </div>
+        </div>
+        <div class="row" style="padding: 10px">
+                <button onClick="createFace (1)" class="col">1</button>
+                <button onClick="createFace (2)" class="col">2</button>
+                <button onClick="createFace (3)" class="col">3</button>
+                <button onClick="createFace (4)" class="col">4</button>
+            </div>
+    </div>
+</body>

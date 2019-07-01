@@ -37,6 +37,9 @@ def css(path):
 def html(path):
   return static_file(path, root='/webpage/public/html')
 
+@server.route('/face-detection/<path>')
+def generic(path):
+  return static_file(path, root='/webpage/public/face-detection')
 
 if __name__ == "__main__":
   server.run(host='0.0.0.0', port=80, server='gunicorn', workers=4, debug=True)

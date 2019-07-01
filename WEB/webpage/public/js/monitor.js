@@ -1,6 +1,9 @@
 
 let last_recived = {}
 let ok = false
+let ip = '0.0.0.0'
+let port = '8081'
+let com_port = '9090'
 
 function connectionUP () {
   const parent = document.getElementById('connection-state')
@@ -9,6 +12,15 @@ function connectionUP () {
     '<h1>Connected</h1>' +
   '</span>'
   ok = true
+}
+
+function setupDocument(){
+  let url_parameters = []
+  location.search.replace("?","").split("&").forEach(function(d){e=d.split("=");url_parameters[e[0]]=e[1]})
+  ip = url_parameters['ip']
+  port = url_parameters['port']
+  const back = document.getElementById('back')
+  back.href = 'http://'+ip+':'+port+'/'
 }
 
 function connectionDown(){
@@ -25,6 +37,7 @@ function sleep(ms) {
 }
 
 function main () {
+  setupDocument()
   connectionDown()
   new p5(sketch, 'monitor');
 }
@@ -52,7 +65,7 @@ function sketch (p) {
 
   update = async ()=>{
     try {
-      const response = await axios.get('http://10.42.0.1:9090');
+      const response = await axios.get('http://'+ip+':'+com_port)
       last_recived = response.data
       if (!ok){
         connectionUP()

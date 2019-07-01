@@ -9,7 +9,18 @@ async function printJson () {
     });
 }
 
+function setupDocument() {
+    const ip = '0.0.0.0'
+    const port = '8081'
+    const url_querry = '?ip='+ip+'&port='+port
+    const monitor = document.getElementById('monitor')
+    monitor.href = 'http://'+ip+':'+port+'/html/monitor.html'+url_querry
+    const face = document.getElementById('face')
+    face.href = 'http://'+ip+':'+port+'/html/face.html'+url_querry
+}
+
 function main () {
+    setupDocument()
     new p5(sketch, 'car-canvas');
 }
 

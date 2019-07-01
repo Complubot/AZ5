@@ -2,6 +2,7 @@ import rospy
 import time
 from controller.msg import raw_controller, buttons, ultrasounds
 import threading
+from math import atan2
 
 class Sender(threading.Thread):
     def __init__(self, sender, interval, safe_time):
@@ -36,7 +37,17 @@ class Sender(threading.Thread):
         self.last_controller = time.time()
 
     def action (self):
-        self.sender.publish(self.controller)
+        x = map (self.controller.LX, -255, 255, -1, 1)
+        y = map (self.controller.LY, -255, 255, -1, 1)
+        #print(atan2(x, y))
+        self.make_public (self.controller, 1)
+
+    def make_public (self, speed, moderator):
+        speed.RX = int(speed.RX / moderator) 
+        speed.RY = int(speed.RY / moderator) 
+        speed.LX = int(speed.LX / moderator) 
+        speed.LY = int(speed.LY / moderator)  
+        self.sender.publish(speed)
 
     def stop (self):
         msg = raw_controller()
@@ -45,3 +56,7 @@ class Sender(threading.Thread):
         msg.LX = 0
         msg.LY = 0
         self.sender.publish(msg)
+
+
+def map (value, in_min, in_max, out_min, out_max):
+  return (float(value) - float(in_min)) * (float(out_max) - float(out_min)) / (float(in_max) - float(in_min)) + float(out_min)

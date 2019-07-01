@@ -23,7 +23,13 @@ robot_monitor = generate_distutils_setup(
     package_dir={'': 'src'}
 )
 
+sounds = generate_distutils_setup(
+    packages=['sounds'],
+    package_dir={'': 'src'}
+)
+
 setup(**controller_reader)
 setup(**us_filter)
 setup(**pollotron)
 setup(**robot_monitor)
+setup(**sounds)

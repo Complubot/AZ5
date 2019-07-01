@@ -9,7 +9,7 @@ void onRawControllerMessage( const controller::raw_controller& raw_message){
   pollotron.go(raw_message.LX, raw_message.LY, raw_message.RX);
 }
 
-ros::Subscriber<controller::raw_controller> sub("raw_controller_msg", &onRawControllerMessage );
+ros::Subscriber<controller::raw_controller> sub("pollotron_velocity", &onRawControllerMessage );
 
 void setup(){
   nodeHandle.initNode();

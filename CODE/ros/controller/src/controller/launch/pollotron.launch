@@ -1,0 +1,11 @@
+<launch>
+    <arg name="port_uno" value="/dev/ttyACM0"/>
+    <arg name="port_mega" value="/dev/ttyACM1"/>
+    <node pkg="controller" name="controller_reader" type="controller_reader" output="screen" respawn="true" />
+    <node pkg="rosserial_python" name="us_reader" type="serial_node.py" args="$(arg port_uno)" output="screen" respawn="true" />
+    <node pkg="controller" name="us_filter" type="us_filter" output="screen" respawn="true" />
+    <node pkg="controller" name="robot_monitor" type="robot_monitor" output="screen" respawn="true" />
+    <node pkg="rosserial_python" name="pollotron_motors" type="serial_node.py" args="$(arg port_mega)" output="screen" respawn="true" />
+    <node pkg="controller" name="pollotron" type="pollotron" output="screen" respawn="true" />
+    <node pkg="controller" name="sounds" type="sounds" respawn="true" />
+</launch>

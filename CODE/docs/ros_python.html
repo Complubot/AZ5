@@ -1,0 +1,61 @@
+<h2 id="setup-python">Setup python</h2>
+<p>We need to have a python stable version binded with te corresponding pip to manage dependencies. For the example we will work with <em>Python 3.5</em>.</p>
+<pre class="(bash)"><code>sudo apt-get install python3-pip python3-yaml
+sudo pip3 install rospkg catkin_pkg</code></pre>
+<h2 id="setup-workspace">Setup workspace</h2>
+<p>First we need to tell ROS which version of python it needs to execute. We can do this when we create the package.</p>
+<pre class="(bash)"><code>mkdir -p ~/catkin_ws/src;
+cd ~/catkin_ws/;
+catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 \
+-DPYTHON_INCLUDE_DIR=/usr/include/python3.5m \
+-DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5m.so;
+catkin config --install;
+catkin_make;
+source devel/setup.bash;</code></pre>
+<h2 id="setup-the-file-architecture">Setup the file architecture</h2>
+<p>The convinient way to do this is to have a /scripts directory where we will writ our <em>headers</em> and then have another /src directory where to write the actual code.</p>
+<p>To make a freandly readable cli for out package its recomended that we write our /scripts/files without extension so to run a bit of code we wold be doing <em>rosrun <workspace> <package> <file></em> instead of <em>rosrun <workspace> <package> <file><strong>.py</strong></em> wich is way more convinient.</p>
+<h2 id="tell-ros-about-our-file-architecture">Tell ROS about our file architecture</h2>
+<p>We need to declare where our code is so ROS can find it. To do so we will ned to modify our CmakeList.txt, and also to create a setup.py.</p>
+<h3 id="cmakelist.txt">CmakeList.txt</h3>
+<pre class="(cmake)"><code>catkin_python_setup()
+install(PROGRAMS
+     scripts/myscript1
+     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)</code></pre>
+<h3 id="setup.py">setup.py</h3>
+<pre class="(python)"><code>#!/usr/bin/env python3.5
+from distutils.core import setup
+from catkin_pkg.python_setup import generate_distutils_setup
+setup_args = generate_distutils_setup(
+     packages=[&#39;mypackage&#39;],
+     package_dir={&#39;&#39;: &#39;src&#39;}
+)
+setup(**setup_args)</code></pre>
+<h2 id="writing-a-new-python-node">Writing a new python node</h2>
+<p>To write a new python node we will need to createa at least two files one that will be located in /scripts and another that will be located in the corresponding directory inside /src.</p>
+<p>A proper exampe would be</p>
+<pre class="(txt)"><code>/ws
+    /package
+        /src
+            /scripts
+                script1
+            /src
+                /script1
+                    main.py
+            CMakeLists.txt
+            package.xml
+            setup.py
+    ...</code></pre>
+<p>Wich will be run with with <em>rosrun package script1</em></p>
+<h3 id="script1">script1</h3>
+<pre class="(python)"><code>#!/usr/bin/env python3.5
+from script1.main import main
+if __name__ == &#39;__main__&#39;:
+    main()</code></pre>
+<h3 id="main.py">main.py</h3>
+<pre class="(python)"><code>def main():
+    print(&#39;Hello ROS!!!&#39;)</code></pre>
+<h2 id="setup-to-run">Setup to run</h2>
+<p>After ROS can detect our script we need to make it executable with <em>chmod +x</em> and then we need to <em>catkin_make</em> the package.</p>
+<p><strong>IT IS IMPORTANT TO MAKE THE SCRIPT FILES EXECUTABLE !!!</strong></p>

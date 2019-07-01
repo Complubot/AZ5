@@ -1,0 +1,2 @@
+learning_tf
+-DCATKIN_DEVEL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/devel -DCMAKE_INSTALL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/install -G Unix Makefiles

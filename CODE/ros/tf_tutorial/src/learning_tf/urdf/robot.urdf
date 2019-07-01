@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="pollotron_example">
+
+  <!--> ******************** PARAMETERS ******************** <!-->
+
+  <xacro:property name="robot_name" value="AZ5" />
+  <xacro:property name="plate_x" value="0.620"/>
+  <xacro:property name="plate_y" value="0.460"/>
+  <xacro:property name="plate_z" value="0.01"/>
+  <xacro:property name="profile_height" value="0.15"/>
+  <xacro:property name="profile_dim" value="0.04"/>
+  <xacro:property name="profile_margin" value="0.005"/>
+  <xacro:property name="height_2_first_floor" value="0.05616"/>
+  <xacro:property name="height_2_second_floor" value="${height_2_first_floor + profile_height + plate_z}"/>
+  <xacro:property name="mast_height" value="0.85"/>
+  <xacro:property name="sonar_radious" value="0.3">
+  <xacro:property name="light_plate" value="0.003">
+
+  <!--> ******************** MATERIALS ******************** <!-->
+  <material name="dm">
+    <color rgba="0.4 0.4 0.1 1"/>
+  </material>
+
+  <material name="aluminium">
+    <color rgba="0.9 0.9 0.9 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <material name="us_sensor">
+    <color rgba="0 0 1 1"/>
+  </material>
+
+  <!--> ********************* MACROS ********************* <!-->
+  <xacro:macro name="base_link">
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <sphere radius="0.05"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="black"/>
+      </visual>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="plate" params="name from_floor">
+    <link name="${robot_name}_${name}_board">
+      <visual>
+        <geometry>
+          <box size="${plate_x} ${plate_y} ${plate_z}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="dm"/>
+      </visual>
+      <collision>
+        <geometry>
+            <box size="${plate_x} ${plate_y} ${plate_z}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <joint name="base_link_2_${robot_name}_${name}_board" type="fixed">
+      <parent link="base_link"/>
+      <child link="${robot_name}_${name}_board"/>
+      <origin xyz="0 0 ${from_floor}" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+  <xacro:macro name="profile" params="letter reflect_x reflect_y angle">
+    <link name="${robot_name}_profile_${letter}">
+      <visual>
+        <geometry>
+          <box size="${profile_dim} ${profile_dim} ${profile_height}"/>
+        </geometry>
+        <origin xyz="0 0 ${profile_height/2}" rpy="0 0 ${-angle}"/>
+        <material name="aluminium"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${profile_dim} ${profile_dim} ${profile_height}"/>
+        </geometry>
+        <origin xyz="0 0 ${profile_height/2}" rpy="0 0 ${-angle}"/>
+      </collision>
+    </link>
+
+    <joint name="${robot_name}_first_board_2_${robot_name}_profile_${letter}" type="fixed">
+      <parent link="${robot_name}_first_board"/>
+      <child link="${robot_name}_profile_${letter}"/>
+      <origin xyz="${(plate_x/2-profile_margin-profile_dim)*reflect_x} ${(plate_y/2-profile_margin-profile_dim)*reflect_y} ${plate_z/2}" rpy="0 0 ${angle}"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="mast">
+    <link name="${robot_name}_mast">
+      <visual>
+        <geometry>
+          <box size="${profile_dim} ${profile_dim*2} ${mast_height}"/>
+        </geometry>
+        <origin xyz="0 0 ${mast_height/2}" rpy="0 0 0"/>
+        <material name="aluminium"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${profile_dim} ${profile_dim*2} ${mast_height}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <joint name="${robot_name}_first_board_2_${robot_name}_mast" type="fixed">
+      <parent link="${robot_name}_first_board"/>
+      <child link="${robot_name}_mast"/>
+      <origin xyz="0 0 ${plate_z/2}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="sonar">
+    <link name="${robot_name}_sonar">
+      <visual>
+        <geometry>
+          
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="aluminium"/>
+      </visual>
+      <collision>
+        <geometry>
+          
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <joint>
+      <parent link="${robot_name}_second_floor_2_${robot_name}_sonar"/>
+      <child link="${robot_name}_sonar"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <!--> ******************** DESCRIPTION ******************** <!-->
+  <xacro:base_link/>
+  <xacro:plate name="first" from_floor="${height_2_first_floor}"/>
+  <xacro:plate name="second" from_floor="${height_2_second_floor}"/>
+  <xacro:profile letter="A" reflect_x="1" reflect_y="1" angle="${pi/4}"/>
+  <xacro:profile letter="B" reflect_x="1" reflect_y="0" angle="0"/>
+  <xacro:profile letter="C" reflect_x="1" reflect_y="-1" angle="${pi/-4}"/>
+  <xacro:profile letter="D" reflect_x="0" reflect_y="-1" angle="${pi/-2}"/>
+  <xacro:profile letter="E" reflect_x="-1" reflect_y="-1" angle="${pi*-3/4}"/>
+  <xacro:profile letter="F" reflect_x="-1" reflect_y="0" angle="${pi*-1}"/>
+  <xacro:profile letter="G" reflect_x="-1" reflect_y="1" angle="${pi*3/4}"/>
+  <xacro:profile letter="H" reflect_x="0" reflect_y="1" angle="${pi/2}"/>
+  <xacro:mast/>
+
+</robot>
+
