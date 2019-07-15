@@ -1,0 +1,10 @@
+<launch>
+  <param name="robot_description" command="xacro --inorder /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/src/learning_tf/urdf/robot.urdf"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+  <node pkg="rviz" type="rviz" name="rviz" args="-d /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/src/learning_tf/rviz/robot_config_complete.rviz"/>
+  <include file="/home/complubot/Documents/POLLOTRON/CODE/ros/rplidar/src/rplidar_ros/launch/rplidar.launch" />
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch" >
+    <arg name="filters" value="pointcloud"/>
+  </include>
+  <node pkg="learning_tf" type="robot_still" name="joint_state_publisher"/>
+</launch>

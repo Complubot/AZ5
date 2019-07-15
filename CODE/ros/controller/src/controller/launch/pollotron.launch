@@ -1,6 +1,6 @@
 <launch>
-    <arg name="port_uno" value="/dev/ttyACM0"/>
-    <arg name="port_mega" value="/dev/ttyACM1"/>
+    <arg name="port_uno" value="/dev/ttyACM1"/>
+    <arg name="port_mega" value="/dev/ttyACM0"/>
     <node pkg="controller" name="controller_reader" type="controller_reader" output="screen" respawn="true" />
     <node pkg="rosserial_python" name="us_reader" type="serial_node.py" args="$(arg port_uno)" output="screen" respawn="true" />
     <node pkg="controller" name="us_filter" type="us_filter" output="screen" respawn="true" />

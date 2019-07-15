@@ -1,8 +1,6 @@
 <launch>
   <param name="robot_description" command="xacro --inorder /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/src/learning_tf/urdf/robot.urdf"/>
-  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
-    <param name="use_gui" value="FALSE"/>
-  </node>
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
   <node pkg="rviz" type="rviz" name="rviz" args="-d /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/src/learning_tf/rviz/robot_config.rviz"/>
+  <node pkg="learning_tf" type="robot_still" name="joint_state_publisher"/>
 </launch>

@@ -12,12 +12,11 @@ find_package(catkin REQUIRED COMPONENTS
 
 # catkin_python_setup()
 
-
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES learning_tf
-#  CATKIN_DEPENDS roscpp rospy tf turtlesim
-#  DEPENDS system_lib
+  INCLUDE_DIRS include
+  LIBRARIES learning_tf
+  CATKIN_DEPENDS roscpp rospy tf turtlesim
+  #DEPENDS system_lib
 )
 
 ###########
@@ -113,3 +112,14 @@ target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 
 add_executable(tf_listener src/tf_listener.cpp)
 target_link_libraries(tf_listener ${catkin_LIBRARIES}) 
+
+#-----------------------------------------------------------------------------
+
+add_executable(state_publisher src/state_publisher.cpp)
+target_link_libraries(state_publisher ${catkin_LIBRARIES})
+
+add_executable(fake_movement src/fake_movement.cpp)
+target_link_libraries(fake_movement ${catkin_LIBRARIES}) 
+
+add_executable(robot_still src/robot_still.cpp)
+target_link_libraries(robot_still ${catkin_LIBRARIES}) 

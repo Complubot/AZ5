@@ -1037,6 +1037,19 @@ controller_generate_messages_lisp/fast:
 .PHONY : controller_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named controller_generate_messages_eus
+
+# Build rule for target.
+controller_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_eus
+.PHONY : controller_generate_messages_eus
+
+# fast build rule for target.
+controller_generate_messages_eus/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
+.PHONY : controller_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1310,6 +1323,19 @@ controller_generate_messages_cpp/fast:
 .PHONY : controller_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named _controller_generate_messages_check_deps_bumpers
+
+# Build rule for target.
+_controller_generate_messages_check_deps_bumpers: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _controller_generate_messages_check_deps_bumpers
+.PHONY : _controller_generate_messages_check_deps_bumpers
+
+# fast build rule for target.
+_controller_generate_messages_check_deps_bumpers/fast:
+	$(MAKE) -f controller/CMakeFiles/_controller_generate_messages_check_deps_bumpers.dir/build.make controller/CMakeFiles/_controller_generate_messages_check_deps_bumpers.dir/build
+.PHONY : _controller_generate_messages_check_deps_bumpers/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_lisp
 
 # Build rule for target.
@@ -1347,19 +1373,6 @@ controller_gencpp: cmake_check_build_system
 controller_gencpp/fast:
 	$(MAKE) -f controller/CMakeFiles/controller_gencpp.dir/build.make controller/CMakeFiles/controller_gencpp.dir/build
 .PHONY : controller_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named controller_generate_messages_eus
-
-# Build rule for target.
-controller_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_eus
-.PHONY : controller_generate_messages_eus
-
-# fast build rule for target.
-controller_generate_messages_eus/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
-.PHONY : controller_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named topic_tools_generate_messages_nodejs
@@ -1974,6 +1987,7 @@ help:
 	@echo "... controller_gennodejs"
 	@echo "... controller_generate_messages_nodejs"
 	@echo "... controller_generate_messages_lisp"
+	@echo "... controller_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _controller_generate_messages_check_deps_ultrasounds"
 	@echo "... controller_genpy"
@@ -1995,10 +2009,10 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... _controller_generate_messages_check_deps_buttons"
 	@echo "... controller_generate_messages_cpp"
+	@echo "... _controller_generate_messages_check_deps_bumpers"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... controller_gencpp"
-	@echo "... controller_generate_messages_eus"
 	@echo "... topic_tools_generate_messages_nodejs"
 	@echo "... topic_tools_generate_messages_eus"
 	@echo "... topic_tools_generate_messages_lisp"

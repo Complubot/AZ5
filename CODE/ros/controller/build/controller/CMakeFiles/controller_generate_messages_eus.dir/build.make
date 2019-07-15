@@ -55,6 +55,7 @@ include controller/CMakeFiles/controller_generate_messages_eus.dir/progress.make
 
 controller/CMakeFiles/controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/buttons.l
 controller/CMakeFiles/controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/raw_controller.l
+controller/CMakeFiles/controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/bumpers.l
 controller/CMakeFiles/controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/ultrasounds.l
 controller/CMakeFiles/controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/manifest.l
 
@@ -69,18 +70,24 @@ controller/CMakeFiles/controller_generate_messages_eus: /home/complubot/Document
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from controller/raw_controller.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/bumpers.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/bumpers.l: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/bumpers.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from controller/bumpers.msg"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/bumpers.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg
+
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/ultrasounds.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/ultrasounds.l: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from controller/ultrasounds.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from controller/ultrasounds.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp manifest code for controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for controller"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/controller && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller controller std_msgs
 
 controller_generate_messages_eus: controller/CMakeFiles/controller_generate_messages_eus
 controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/buttons.l
 controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/raw_controller.l
+controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/bumpers.l
 controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/msg/ultrasounds.l
 controller_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/share/roseus/ros/controller/manifest.l
 controller_generate_messages_eus: controller/CMakeFiles/controller_generate_messages_eus.dir/build.make

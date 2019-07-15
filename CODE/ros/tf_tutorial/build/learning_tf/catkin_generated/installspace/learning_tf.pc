@@ -3,6 +3,6 @@ prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/install
 Name: learning_tf
 Description: Description of learning_tf
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/install/lib 
-Requires: 
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/install/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/install/lib -llearning_tf
+Requires: roscpp rospy tf turtlesim

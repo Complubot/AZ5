@@ -21,6 +21,7 @@ add_message_files(
   raw_controller.msg
   ultrasounds.msg
   buttons.msg
+  bumpers.msg
 )
 
 generate_messages(

@@ -1,0 +1,5 @@
+<launch>
+  <param name="robot_description" command="cat /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/src/learning_tf/urdf/model.xml" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="state_publisher" pkg="learning_tf" type="state_publisher" />
+</launch>

@@ -283,6 +283,32 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named robot_still
+
+# Build rule for target.
+robot_still: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_still
+.PHONY : robot_still
+
+# fast build rule for target.
+robot_still/fast:
+	$(MAKE) -f learning_tf/CMakeFiles/robot_still.dir/build.make learning_tf/CMakeFiles/robot_still.dir/build
+.PHONY : robot_still/fast
+
+#=============================================================================
+# Target rules for targets named fake_movement
+
+# Build rule for target.
+fake_movement: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fake_movement
+.PHONY : fake_movement
+
+# fast build rule for target.
+fake_movement/fast:
+	$(MAKE) -f learning_tf/CMakeFiles/fake_movement.dir/build.make learning_tf/CMakeFiles/fake_movement.dir/build
+.PHONY : fake_movement/fast
+
+#=============================================================================
 # Target rules for targets named tf_listener
 
 # Build rule for target.
@@ -606,6 +632,19 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 rosgraph_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f learning_tf/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make learning_tf/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named state_publisher
+
+# Build rule for target.
+state_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 state_publisher
+.PHONY : state_publisher
+
+# fast build rule for target.
+state_publisher/fast:
+	$(MAKE) -f learning_tf/CMakeFiles/state_publisher.dir/build.make learning_tf/CMakeFiles/state_publisher.dir/build
+.PHONY : state_publisher/fast
 
 #=============================================================================
 # Target rules for targets named tf_generate_messages_lisp
@@ -1097,6 +1136,8 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... robot_still"
+	@echo "... fake_movement"
 	@echo "... tf_listener"
 	@echo "... turtle_sensor"
 	@echo "... turtle_tf_listener"
@@ -1122,6 +1163,7 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... turtlesim_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... state_publisher"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"

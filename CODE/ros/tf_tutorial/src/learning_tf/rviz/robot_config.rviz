@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1
-        - /TF1/Tree1/base_link1
         - /Axes1
       Splitter Ratio: 0.5
     Tree Height: 565
@@ -57,6 +56,185 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
+        AZ5_bumper_sensor_back:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_bumper_sensor_front:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_bumper_sensor_left:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_bumper_sensor_right:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_first_plate:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_mast:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_profile_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_profile_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_profile_C:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_profile_D:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_profile_E:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_profile_F:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_profile_G:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_profile_H:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_realsense:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_rplidar:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_second_plate:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_sonar_plate_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_sonar_plate_top:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_sonar_sensor_base_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_10:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_12:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_13:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_14:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_15:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_16:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_sonar_sensor_base_9:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        AZ5_wheel_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_wheel_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_wheel_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        AZ5_wheel_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
@@ -67,77 +245,95 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        box:
+        camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        laser:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        odom:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        gripper_pole:
+        sonar_sensor_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        head:
+        sonar_sensor_10:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_back_wheel:
+        sonar_sensor_11:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_base:
+        sonar_sensor_12:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_front_wheel:
+        sonar_sensor_13:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_gripper:
+        sonar_sensor_14:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_leg:
+        sonar_sensor_15:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_tip:
+        sonar_sensor_16:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_back_wheel:
+        sonar_sensor_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_base:
+        sonar_sensor_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_front_wheel:
+        sonar_sensor_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_gripper:
+        sonar_sensor_5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_leg:
+        sonar_sensor_6:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_tip:
+        sonar_sensor_7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sonar_sensor_8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sonar_sensor_9:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -152,67 +348,225 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
+        AZ5_bumper_sensor_back:
+          Value: true
+        AZ5_bumper_sensor_front:
+          Value: true
+        AZ5_bumper_sensor_left:
+          Value: true
+        AZ5_bumper_sensor_right:
+          Value: true
+        AZ5_first_plate:
+          Value: true
+        AZ5_mast:
+          Value: true
+        AZ5_profile_A:
+          Value: true
+        AZ5_profile_B:
+          Value: true
+        AZ5_profile_C:
+          Value: true
+        AZ5_profile_D:
+          Value: true
+        AZ5_profile_E:
+          Value: true
+        AZ5_profile_F:
+          Value: true
+        AZ5_profile_G:
+          Value: true
+        AZ5_profile_H:
+          Value: true
+        AZ5_realsense:
+          Value: true
+        AZ5_rplidar:
+          Value: true
+        AZ5_second_plate:
+          Value: true
+        AZ5_sonar_plate_bottom:
+          Value: true
+        AZ5_sonar_plate_top:
+          Value: true
+        AZ5_sonar_sensor_base_1:
+          Value: true
+        AZ5_sonar_sensor_base_10:
+          Value: true
+        AZ5_sonar_sensor_base_11:
+          Value: true
+        AZ5_sonar_sensor_base_12:
+          Value: true
+        AZ5_sonar_sensor_base_13:
+          Value: true
+        AZ5_sonar_sensor_base_14:
+          Value: true
+        AZ5_sonar_sensor_base_15:
+          Value: true
+        AZ5_sonar_sensor_base_16:
+          Value: true
+        AZ5_sonar_sensor_base_2:
+          Value: true
+        AZ5_sonar_sensor_base_3:
+          Value: true
+        AZ5_sonar_sensor_base_4:
+          Value: true
+        AZ5_sonar_sensor_base_5:
+          Value: true
+        AZ5_sonar_sensor_base_6:
+          Value: true
+        AZ5_sonar_sensor_base_7:
+          Value: true
+        AZ5_sonar_sensor_base_8:
+          Value: true
+        AZ5_sonar_sensor_base_9:
+          Value: true
+        AZ5_wheel_1:
+          Value: true
+        AZ5_wheel_2:
+          Value: true
+        AZ5_wheel_3:
+          Value: true
+        AZ5_wheel_4:
+          Value: true
         All Enabled: true
         base_link:
           Value: true
-        box:
+        camera_link:
           Value: true
-        gripper_pole:
+        laser:
           Value: true
-        head:
+        odom:
           Value: true
-        left_back_wheel:
+        sonar_sensor_1:
           Value: true
-        left_base:
+        sonar_sensor_10:
           Value: true
-        left_front_wheel:
+        sonar_sensor_11:
           Value: true
-        left_gripper:
+        sonar_sensor_12:
           Value: true
-        left_leg:
+        sonar_sensor_13:
           Value: true
-        left_tip:
+        sonar_sensor_14:
           Value: true
-        right_back_wheel:
+        sonar_sensor_15:
           Value: true
-        right_base:
+        sonar_sensor_16:
           Value: true
-        right_front_wheel:
+        sonar_sensor_2:
           Value: true
-        right_gripper:
+        sonar_sensor_3:
           Value: true
-        right_leg:
+        sonar_sensor_4:
           Value: true
-        right_tip:
+        sonar_sensor_5:
+          Value: true
+        sonar_sensor_6:
+          Value: true
+        sonar_sensor_7:
+          Value: true
+        sonar_sensor_8:
+          Value: true
+        sonar_sensor_9:
           Value: true
       Marker Scale: 0.400000006
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Tree:
-        base_link:
-          gripper_pole:
-            left_gripper:
-              left_tip:
+        odom:
+          base_link:
+            AZ5_first_plate:
+              AZ5_bumper_sensor_back:
                 {}
-            right_gripper:
-              right_tip:
+              AZ5_bumper_sensor_front:
                 {}
-          head:
-            box:
-              {}
-          left_leg:
-            left_base:
-              left_back_wheel:
+              AZ5_bumper_sensor_left:
                 {}
-              left_front_wheel:
+              AZ5_bumper_sensor_right:
                 {}
-          right_leg:
-            right_base:
-              right_back_wheel:
+              AZ5_mast:
                 {}
-              right_front_wheel:
+              AZ5_profile_A:
+                {}
+              AZ5_profile_B:
+                {}
+              AZ5_profile_C:
+                {}
+              AZ5_profile_D:
+                {}
+              AZ5_profile_E:
+                {}
+              AZ5_profile_F:
+                {}
+              AZ5_profile_G:
+                {}
+              AZ5_profile_H:
+                {}
+              AZ5_wheel_1:
+                {}
+              AZ5_wheel_2:
+                {}
+              AZ5_wheel_3:
+                {}
+              AZ5_wheel_4:
+                {}
+            AZ5_second_plate:
+              AZ5_realsense:
+                camera_link:
+                  {}
+              AZ5_rplidar:
+                laser:
+                  {}
+              AZ5_sonar_plate_bottom:
+                AZ5_sonar_sensor_base_1:
+                  sonar_sensor_1:
+                    {}
+                AZ5_sonar_sensor_base_10:
+                  sonar_sensor_10:
+                    {}
+                AZ5_sonar_sensor_base_11:
+                  sonar_sensor_11:
+                    {}
+                AZ5_sonar_sensor_base_12:
+                  sonar_sensor_12:
+                    {}
+                AZ5_sonar_sensor_base_13:
+                  sonar_sensor_13:
+                    {}
+                AZ5_sonar_sensor_base_14:
+                  sonar_sensor_14:
+                    {}
+                AZ5_sonar_sensor_base_15:
+                  sonar_sensor_15:
+                    {}
+                AZ5_sonar_sensor_base_16:
+                  sonar_sensor_16:
+                    {}
+                AZ5_sonar_sensor_base_2:
+                  sonar_sensor_2:
+                    {}
+                AZ5_sonar_sensor_base_3:
+                  sonar_sensor_3:
+                    {}
+                AZ5_sonar_sensor_base_4:
+                  sonar_sensor_4:
+                    {}
+                AZ5_sonar_sensor_base_5:
+                  sonar_sensor_5:
+                    {}
+                AZ5_sonar_sensor_base_6:
+                  sonar_sensor_6:
+                    {}
+                AZ5_sonar_sensor_base_7:
+                  sonar_sensor_7:
+                    {}
+                AZ5_sonar_sensor_base_8:
+                  sonar_sensor_8:
+                    {}
+                AZ5_sonar_sensor_base_9:
+                  sonar_sensor_9:
+                    {}
+              AZ5_sonar_plate_top:
                 {}
       Update Interval: 0
       Value: true
@@ -248,7 +602,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.7926476
+      Distance: 6.20808172
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -263,10 +617,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.52539891
+      Pitch: 1.04479659
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.205394998
+      Yaw: 4.85355473
     Saved: ~
 Window Geometry:
   Displays:

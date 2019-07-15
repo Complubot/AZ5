@@ -262,7 +262,7 @@ if __name__ == '__main__':
             sys.exit(1)
 
         # environment at generation time
-        CMAKE_PREFIX_PATH = '/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/devel;/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel;/opt/ros/kinetic'.split(';')
+        CMAKE_PREFIX_PATH = '/home/complubot/Documents/POLLOTRON/CODE/ros/rplidar/devel;/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/devel;/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/devel;/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel;/opt/ros/kinetic'.split(';')
         # prepend current workspace if not already part of CPP
         base_path = os.path.dirname(__file__)
         if base_path not in CMAKE_PREFIX_PATH:

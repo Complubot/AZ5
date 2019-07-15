@@ -78,17 +78,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -100,6 +89,17 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -122,16 +122,16 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : edit_cache/fast
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -224,6 +224,21 @@ controller_generate_messages_lisp: controller/CMakeFiles/controller_generate_mes
 controller_generate_messages_lisp/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_lisp.dir/build.make controller/CMakeFiles/controller_generate_messages_lisp.dir/build
 .PHONY : controller_generate_messages_lisp/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_generate_messages_eus.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_eus.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+controller_generate_messages_eus: controller/CMakeFiles/controller_generate_messages_eus.dir/rule
+
+.PHONY : controller_generate_messages_eus
+
+# fast build rule for target.
+controller_generate_messages_eus/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
+.PHONY : controller_generate_messages_eus/fast
 
 # Convenience name for target.
 controller/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
@@ -541,6 +556,21 @@ controller_generate_messages_cpp/fast:
 .PHONY : controller_generate_messages_cpp/fast
 
 # Convenience name for target.
+controller/CMakeFiles/_controller_generate_messages_check_deps_bumpers.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/_controller_generate_messages_check_deps_bumpers.dir/rule
+.PHONY : controller/CMakeFiles/_controller_generate_messages_check_deps_bumpers.dir/rule
+
+# Convenience name for target.
+_controller_generate_messages_check_deps_bumpers: controller/CMakeFiles/_controller_generate_messages_check_deps_bumpers.dir/rule
+
+.PHONY : _controller_generate_messages_check_deps_bumpers
+
+# fast build rule for target.
+_controller_generate_messages_check_deps_bumpers/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/_controller_generate_messages_check_deps_bumpers.dir/build.make controller/CMakeFiles/_controller_generate_messages_check_deps_bumpers.dir/build
+.PHONY : _controller_generate_messages_check_deps_bumpers/fast
+
+# Convenience name for target.
 controller/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : controller/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
@@ -585,21 +615,6 @@ controller_gencpp/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/controller_gencpp.dir/build.make controller/CMakeFiles/controller_gencpp.dir/build
 .PHONY : controller_gencpp/fast
 
-# Convenience name for target.
-controller/CMakeFiles/controller_generate_messages_eus.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_eus.dir/rule
-.PHONY : controller/CMakeFiles/controller_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-controller_generate_messages_eus: controller/CMakeFiles/controller_generate_messages_eus.dir/rule
-
-.PHONY : controller_generate_messages_eus
-
-# fast build rule for target.
-controller_generate_messages_eus/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
-.PHONY : controller_generate_messages_eus/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -608,12 +623,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... install/local"
 	@echo "... install"
 	@echo "... controller_generate_messages_py"
 	@echo "... controller_gennodejs"
 	@echo "... controller_generate_messages_nodejs"
 	@echo "... controller_generate_messages_lisp"
+	@echo "... edit_cache"
+	@echo "... controller_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _controller_generate_messages_check_deps_ultrasounds"
 	@echo "... controller_genpy"
@@ -637,11 +653,11 @@ help:
 	@echo "... install/strip"
 	@echo "... _controller_generate_messages_check_deps_buttons"
 	@echo "... controller_generate_messages_cpp"
+	@echo "... install/local"
+	@echo "... _controller_generate_messages_check_deps_bumpers"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... controller_gencpp"
-	@echo "... edit_cache"
-	@echo "... controller_generate_messages_eus"
 .PHONY : help
 
 

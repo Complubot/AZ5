@@ -166,6 +166,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+learning_tf/CMakeFiles/robot_still.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 learning_tf/CMakeFiles/robot_still.dir/rule
+.PHONY : learning_tf/CMakeFiles/robot_still.dir/rule
+
+# Convenience name for target.
+robot_still: learning_tf/CMakeFiles/robot_still.dir/rule
+
+.PHONY : robot_still
+
+# fast build rule for target.
+robot_still/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/robot_still.dir/build.make learning_tf/CMakeFiles/robot_still.dir/build
+.PHONY : robot_still/fast
+
+# Convenience name for target.
+learning_tf/CMakeFiles/fake_movement.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 learning_tf/CMakeFiles/fake_movement.dir/rule
+.PHONY : learning_tf/CMakeFiles/fake_movement.dir/rule
+
+# Convenience name for target.
+fake_movement: learning_tf/CMakeFiles/fake_movement.dir/rule
+
+.PHONY : fake_movement
+
+# fast build rule for target.
+fake_movement/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/fake_movement.dir/build.make learning_tf/CMakeFiles/fake_movement.dir/build
+.PHONY : fake_movement/fast
+
+# Convenience name for target.
 learning_tf/CMakeFiles/tf_listener.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 learning_tf/CMakeFiles/tf_listener.dir/rule
 .PHONY : learning_tf/CMakeFiles/tf_listener.dir/rule
@@ -539,6 +569,21 @@ rosgraph_msgs_generate_messages_lisp: learning_tf/CMakeFiles/rosgraph_msgs_gener
 rosgraph_msgs_generate_messages_lisp/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make learning_tf/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+learning_tf/CMakeFiles/state_publisher.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 learning_tf/CMakeFiles/state_publisher.dir/rule
+.PHONY : learning_tf/CMakeFiles/state_publisher.dir/rule
+
+# Convenience name for target.
+state_publisher: learning_tf/CMakeFiles/state_publisher.dir/rule
+
+.PHONY : state_publisher
+
+# fast build rule for target.
+state_publisher/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/state_publisher.dir/build.make learning_tf/CMakeFiles/state_publisher.dir/build
+.PHONY : state_publisher/fast
 
 # Convenience name for target.
 learning_tf/CMakeFiles/tf_generate_messages_lisp.dir/rule:
@@ -1080,6 +1125,33 @@ turtlesim_generate_messages_cpp/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/turtlesim_generate_messages_cpp.dir/build.make learning_tf/CMakeFiles/turtlesim_generate_messages_cpp.dir/build
 .PHONY : turtlesim_generate_messages_cpp/fast
 
+src/fake_movement.o: src/fake_movement.cpp.o
+
+.PHONY : src/fake_movement.o
+
+# target to build an object file
+src/fake_movement.cpp.o:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/fake_movement.dir/build.make learning_tf/CMakeFiles/fake_movement.dir/src/fake_movement.cpp.o
+.PHONY : src/fake_movement.cpp.o
+
+src/fake_movement.i: src/fake_movement.cpp.i
+
+.PHONY : src/fake_movement.i
+
+# target to preprocess a source file
+src/fake_movement.cpp.i:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/fake_movement.dir/build.make learning_tf/CMakeFiles/fake_movement.dir/src/fake_movement.cpp.i
+.PHONY : src/fake_movement.cpp.i
+
+src/fake_movement.s: src/fake_movement.cpp.s
+
+.PHONY : src/fake_movement.s
+
+# target to generate assembly for a file
+src/fake_movement.cpp.s:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/fake_movement.dir/build.make learning_tf/CMakeFiles/fake_movement.dir/src/fake_movement.cpp.s
+.PHONY : src/fake_movement.cpp.s
+
 src/frame_tf_broadcaster.o: src/frame_tf_broadcaster.cpp.o
 
 .PHONY : src/frame_tf_broadcaster.o
@@ -1106,6 +1178,60 @@ src/frame_tf_broadcaster.s: src/frame_tf_broadcaster.cpp.s
 src/frame_tf_broadcaster.cpp.s:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/frame_tf_broadcaster.dir/build.make learning_tf/CMakeFiles/frame_tf_broadcaster.dir/src/frame_tf_broadcaster.cpp.s
 .PHONY : src/frame_tf_broadcaster.cpp.s
+
+src/robot_still.o: src/robot_still.cpp.o
+
+.PHONY : src/robot_still.o
+
+# target to build an object file
+src/robot_still.cpp.o:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/robot_still.dir/build.make learning_tf/CMakeFiles/robot_still.dir/src/robot_still.cpp.o
+.PHONY : src/robot_still.cpp.o
+
+src/robot_still.i: src/robot_still.cpp.i
+
+.PHONY : src/robot_still.i
+
+# target to preprocess a source file
+src/robot_still.cpp.i:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/robot_still.dir/build.make learning_tf/CMakeFiles/robot_still.dir/src/robot_still.cpp.i
+.PHONY : src/robot_still.cpp.i
+
+src/robot_still.s: src/robot_still.cpp.s
+
+.PHONY : src/robot_still.s
+
+# target to generate assembly for a file
+src/robot_still.cpp.s:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/robot_still.dir/build.make learning_tf/CMakeFiles/robot_still.dir/src/robot_still.cpp.s
+.PHONY : src/robot_still.cpp.s
+
+src/state_publisher.o: src/state_publisher.cpp.o
+
+.PHONY : src/state_publisher.o
+
+# target to build an object file
+src/state_publisher.cpp.o:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/state_publisher.dir/build.make learning_tf/CMakeFiles/state_publisher.dir/src/state_publisher.cpp.o
+.PHONY : src/state_publisher.cpp.o
+
+src/state_publisher.i: src/state_publisher.cpp.i
+
+.PHONY : src/state_publisher.i
+
+# target to preprocess a source file
+src/state_publisher.cpp.i:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/state_publisher.dir/build.make learning_tf/CMakeFiles/state_publisher.dir/src/state_publisher.cpp.i
+.PHONY : src/state_publisher.cpp.i
+
+src/state_publisher.s: src/state_publisher.cpp.s
+
+.PHONY : src/state_publisher.s
+
+# target to generate assembly for a file
+src/state_publisher.cpp.s:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/build && $(MAKE) -f learning_tf/CMakeFiles/state_publisher.dir/build.make learning_tf/CMakeFiles/state_publisher.dir/src/state_publisher.cpp.s
+.PHONY : src/state_publisher.cpp.s
 
 src/tf_broadcaster.o: src/tf_broadcaster.cpp.o
 
@@ -1250,6 +1376,8 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... robot_still"
+	@echo "... fake_movement"
 	@echo "... edit_cache"
 	@echo "... tf_listener"
 	@echo "... turtle_sensor"
@@ -1278,6 +1406,7 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... turtlesim_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... state_publisher"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... list_install_components"
@@ -1316,9 +1445,18 @@ help:
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... turtlesim_generate_messages_cpp"
+	@echo "... src/fake_movement.o"
+	@echo "... src/fake_movement.i"
+	@echo "... src/fake_movement.s"
 	@echo "... src/frame_tf_broadcaster.o"
 	@echo "... src/frame_tf_broadcaster.i"
 	@echo "... src/frame_tf_broadcaster.s"
+	@echo "... src/robot_still.o"
+	@echo "... src/robot_still.i"
+	@echo "... src/robot_still.s"
+	@echo "... src/state_publisher.o"
+	@echo "... src/state_publisher.i"
+	@echo "... src/state_publisher.s"
 	@echo "... src/tf_broadcaster.o"
 	@echo "... src/tf_broadcaster.i"
 	@echo "... src/tf_broadcaster.s"

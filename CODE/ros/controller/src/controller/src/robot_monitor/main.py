@@ -15,7 +15,7 @@ class RosReader (threading.Thread):
         threading.Thread.__init__(self)
         rospy.init_node('pollotron_controller')
         rospy.Subscriber('raw_controller_msg', raw_controller, self.callback_controller)
-        rospy.Subscriber('max_velocity', ultrasounds, self.callback_us)
+        rospy.Subscriber('ultrasounds_raw', ultrasounds, self.callback_us)
         self.sender = sender
 
     def run(self):

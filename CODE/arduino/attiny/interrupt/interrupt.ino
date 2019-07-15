@@ -1,22 +1,18 @@
-volatile byte state = 0;
-
 #include "attiny1634.h"
+#define LED 2
+volatile bool state = 0;
 
 
 void setup() { 
+  pinMode(LED,OUTPUT);
   interruptionSetup();
-  //pwmSetup();
-  ledSetup ();
-  //setPWM(255);
-  //setPIN(PORTA, 4, 0);
-  //setPIN(PORTA, 3, 1);
 }
 
 void loop() {
-   setPIN (PORTA, LED, state);
+   digitalWrite (LED, state);
 }
 
 
-ISR (PCINT1_vect) {
+ISR (PCINT2_vect) {
   state = !state;
 }

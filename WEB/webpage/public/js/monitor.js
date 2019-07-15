@@ -1,7 +1,7 @@
 
 let last_recived = {}
 let ok = false
-let ip = '0.0.0.0'
+let ip = '192.168.1.63'
 let port = '8081'
 let com_port = '9090'
 

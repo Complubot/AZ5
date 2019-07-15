@@ -55,6 +55,7 @@ include controller/CMakeFiles/controller_generate_messages_cpp.dir/progress.make
 
 controller/CMakeFiles/controller_generate_messages_cpp: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/buttons.h
 controller/CMakeFiles/controller_generate_messages_cpp: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/raw_controller.h
+controller/CMakeFiles/controller_generate_messages_cpp: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/bumpers.h
 controller/CMakeFiles/controller_generate_messages_cpp: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/ultrasounds.h
 
 
@@ -70,15 +71,22 @@ controller/CMakeFiles/controller_generate_messages_cpp: /home/complubot/Document
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from controller/raw_controller.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller && /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/raw_controller.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller -e /opt/ros/kinetic/share/gencpp/cmake/..
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/bumpers.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/bumpers.h: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/bumpers.msg
+/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/bumpers.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from controller/bumpers.msg"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller && /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/bumpers.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller -e /opt/ros/kinetic/share/gencpp/cmake/..
+
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/ultrasounds.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/ultrasounds.h: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg
 /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/ultrasounds.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from controller/ultrasounds.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from controller/ultrasounds.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller && /home/complubot/Documents/POLLOTRON/CODE/ros/controller/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg/ultrasounds.msg -Icontroller:/home/complubot/Documents/POLLOTRON/CODE/ros/controller/src/controller/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p controller -o /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 controller_generate_messages_cpp: controller/CMakeFiles/controller_generate_messages_cpp
 controller_generate_messages_cpp: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/buttons.h
 controller_generate_messages_cpp: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/raw_controller.h
+controller_generate_messages_cpp: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/bumpers.h
 controller_generate_messages_cpp: /home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/include/controller/ultrasounds.h
 controller_generate_messages_cpp: controller/CMakeFiles/controller_generate_messages_cpp.dir/build.make
 

@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(learning_tf_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "include " STREQUAL " ")
   set(learning_tf_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT " " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "")
+set(libraries "learning_tf")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/install/lib;/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/devel/lib;/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/install/lib;/home/complubot/Documents/POLLOTRON/CODE/ros/rplidar/devel/lib;/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/devel/lib;/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/devel/lib;/home/complubot/Documents/POLLOTRON/CODE/ros/controller/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -160,7 +160,7 @@ foreach(t ${learning_tf_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "")
+set(depends "roscpp;rospy;tf;turtlesim")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

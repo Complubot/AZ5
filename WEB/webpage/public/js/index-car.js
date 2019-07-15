@@ -10,7 +10,7 @@ async function printJson () {
 }
 
 function setupDocument() {
-    const ip = '0.0.0.0'
+    const ip = '192.168.1.63'
     const port = '8081'
     const url_querry = '?ip='+ip+'&port='+port
     const monitor = document.getElementById('monitor')
