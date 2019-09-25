@@ -1,0 +1,3 @@
+
+void encoderSetup();
+long readEncoder();

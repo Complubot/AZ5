@@ -38,6 +38,13 @@
     "tuple": "cpp",
     "typeindex": "cpp",
     "typeinfo": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "csignal": "cpp",
+    "cstdarg": "cpp",
+    "codecvt": "cpp",
+    "condition_variable": "cpp",
+    "future": "cpp",
+    "iostream": "cpp",
+    "mutex": "cpp"
   }
 }

@@ -31,7 +31,7 @@ source devel/setup.bash;
 
 ## Setup the file architecture
 
-The convinient way to do this is to have a /scripts directory where we will writ our *headers* and then have another /src directory where to write the actual code.
+The convinient way to do this is to have a /scripts directory where we will write our *headers* and then have another /src directory where to write the actual code.
 
 To make a freandly readable cli for out package its recomended that we write our /scripts/files without extension so to run a bit of code we wold be doing *rosrun <workspace> <package> <file>* instead of *rosrun <workspace> <package> <file>**.py*** wich is way more convinient.
 

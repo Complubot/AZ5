@@ -519,74 +519,59 @@ Wire Wire Line
 	8550 1950 8550 1900
 Wire Wire Line
 	8550 1900 8700 1900
-Text GLabel 8100 1700 0    50   Input ~ 0
+Text GLabel 7700 1700 0    50   Input ~ 0
 MOSI-SDA
-Text GLabel 8100 1800 0    50   Input ~ 0
+Text GLabel 7700 1800 0    50   Input ~ 0
 SCK-SCL
 Wire Wire Line
-	8100 1800 8200 1800
+	7700 1800 7800 1800
 Wire Wire Line
-	8100 1700 8200 1700
+	7700 1700 7800 1700
 $Comp
 L Device:R R8
 U 1 1 5CACE2AB
-P 8200 1550
-F 0 "R8" H 8270 1596 50  0000 L CNN
-F 1 "R10K" H 8270 1505 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8130 1550 50  0001 C CNN
-F 3 "~" H 8200 1550 50  0001 C CNN
-	1    8200 1550
+P 7800 1550
+F 0 "R8" H 7870 1596 50  0000 L CNN
+F 1 "R10K" H 7870 1505 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 1550 50  0001 C CNN
+F 3 "~" H 7800 1550 50  0001 C CNN
+	1    7800 1550
 	1    0    0    -1  
 $EndComp
-Connection ~ 8200 1700
-Wire Wire Line
-	8200 1700 8700 1700
+Connection ~ 7800 1700
 $Comp
 L Device:R R7
 U 1 1 5CACE2B4
-P 8200 1950
-F 0 "R7" H 8270 1996 50  0000 L CNN
-F 1 "R10K" H 8270 1905 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8130 1950 50  0001 C CNN
-F 3 "~" H 8200 1950 50  0001 C CNN
-	1    8200 1950
+P 7800 1950
+F 0 "R7" H 7870 1996 50  0000 L CNN
+F 1 "R10K" H 7870 1905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 1950 50  0001 C CNN
+F 3 "~" H 7800 1950 50  0001 C CNN
+	1    7800 1950
 	1    0    0    -1  
 $EndComp
-Connection ~ 8200 1800
-Wire Wire Line
-	8200 1800 8700 1800
+Connection ~ 7800 1800
 $Comp
 L power:+5V #PWR0105
 U 1 1 5CACE2BD
-P 8200 1400
-F 0 "#PWR0105" H 8200 1250 50  0001 C CNN
-F 1 "+5V" H 8215 1573 50  0000 C CNN
-F 2 "" H 8200 1400 50  0001 C CNN
-F 3 "" H 8200 1400 50  0001 C CNN
-	1    8200 1400
+P 7800 1400
+F 0 "#PWR0105" H 7800 1250 50  0001 C CNN
+F 1 "+5V" H 7815 1573 50  0000 C CNN
+F 2 "" H 7800 1400 50  0001 C CNN
+F 3 "" H 7800 1400 50  0001 C CNN
+	1    7800 1400
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR0106
 U 1 1 5CACE2C3
-P 8200 2100
-F 0 "#PWR0106" H 8200 1950 50  0001 C CNN
-F 1 "+5V" H 8215 2273 50  0000 C CNN
-F 2 "" H 8200 2100 50  0001 C CNN
-F 3 "" H 8200 2100 50  0001 C CNN
-	1    8200 2100
+P 7800 2100
+F 0 "#PWR0106" H 7800 1950 50  0001 C CNN
+F 1 "+5V" H 7815 2273 50  0000 C CNN
+F 2 "" H 7800 2100 50  0001 C CNN
+F 3 "" H 7800 2100 50  0001 C CNN
+	1    7800 2100
 	-1   0    0    1   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J7
-U 1 1 5CAD5FAB
-P 4050 3050
-F 0 "J7" H 4130 3042 50  0000 L CNN
-F 1 "Puerto_Encoders" H 4130 2951 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4050 3050 50  0001 C CNN
-F 3 "~" H 4050 3050 50  0001 C CNN
-	1    4050 3050
-	1    0    0    -1  
 $EndComp
 Text GLabel 3550 3050 0    50   Input ~ 0
 INT1
@@ -696,14 +681,10 @@ Wire Wire Line
 Text GLabel 3750 4400 0    50   Input ~ 0
 ENABLE
 Wire Wire Line
-	3700 3150 3850 3150
-Wire Wire Line
 	3700 3150 3550 3150
 Connection ~ 3700 3150
 Wire Wire Line
 	3700 3050 3550 3050
-Wire Wire Line
-	3700 3050 3850 3050
 Connection ~ 3700 3050
 $Comp
 L power:+5V #PWR012
@@ -796,28 +777,6 @@ F 3 "" H 10350 4600 50  0001 C CNN
 	1    10350 4600
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:Earth #PWR019
-U 1 1 5D2F8DE5
-P 9000 5050
-F 0 "#PWR019" H 9000 4800 50  0001 C CNN
-F 1 "Earth" H 9000 4900 50  0001 C CNN
-F 2 "" H 9000 5050 50  0001 C CNN
-F 3 "~" H 9000 5050 50  0001 C CNN
-	1    9000 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:Earth #PWR015
-U 1 1 5D2F8E2A
-P 9000 4350
-F 0 "#PWR015" H 9000 4100 50  0001 C CNN
-F 1 "Earth" H 9000 4200 50  0001 C CNN
-F 2 "" H 9000 4350 50  0001 C CNN
-F 3 "~" H 9000 4350 50  0001 C CNN
-	1    9000 4350
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	10350 4600 10350 4650
 Connection ~ 10350 4650
@@ -847,25 +806,180 @@ Wire Wire Line
 Wire Wire Line
 	9750 1800 10350 1800
 $Comp
-L Connector_Generic:Conn_01x03 J2
+L Connector_Generic:Conn_01x04 J2
 U 1 1 5D3202A0
-P 8900 1800
-F 0 "J2" H 8980 1792 50  0000 L CNN
-F 1 "I2C_IN" H 8980 1701 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8900 1800 50  0001 C CNN
-F 3 "~" H 8900 1800 50  0001 C CNN
-	1    8900 1800
+P 8900 1700
+F 0 "J2" H 8980 1692 50  0000 L CNN
+F 1 "I2C_IN" H 8980 1601 50  0000 L CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical" H 8900 1700 50  0001 C CNN
+F 3 "~" H 8900 1700 50  0001 C CNN
+	1    8900 1700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x03 J6
+L Connector_Generic:Conn_01x04 J6
 U 1 1 5D323BFC
-P 10550 1800
-F 0 "J6" H 10630 1792 50  0000 L CNN
-F 1 "I2C_OUT" H 10630 1701 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 10550 1800 50  0001 C CNN
-F 3 "~" H 10550 1800 50  0001 C CNN
-	1    10550 1800
+P 10550 1700
+F 0 "J6" H 10630 1692 50  0000 L CNN
+F 1 "I2C_OUT" H 10630 1601 50  0000 L CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical" H 10550 1700 50  0001 C CNN
+F 3 "~" H 10550 1700 50  0001 C CNN
+	1    10550 1700
 	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5D32784F
+P 9450 2700
+F 0 "H1" H 9550 2746 50  0000 L CNN
+F 1 "MountingHole" H 9550 2655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 9450 2700 50  0001 C CNN
+F 3 "~" H 9450 2700 50  0001 C CNN
+	1    9450 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5D32AD6C
+P 9450 2900
+F 0 "H2" H 9550 2946 50  0000 L CNN
+F 1 "MountingHole" H 9550 2855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 9450 2900 50  0001 C CNN
+F 3 "~" H 9450 2900 50  0001 C CNN
+	1    9450 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5D32AE7A
+P 9450 3100
+F 0 "H3" H 9550 3146 50  0000 L CNN
+F 1 "MountingHole" H 9550 3055 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 9450 3100 50  0001 C CNN
+F 3 "~" H 9450 3100 50  0001 C CNN
+	1    9450 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5D32AE81
+P 9450 3300
+F 0 "H4" H 9550 3346 50  0000 L CNN
+F 1 "MountingHole" H 9550 3255 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 9450 3300 50  0001 C CNN
+F 3 "~" H 9450 3300 50  0001 C CNN
+	1    9450 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H5
+U 1 1 5D32C970
+P 10300 2700
+F 0 "H5" H 10400 2746 50  0000 L CNN
+F 1 "MountingHole" H 10400 2655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 10300 2700 50  0001 C CNN
+F 3 "~" H 10300 2700 50  0001 C CNN
+	1    10300 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H6
+U 1 1 5D32C977
+P 10300 2900
+F 0 "H6" H 10400 2946 50  0000 L CNN
+F 1 "MountingHole" H 10400 2855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 10300 2900 50  0001 C CNN
+F 3 "~" H 10300 2900 50  0001 C CNN
+	1    10300 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H7
+U 1 1 5D32C97E
+P 10300 3100
+F 0 "H7" H 10400 3146 50  0000 L CNN
+F 1 "MountingHole" H 10400 3055 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 10300 3100 50  0001 C CNN
+F 3 "~" H 10300 3100 50  0001 C CNN
+	1    10300 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H8
+U 1 1 5D32C985
+P 10300 3300
+F 0 "H8" H 10400 3346 50  0000 L CNN
+F 1 "MountingHole" H 10400 3255 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 10300 3300 50  0001 C CNN
+F 3 "~" H 10300 3300 50  0001 C CNN
+	1    10300 3300
+	1    0    0    -1  
+$EndComp
+Text GLabel 10350 1600 0    50   Input ~ 0
+HANDSHAKE
+Text GLabel 8700 1600 0    50   Input ~ 0
+HANDSHAKE
+Wire Wire Line
+	7800 1700 8700 1700
+Wire Wire Line
+	7800 1800 8700 1800
+$Comp
+L Connector_Generic:Conn_01x04 J7
+U 1 1 5D381CBC
+P 4250 2950
+F 0 "J7" H 4330 2942 50  0000 L CNN
+F 1 "Puerto_Encoders" H 4330 2851 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4250 2950 50  0001 C CNN
+F 3 "~" H 4250 2950 50  0001 C CNN
+	1    4250 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 3050 4050 3050
+Wire Wire Line
+	3700 3150 4050 3150
+$Comp
+L power:Earth #PWR024
+U 1 1 5D38A1F6
+P 4050 2950
+F 0 "#PWR024" H 4050 2700 50  0001 C CNN
+F 1 "Earth" H 4050 2800 50  0001 C CNN
+F 2 "" H 4050 2950 50  0001 C CNN
+F 3 "~" H 4050 2950 50  0001 C CNN
+	1    4050 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR023
+U 1 1 5D38A78C
+P 4050 2850
+F 0 "#PWR023" H 4050 2700 50  0001 C CNN
+F 1 "+5V" H 4065 3023 50  0000 C CNN
+F 2 "" H 4050 2850 50  0001 C CNN
+F 3 "" H 4050 2850 50  0001 C CNN
+	1    4050 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR015
+U 1 1 5D331926
+P 9000 4350
+F 0 "#PWR015" H 9000 4200 50  0001 C CNN
+F 1 "+5V" H 9015 4523 50  0000 C CNN
+F 2 "" H 9000 4350 50  0001 C CNN
+F 3 "" H 9000 4350 50  0001 C CNN
+	1    9000 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR019
+U 1 1 5D331A15
+P 9000 5050
+F 0 "#PWR019" H 9000 4900 50  0001 C CNN
+F 1 "+5V" H 9015 5223 50  0000 C CNN
+F 2 "" H 9000 5050 50  0001 C CNN
+F 3 "" H 9000 5050 50  0001 C CNN
+	1    9000 5050
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC

@@ -111,17 +111,6 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -132,6 +121,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -181,34 +181,34 @@ run_tests_rosserial_test_rostest_test_rosserial_python_socket.test/fast:
 .PHONY : run_tests_rosserial_test_rostest_test_rosserial_python_socket.test/fast
 
 # Convenience name for target.
-rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule
-.PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule
+rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/rule
+.PHONY : rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/rule
 
 # Convenience name for target.
-_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test: rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule
+run_tests_rosserial_test_rostest: rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/rule
 
-.PHONY : _run_tests_rosserial_test_rostest_test_rosserial_server_serial.test
+.PHONY : run_tests_rosserial_test_rostest
 
 # fast build rule for target.
-_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/build.make rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/build
-.PHONY : _run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast
+run_tests_rosserial_test_rostest/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/build.make rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/build
+.PHONY : run_tests_rosserial_test_rostest/fast
 
 # Convenience name for target.
-rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/rule
-.PHONY : rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/rule
+rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule
+.PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule
 
 # Convenience name for target.
-run_tests_rosserial_test: rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/rule
+_run_tests_rosserial_test: rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule
 
-.PHONY : run_tests_rosserial_test
+.PHONY : _run_tests_rosserial_test
 
 # fast build rule for target.
-run_tests_rosserial_test/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/build.make rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/build
-.PHONY : run_tests_rosserial_test/fast
+_run_tests_rosserial_test/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/build.make rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/build
+.PHONY : _run_tests_rosserial_test/fast
 
 # Convenience name for target.
 rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/rule:
@@ -241,34 +241,19 @@ _run_tests_rosserial_test_rostest_test_rosserial_server_socket.test/fast:
 .PHONY : _run_tests_rosserial_test_rostest_test_rosserial_server_socket.test/fast
 
 # Convenience name for target.
-rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule
-.PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule
+rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/rule
+.PHONY : rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/rule
 
 # Convenience name for target.
-_run_tests_rosserial_test: rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule
+run_tests_rosserial_test: rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/rule
 
-.PHONY : _run_tests_rosserial_test
+.PHONY : run_tests_rosserial_test
 
 # fast build rule for target.
-_run_tests_rosserial_test/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/build.make rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/build
-.PHONY : _run_tests_rosserial_test/fast
-
-# Convenience name for target.
-rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/rule
-.PHONY : rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/rule
-
-# Convenience name for target.
-run_tests_rosserial_test_rostest: rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/rule
-
-.PHONY : run_tests_rosserial_test_rostest
-
-# fast build rule for target.
-run_tests_rosserial_test_rostest/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/build.make rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest.dir/build
-.PHONY : run_tests_rosserial_test_rostest/fast
+run_tests_rosserial_test/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/build.make rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test.dir/build
+.PHONY : run_tests_rosserial_test/fast
 
 # Convenience name for target.
 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest.dir/rule:
@@ -360,6 +345,21 @@ run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/build.make rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/build
 .PHONY : run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast
 
+# Convenience name for target.
+rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule
+.PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule
+
+# Convenience name for target.
+_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test: rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule
+
+.PHONY : _run_tests_rosserial_test_rostest_test_rosserial_server_serial.test
+
+# fast build rule for target.
+_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/build.make rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/build
+.PHONY : _run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast
+
 src/publish_subscribe.o: src/publish_subscribe.cpp.o
 
 .PHONY : src/publish_subscribe.o
@@ -399,20 +399,20 @@ help:
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... run_tests_rosserial_test_rostest_test_rosserial_python_socket.test"
-	@echo "... _run_tests_rosserial_test_rostest_test_rosserial_server_serial.test"
-	@echo "... test"
-	@echo "... run_tests_rosserial_test"
+	@echo "... install/local"
+	@echo "... run_tests_rosserial_test_rostest"
+	@echo "... _run_tests_rosserial_test"
 	@echo "... rosserial_test_rosserial_lib"
 	@echo "... _run_tests_rosserial_test_rostest_test_rosserial_server_socket.test"
-	@echo "... install/local"
-	@echo "... _run_tests_rosserial_test"
-	@echo "... run_tests_rosserial_test_rostest"
+	@echo "... test"
+	@echo "... run_tests_rosserial_test"
 	@echo "... _run_tests_rosserial_test_rostest"
 	@echo "... rosserial_test_publish_subscribe"
 	@echo "... run_tests_rosserial_test_rostest_test_rosserial_server_socket.test"
 	@echo "... clean_test_results_rosserial_test"
 	@echo "... _run_tests_rosserial_test_rostest_test_rosserial_python_socket.test"
 	@echo "... run_tests_rosserial_test_rostest_test_rosserial_server_serial.test"
+	@echo "... _run_tests_rosserial_test_rostest_test_rosserial_server_serial.test"
 	@echo "... src/publish_subscribe.o"
 	@echo "... src/publish_subscribe.i"
 	@echo "... src/publish_subscribe.s"

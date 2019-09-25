@@ -68,38 +68,47 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/setup.bash")
+   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/setup.bash;/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install" TYPE FILE FILES "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/setup.bash")
+file(INSTALL DESTINATION "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install" TYPE FILE FILES
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/setup.bash"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/local_setup.bash"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/setup.sh")
+   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/setup.sh;/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install" TYPE FILE FILES "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/setup.sh")
+file(INSTALL DESTINATION "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install" TYPE FILE FILES
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/setup.sh"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/local_setup.sh"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/setup.zsh")
+   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/setup.zsh;/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install" TYPE FILE FILES "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/setup.zsh")
+file(INSTALL DESTINATION "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install" TYPE FILE FILES
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/setup.zsh"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/catkin_generated/installspace/local_setup.zsh"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -128,9 +137,11 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/rosserial/rosserial_xbee/cmake_install.cmake")
   include("/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/rosserial/rosserial_client/cmake_install.cmake")
   include("/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/rosserial/rosserial_server/cmake_install.cmake")
+  include("/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5_model/cmake_install.cmake")
   include("/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/rosserial/rosserial_embeddedlinux/cmake_install.cmake")
   include("/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/rosserial/rosserial_test/cmake_install.cmake")
   include("/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/rosserial/rosserial_windows/cmake_install.cmake")
+  include("/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5/cmake_install.cmake")
 
 endif()
 

@@ -1,11 +1,11 @@
 #include <ros.h>
-#include <controller/ultrasounds.h>
+#include <az5/ultrasounds.h>
 #include "Ultrasonic.h"
 
 //rosrun rosserial_arduino make_libraries.py .
 //rosrun rosserial_python serial_node.py /dev/ttyACM0
 
-controller::ultrasounds msg;
+az5::ultrasounds msg;
 Ultrasonic *ultrasonic [msg.length];
 ros::NodeHandle node_handler;
 ros::Publisher pub("ultrasounds_raw", &msg);
@@ -20,8 +20,9 @@ void setup() {
 
 void loop() {
   for (int i = 0; i < msg.length; ++i){
-    msg.measurements[i]=ultrasonic[i]->read();
+    msg.us = i;
+    msg.value = ultrasonic[i]->read();
+    pub.publish(&msg);
   }
-  pub.publish(&msg);
   node_handler.spinOnce();
 }

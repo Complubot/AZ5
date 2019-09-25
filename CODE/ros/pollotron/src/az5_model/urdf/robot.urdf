@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="pollotron_example">
+
+  <!--> ******************** PARAMETERS ******************** <!-->
+
+  <xacro:property name="robot_name" value="AZ5" />
+  <xacro:property name="plate_x" value="0.620"/>
+  <xacro:property name="plate_y" value="0.460"/>
+  <xacro:property name="plate_z" value="0.01"/>
+  <xacro:property name="profile_height" value="0.15"/>
+  <xacro:property name="profile_dim" value="0.04"/>
+  <xacro:property name="profile_margin" value="0.005"/>
+  <xacro:property name="height_2_first_floor" value="0.061"/>
+  <xacro:property name="height_2_second_floor" value="${height_2_first_floor + profile_height + plate_z}"/>
+  <xacro:property name="mast_height" value="0.85"/>
+  <xacro:property name="sonar_radious" value="0.15"/>
+  <xacro:property name="sonar_height" value="0.348"/>
+  <xacro:property name="sonar_height_inc" value="0.035"/>
+  <xacro:property name="light_plate" value="0.003"/>
+  <xacro:property name="sonar_sensor_width" value="0.046"/>
+  <xacro:property name="sonar_sensor_height" value="0.021"/>
+  <xacro:property name="sonar_sensor_depth" value="0.002"/>
+  <xacro:property name="sonar_sensor_radius" value="0.12716"/>
+  <xacro:property name="bumper_sensor_dim" value="0.0315"/>
+  <xacro:property name="bumper_sensor_depth" value="0.105"/>
+  <xacro:property name="bumper_sensor_separation" value="0.06"/>
+  <xacro:property name="bumper_sensor_out" value="0.065"/>
+  <xacro:property name="realsense_height" value="0.62"/>
+  <xacro:property name="realsense_out" value="0.075"/>
+  <xacro:property name="realsense_rgb" value="0.0295"/>
+  <xacro:property name="realsense_infrared" value="0.0145"/>
+  <xacro:property name="realsense_x" value="0.0245"/>
+  <xacro:property name="realsense_y" value="0.09"/>
+  <xacro:property name="realsense_z" value="0.0255"/>
+  <xacro:property name="realsense_offset" value="0.045"/>
+  <xacro:property name="wheel_x" value="0.185"/>
+  <xacro:property name="wheel_y" value="0.17235"/>
+  <xacro:property name="wheel_z" value="0.015"/>
+  <xacro:property name="wheel_radius" value="0.076"/>
+  <xacro:property name="wheel_width" value="0.045"/>
+  <xacro:property name="rplidar_x" value="0.21"/>
+  <xacro:property name="rplidar_y" value="0.0"/>
+  <xacro:property name="rplidar_z" value="0.199"/>
+  <xacro:property name="rplidar_radius" value="0.035"/>
+  <xacro:property name="rplidar_heigth" value="0.02"/>
+
+  <!--> ******************** MATERIALS ******************** <!-->
+  <material name="dm">
+    <color rgba="0.4 0.4 0.1 1"/>
+  </material>
+
+  <material name="aluminium">
+    <color rgba="0.9 0.9 0.9 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="bumper_sensor">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <material name="sonar_sensor">
+    <color rgba="0 0 1 1"/>
+  </material>
+
+  <!--> ********************* MACROS ********************* <!-->
+  <xacro:macro name="base_link">
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <sphere radius="0.05"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="black"/>
+      </visual>
+    </link>
+    <link name="odom">
+      <visual>
+        <geometry>
+          <sphere radius="0.05"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="black"/>
+      </visual>
+    </link>
+
+    <joint name="odom_2_base_link" type="planar">
+      <parent link="odom"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1" />
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="plate" params="name from_floor">
+    <link name="${robot_name}_${name}_plate">
+      <visual>
+        <geometry>
+          <box size="${plate_x} ${plate_y} ${plate_z}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="dm"/>
+      </visual>
+      <collision>
+        <geometry>
+            <box size="${plate_x} ${plate_y} ${plate_z}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <joint name="base_link_2_${robot_name}_${name}_plate" type="fixed">
+      <parent link="base_link"/>
+      <child link="${robot_name}_${name}_plate"/>
+      <origin xyz="0 0 ${from_floor}" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+  <xacro:macro name="profile" params="letter reflect_x reflect_y angle">
+    <link name="${robot_name}_profile_${letter}">
+      <visual>
+        <geometry>
+          <box size="${profile_dim} ${profile_dim} ${profile_height}"/>
+        </geometry>
+        <origin xyz="0 0 ${profile_height/2}" rpy="0 0 ${-angle}"/>
+        <material name="aluminium"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${profile_dim} ${profile_dim} ${profile_height}"/>
+        </geometry>
+        <origin xyz="0 0 ${profile_height/2}" rpy="0 0 ${-angle}"/>
+      </collision>
+    </link>
+
+    <joint name="${robot_name}_first_plate_2_${robot_name}_profile_${letter}" type="fixed">
+      <parent link="${robot_name}_first_plate"/>
+      <child link="${robot_name}_profile_${letter}"/>
+      <origin xyz="${(plate_x/2-profile_margin-profile_dim)*reflect_x} ${(plate_y/2-profile_margin-profile_dim)*reflect_y} ${plate_z/2}" rpy="0 0 ${angle}"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="mast">
+    <link name="${robot_name}_mast">
+      <visual>
+        <geometry>
+          <box size="${profile_dim} ${profile_dim*2} ${mast_height}"/>
+        </geometry>
+        <origin xyz="0 0 ${mast_height/2}" rpy="0 0 0"/>
+        <material name="aluminium"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${profile_dim} ${profile_dim*2} ${mast_height}"/>
+        </geometry>
+        <origin xyz="0 0 ${mast_height/2}" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <joint name="${robot_name}_first_plate_2_${robot_name}_mast" type="fixed">
+      <parent link="${robot_name}_first_plate"/>
+      <child link="${robot_name}_mast"/>
+      <origin xyz="0 0 ${plate_z/2}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="sonar_plate" params="name z">
+    <link name="${robot_name}_sonar_plate_${name}">
+      <visual>
+        <geometry>
+          <cylinder radius="${sonar_radious}" length="${light_plate}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="dm"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="${sonar_radious}" length="${light_plate}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <joint name="${robot_name}_second_plate_2_${robot_name}_sonar_plate_${name}" type="fixed">
+      <parent link="${robot_name}_second_plate"/>
+      <child link="${robot_name}_sonar_plate_${name}"/>
+      <origin xyz="0 0 ${z-light_plate/2}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="sonar_sensor" params="number">
+    <link name="${robot_name}_sonar_sensor_base_${number}">
+    </link>
+
+    <link name="sonar_sensor_${number}">
+      <visual>
+        <geometry>
+          <box size="${sonar_sensor_depth} ${sonar_sensor_width} ${sonar_sensor_height}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="sonar_sensor"/>
+      </visual>
+    </link>
+
+    <joint name="${robot_name}_sonar_plate_bottom_2_${robot_name}_sonar_sensor_base_${number}" type="fixed">
+      <parent link="${robot_name}_sonar_plate_bottom"/>
+      <child link="${robot_name}_sonar_sensor_base_${number}"/>
+      <origin xyz="0 0 0" rpy="0 0 ${-(number-1)*(2*pi/16)}"/>
+    </joint>
+
+    <joint name="${robot_name}_sonar_sensor_base_${number}_2_sonar_sensor_${number}" type="fixed">
+      <parent link="${robot_name}_sonar_sensor_base_${number}"/>
+      <child link="sonar_sensor_${number}"/>
+      <origin xyz="${sonar_sensor_radius} 0 ${sonar_height_inc/2-light_plate/2}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="bumper_sensor" params="name reflect_x reflect_y">
+    <link name="${robot_name}_bumper_sensor_${name}">
+      <visual>
+        <xacro:if value="${(name=='left') or (name=='right')}">
+          <geometry>
+            <box size="${bumper_sensor_dim} ${bumper_sensor_depth} ${bumper_sensor_dim}"/>
+          </geometry>
+          <origin xyz="${reflect_x*(-bumper_sensor_depth/2+bumper_sensor_out)+bumper_sensor_separation} ${reflect_y*(-bumper_sensor_depth/2+bumper_sensor_out)} 0" rpy="0 0 0"/>
+        </xacro:if>
+        <xacro:if value="${(name=='front') or (name=='back')}">
+          <geometry>
+            <box size="${bumper_sensor_dim} ${bumper_sensor_depth} ${bumper_sensor_dim}"/>
+          </geometry>
+          <origin xyz="${bumper_sensor_separation} ${-(-bumper_sensor_depth/2+bumper_sensor_out)} 0" rpy="0 0 0"/>
+        </xacro:if>
+        <material name="bumper_sensor"/>
+      </visual>
+
+      <visual>
+        <xacro:if value="${(name=='left') or (name=='right')}">
+          <geometry>
+            <box size="${bumper_sensor_dim} ${bumper_sensor_depth} ${bumper_sensor_dim}"/>
+          </geometry>
+          <origin xyz="${reflect_x*(-bumper_sensor_depth/2+bumper_sensor_out)-bumper_sensor_separation} ${reflect_y*(-bumper_sensor_depth/2+bumper_sensor_out)} 0" rpy="0 0 0"/>
+        </xacro:if>
+        <xacro:if value="${(name=='front') or (name=='back')}">
+          <geometry>
+            <box size="${bumper_sensor_dim} ${bumper_sensor_depth} ${bumper_sensor_dim}"/>
+          </geometry>
+          <origin xyz="${-bumper_sensor_separation} ${-(-bumper_sensor_depth/2+bumper_sensor_out)} 0" rpy="0 0 0"/>
+        </xacro:if>
+        <material name="bumper_sensor"/>
+      </visual>
+      
+      <collision>
+        <xacro:if value="${(name=='left') or (name=='right')}">
+          <geometry>
+            <box size="${plate_x} ${bumper_sensor_depth} ${bumper_sensor_dim}"/>
+          </geometry>
+          <origin xyz="${reflect_x*(-bumper_sensor_depth/2+bumper_sensor_out)} ${reflect_y*(-bumper_sensor_depth/2+bumper_sensor_out)} 0" rpy="0 0 0"/>
+        </xacro:if>
+        <xacro:if value="${(name=='front') or (name=='back')}">
+          <geometry>
+            <box size="${plate_y} ${bumper_sensor_depth} ${bumper_sensor_dim}"/>
+          </geometry>
+          <origin xyz="0 ${-(-bumper_sensor_depth/2+bumper_sensor_out)} 0" rpy="0 0 0"/>
+        </xacro:if>
+      </collision>
+    </link>
+
+    <joint name="${robot_name}_first_plate_2_${robot_name}_sonar_sensor_${name}" type="fixed">
+      <parent link="${robot_name}_first_plate"/>
+      <child link="${robot_name}_bumper_sensor_${name}"/>
+      <origin xyz="${plate_x/2*reflect_x} ${plate_y/2*reflect_y} ${plate_z/2+bumper_sensor_dim/2}" rpy="0 0 ${reflect_x*pi/2}"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="realsense">
+    <link name="${robot_name}_realsense">
+      <visual>
+        <geometry>
+          <box size="${realsense_x} ${realsense_y} ${realsense_z}"/>
+        </geometry>
+        <origin xyz="${-realsense_x/2} 0 0" rpy="0 0 0"/>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${realsense_x} ${realsense_y} ${realsense_z}"/>
+        </geometry>
+        <origin xyz="${-realsense_x/2} 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <joint name="${robot_name}_second_plate_2_${robot_name}_realsense" type="fixed">
+      <parent link="${robot_name}_second_plate"/>
+      <child link="${robot_name}_realsense"/>
+      <origin xyz="${realsense_out} 0 ${realsense_height+plate_z/2}" rpy="0 0 0"/>
+    </joint>
+
+    <link name="camera_link">
+    </link>
+    <joint name="${robot_name}_realsense_2_camera_link" type="fixed">
+      <parent link="${robot_name}_realsense"/>
+      <child link="camera_link"/>
+      <origin xyz="0 ${realsense_offset} 0" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="wheel" params="number reflect_x reflect_y">
+    <link name="${robot_name}_wheel_${number}">
+      <visual>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="aluminium"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <joint name="wheel_${number}" type="continuous">
+      <parent link="${robot_name}_first_plate"/>
+      <child link="${robot_name}_wheel_${number}"/>
+      <origin xyz="${wheel_x*reflect_x} ${wheel_y*reflect_y} ${wheel_z}" rpy="${-pi/2} ${pi} ${pi}"/>
+      <axis xyz="0 0 -1" />
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="rplidar">
+    <link name="${robot_name}_rplidar">
+      <visual>
+        <geometry>
+          <cylinder radius="${rplidar_radius}" length="${rplidar_heigth}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="aluminium"/>
+      </visual>
+    </link>
+
+    <joint name="${robot_name}_first_plate_2_${robot_name}_rplidar" type="fixed">
+      <parent link="${robot_name}_second_plate"/>
+      <child link="${robot_name}_rplidar"/>
+      <origin xyz="${rplidar_x} ${rplidar_y} ${rplidar_z+plate_z/2}" rpy="0 0 0"/>
+    </joint>
+
+    <link name="laser">
+    </link>
+
+    <joint name="${robot_name}_rplidar_2_laser" type="fixed">
+      <parent link="${robot_name}_rplidar"/>
+      <child link="laser"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <!--> ******************** COMPONENTS ******************** <!-->
+
+  <xacro:macro name="base">
+    <xacro:plate name="first" from_floor="${height_2_first_floor}"/>
+    <xacro:plate name="second" from_floor="${height_2_second_floor}"/>
+    <xacro:profile letter="A" reflect_x="1" reflect_y="1" angle="${pi/4}"/>
+    <xacro:profile letter="B" reflect_x="1" reflect_y="0" angle="0"/>
+    <xacro:profile letter="C" reflect_x="1" reflect_y="-1" angle="${pi/-4}"/>
+    <xacro:profile letter="D" reflect_x="0" reflect_y="-1" angle="${pi/-2}"/>
+    <xacro:profile letter="E" reflect_x="-1" reflect_y="-1" angle="${pi*-3/4}"/>
+    <xacro:profile letter="F" reflect_x="-1" reflect_y="0" angle="${pi*-1}"/>
+    <xacro:profile letter="G" reflect_x="-1" reflect_y="1" angle="${pi*3/4}"/>
+    <xacro:profile letter="H" reflect_x="0" reflect_y="1" angle="${pi/2}"/>
+    <xacro:mast/>
+  </xacro:macro>
+
+  <xacro:macro name="sonar">
+    <xacro:sonar_plate name="bottom" z="${sonar_height}"/>
+    <xacro:sonar_plate name="top" z="${sonar_height+sonar_height_inc+light_plate}"/>
+    <xacro:sonar_sensor number="1"/>
+    <xacro:sonar_sensor number="2"/>
+    <xacro:sonar_sensor number="3"/>
+    <xacro:sonar_sensor number="4"/>
+    <xacro:sonar_sensor number="5"/>
+    <xacro:sonar_sensor number="6"/>
+    <xacro:sonar_sensor number="7"/>
+    <xacro:sonar_sensor number="8"/>
+    <xacro:sonar_sensor number="9"/>
+    <xacro:sonar_sensor number="10"/>
+    <xacro:sonar_sensor number="11"/>
+    <xacro:sonar_sensor number="12"/>
+    <xacro:sonar_sensor number="13"/>
+    <xacro:sonar_sensor number="14"/>
+    <xacro:sonar_sensor number="15"/>
+    <xacro:sonar_sensor number="16"/>
+  </xacro:macro>
+
+  <xacro:macro name="bumpers">
+    <xacro:bumper_sensor name="front" reflect_x="1" reflect_y="0"/>
+    <xacro:bumper_sensor name="left" reflect_x="0" reflect_y="1"/>
+    <xacro:bumper_sensor name="back" reflect_x="-1" reflect_y="0"/>
+    <xacro:bumper_sensor name="right" reflect_x="0" reflect_y="-1"/>
+  </xacro:macro>
+
+  <xacro:macro name="wheels">
+    <xacro:wheel number="1" reflect_x="1" reflect_y="1"/>
+    <xacro:wheel number="2" reflect_x="-1" reflect_y="1"/>
+    <xacro:wheel number="3" reflect_x="1" reflect_y="-1"/>
+    <xacro:wheel number="4" reflect_x="-1" reflect_y="-1"/>
+  </xacro:macro>
+
+  <!--> ******************** DESCRIPTION ******************** <!-->
+  <xacro:base_link/>
+  <xacro:base/>
+  <xacro:sonar/>
+  <xacro:bumpers/>
+  <xacro:realsense/>
+  <xacro:wheels/>
+  <xacro:rplidar/>
+
+</robot>
+

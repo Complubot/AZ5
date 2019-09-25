@@ -110,17 +110,6 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -132,6 +121,17 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -196,19 +196,34 @@ rosserial_arduino_generate_messages_py/fast:
 .PHONY : rosserial_arduino_generate_messages_py/fast
 
 # Convenience name for target.
-rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule
-.PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule
+rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule
+.PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule
 
 # Convenience name for target.
-rosserial_arduino_gennodejs: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule
+rosserial_arduino_gencpp: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule
 
-.PHONY : rosserial_arduino_gennodejs
+.PHONY : rosserial_arduino_gencpp
 
 # fast build rule for target.
-rosserial_arduino_gennodejs/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/build
-.PHONY : rosserial_arduino_gennodejs/fast
+rosserial_arduino_gencpp/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/build
+.PHONY : rosserial_arduino_gencpp/fast
+
+# Convenience name for target.
+rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/rule
+.PHONY : rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/rule
+
+# Convenience name for target.
+_rosserial_arduino_generate_messages_check_deps_Adc: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/rule
+
+.PHONY : _rosserial_arduino_generate_messages_check_deps_Adc
+
+# fast build rule for target.
+_rosserial_arduino_generate_messages_check_deps_Adc/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/build.make rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/build
+.PHONY : _rosserial_arduino_generate_messages_check_deps_Adc/fast
 
 # Convenience name for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/rule:
@@ -239,36 +254,6 @@ rosserial_arduino_generate_messages_eus: rosserial/rosserial_arduino/CMakeFiles/
 rosserial_arduino_generate_messages_eus/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build
 .PHONY : rosserial_arduino_generate_messages_eus/fast
-
-# Convenience name for target.
-rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/rule
-.PHONY : rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/rule
-
-# Convenience name for target.
-_rosserial_arduino_generate_messages_check_deps_Adc: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/rule
-
-.PHONY : _rosserial_arduino_generate_messages_check_deps_Adc
-
-# fast build rule for target.
-_rosserial_arduino_generate_messages_check_deps_Adc/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/build.make rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc.dir/build
-.PHONY : _rosserial_arduino_generate_messages_check_deps_Adc/fast
-
-# Convenience name for target.
-rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule
-.PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule
-
-# Convenience name for target.
-rosserial_arduino_gencpp: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule
-
-.PHONY : rosserial_arduino_gencpp
-
-# fast build rule for target.
-rosserial_arduino_gencpp/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/build
-.PHONY : rosserial_arduino_gencpp/fast
 
 # Convenience name for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/rule:
@@ -360,6 +345,21 @@ rosserial_arduino_genlisp/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/build
 .PHONY : rosserial_arduino_genlisp/fast
 
+# Convenience name for target.
+rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule
+.PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule
+
+# Convenience name for target.
+rosserial_arduino_gennodejs: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule
+
+.PHONY : rosserial_arduino_gennodejs
+
+# fast build rule for target.
+rosserial_arduino_gennodejs/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/build
+.PHONY : rosserial_arduino_gennodejs/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -373,19 +373,19 @@ help:
 	@echo "... install/strip"
 	@echo "... rosserial_arduino_genpy"
 	@echo "... rosserial_arduino_generate_messages_py"
-	@echo "... rosserial_arduino_gennodejs"
+	@echo "... install"
+	@echo "... rosserial_arduino_gencpp"
+	@echo "... _rosserial_arduino_generate_messages_check_deps_Adc"
 	@echo "... rosserial_arduino_generate_messages_nodejs"
 	@echo "... test"
 	@echo "... rosserial_arduino_generate_messages_eus"
-	@echo "... _rosserial_arduino_generate_messages_check_deps_Adc"
-	@echo "... install"
-	@echo "... rosserial_arduino_gencpp"
 	@echo "... rosserial_arduino_generate_messages_cpp"
 	@echo "... rosserial_arduino_generate_messages"
 	@echo "... _rosserial_arduino_generate_messages_check_deps_Test"
 	@echo "... rosserial_arduino_geneus"
 	@echo "... rosserial_arduino_generate_messages_lisp"
 	@echo "... rosserial_arduino_genlisp"
+	@echo "... rosserial_arduino_gennodejs"
 .PHONY : help
 
 

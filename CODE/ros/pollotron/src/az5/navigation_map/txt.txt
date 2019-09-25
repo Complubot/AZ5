@@ -1,0 +1,1 @@
+sudo apt-get install ros-kinetic-navigation ros-kinetic-map-server libsdl-image1.2-dev libsdl1.2-dev libcaca-dev libpulse-dev libpulse0=1:8.0-0ubuntu3 libpulse-mainloop-glib0=1:8.0-0ubuntu3 libslang2-dev libslang2=2.3.0-2ubuntu1

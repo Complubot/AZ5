@@ -1,0 +1,63 @@
+
+<launch>
+  <param name="robot_description" command="xacro --inorder $(find az5_model)/urdf/robot.urdf"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+  <include file="/home/complubot/Documents/POLLOTRON/CODE/ros/rplidar/src/rplidar_ros/launch/rplidar.launch" />
+  <node pkg="az5" name="laser_filter" type="laser_filter" output="screen" respawn="true" />
+
+  <node pkg="az5_model" type="fake_movement" name="fake_movement"/>
+
+  <node pkg="gmapping" type="slam_gmapping" name="gmapping">
+    <param name="base_frame" value="base_link"/>
+    <param name="odom_frame" value="odom" />
+    <param name="scan" value="laser_filter" />
+
+    <param name="map_update_interval" value="0.1"/> 
+    <param name="maxUrange" value="6.0"/> 
+    <param name="maxRange" value="8.0"/> 
+    <param name="sigma" value="0.05"/> 
+    <param name="kernelSize" value="1"/> 
+    <param name="lstep" value="0.05"/> 
+    <param name="astep" value="0.05"/> 
+    <param name="iterations" value=""/> 
+    <param name="lsigma" value="0.075"/> 
+    <param name="ogain" value="3.0"/> 
+    <param name="lskip" value="0"/> 
+    <param name="minimumScore" value="100"/> 
+    <param name="srr" value="0.01"/> 
+    <param name="srt" value="0.02"/> 
+    <param name="str" value="0.01"/> 
+    <param name="stt" value="0.02"/> 
+    <param name="linearUpdate" value="0.5"/> 
+    <param name="angularUpdate" value="0.436"/> 
+    <param name="temporalUpdate" value="-1.0"/> 
+    <param name="resampleThreshold" value="0.5"/> 
+    <param name="particles" value="100"/> 
+    <param name="xmin" value="-1.0"/> 
+    <param name="ymin" value="-1.0"/> 
+    <param name="xmax" value="1.0"/> 
+    <param name="ymax" value="1.0"/> 
+    <param name="delta" value="0.05"/> 
+    <param name="llsamplerange" value="0.01"/> 
+    <param name="llsamplestep" value="0.01"/> 
+    <param name="lasamplerange" value="0.005"/> 
+    <param name="lasamplestep" value="0.005"/> 
+  </node>
+  <!-->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find az5_model)/maps/map.pgm 0.05"/>
+  <include file="$(find amcl)/examples/amcl_omni.launch" />
+  <!-->
+
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch" >
+    <arg name="filters" value="pointcloud"/>
+  </include>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find az5)/navigation_map/costmap_common_params.yml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find az5)/navigation_map/costmap_common_params.yml" command="load" ns="local_costmap" />
+    <rosparam file="$(find az5)/navigation_map/local_costmap_params.yml" command="load" />
+    <rosparam file="$(find az5)/navigation_map/global_costmap_params.yml" command="load" /> 
+    <rosparam file="$(find az5)/navigation_map/base_local_planner_params.yml" command="load" />
+  </node>
+</launch>

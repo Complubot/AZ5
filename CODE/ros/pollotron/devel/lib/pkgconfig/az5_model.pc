@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel
+
+Name: az5_model
+Description: Description of az5_model
+Version: 0.0.0
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5_model/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib -laz5_model
+Requires: roscpp rospy tf

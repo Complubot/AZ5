@@ -1,0 +1,13 @@
+<launch>
+  <param name="robot_description" command="xacro --inorder /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5_model/urdf/robot.urdf"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+  <arg name="port_uno" value="/dev/ttyACM1"/>
+  <node pkg="rviz" type="rviz" name="rviz" args="-d /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5_model/rviz/robot_config_complete.rviz"/>
+  <node pkg="az5" name="us_filter" type="us_filter" output="screen" respawn="true" />
+  <node pkg="rosserial_python" name="us_reader" type="serial_node.py" args="$(arg port_uno)" output="screen" respawn="true" />
+  <include file="/home/complubot/Documents/POLLOTRON/CODE/ros/rplidar/src/rplidar_ros/launch/rplidar.launch" />
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch" >
+    <arg name="filters" value="pointcloud"/>
+  </include>
+  <node pkg="az5_model" type="robot_still" name="joint_state_publisher"/>
+</launch>

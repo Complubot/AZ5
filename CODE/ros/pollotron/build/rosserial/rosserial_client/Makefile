@@ -166,19 +166,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule
-.PHONY : rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule
+.PHONY : rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule
 
 # Convenience name for target.
-_run_tests_rosserial_client_gtest_subscriber_test: rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+_run_tests_rosserial_client_gtest: rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule
 
-.PHONY : _run_tests_rosserial_client_gtest_subscriber_test
+.PHONY : _run_tests_rosserial_client_gtest
 
 # fast build rule for target.
-_run_tests_rosserial_client_gtest_subscriber_test/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/build
-.PHONY : _run_tests_rosserial_client_gtest_subscriber_test/fast
+_run_tests_rosserial_client_gtest/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/build.make rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/build
+.PHONY : _run_tests_rosserial_client_gtest/fast
+
+# Convenience name for target.
+rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+.PHONY : rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+
+# Convenience name for target.
+run_tests_rosserial_client_gtest_subscriber_test: rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+
+.PHONY : run_tests_rosserial_client_gtest_subscriber_test
+
+# fast build rule for target.
+run_tests_rosserial_client_gtest_subscriber_test/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/build
+.PHONY : run_tests_rosserial_client_gtest_subscriber_test/fast
 
 # Convenience name for target.
 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client.dir/rule:
@@ -194,36 +209,6 @@ _run_tests_rosserial_client: rosserial/rosserial_client/CMakeFiles/_run_tests_ro
 _run_tests_rosserial_client/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client.dir/build.make rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client.dir/build
 .PHONY : _run_tests_rosserial_client/fast
-
-# Convenience name for target.
-rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule
-.PHONY : rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule
-
-# Convenience name for target.
-run_tests_rosserial_client: rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule
-
-.PHONY : run_tests_rosserial_client
-
-# fast build rule for target.
-run_tests_rosserial_client/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/build.make rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/build
-.PHONY : run_tests_rosserial_client/fast
-
-# Convenience name for target.
-rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule
-.PHONY : rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule
-
-# Convenience name for target.
-float64_test: rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule
-
-.PHONY : float64_test
-
-# fast build rule for target.
-float64_test/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/float64_test.dir/build.make rosserial/rosserial_client/CMakeFiles/float64_test.dir/build
-.PHONY : float64_test/fast
 
 # Convenience name for target.
 rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/rule:
@@ -271,34 +256,34 @@ _run_tests_rosserial_client_gtest_float64_test/fast:
 .PHONY : _run_tests_rosserial_client_gtest_float64_test/fast
 
 # Convenience name for target.
-rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule
-.PHONY : rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule
+rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule
+.PHONY : rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule
 
 # Convenience name for target.
-_run_tests_rosserial_client_gtest: rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule
+float64_test: rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule
 
-.PHONY : _run_tests_rosserial_client_gtest
+.PHONY : float64_test
 
 # fast build rule for target.
-_run_tests_rosserial_client_gtest/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/build.make rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/build
-.PHONY : _run_tests_rosserial_client_gtest/fast
+float64_test/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/float64_test.dir/build.make rosserial/rosserial_client/CMakeFiles/float64_test.dir/build
+.PHONY : float64_test/fast
 
 # Convenience name for target.
-rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule
-.PHONY : rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule
+.PHONY : rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule
 
 # Convenience name for target.
-run_tests_rosserial_client_gtest_subscriber_test: rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+run_tests_rosserial_client: rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule
 
-.PHONY : run_tests_rosserial_client_gtest_subscriber_test
+.PHONY : run_tests_rosserial_client
 
 # fast build rule for target.
-run_tests_rosserial_client_gtest_subscriber_test/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/build
-.PHONY : run_tests_rosserial_client_gtest_subscriber_test/fast
+run_tests_rosserial_client/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/build.make rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/build
+.PHONY : run_tests_rosserial_client/fast
 
 # Convenience name for target.
 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_float64_test.dir/rule:
@@ -329,6 +314,21 @@ clean_test_results_rosserial_client: rosserial/rosserial_client/CMakeFiles/clean
 clean_test_results_rosserial_client/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/clean_test_results_rosserial_client.dir/build.make rosserial/rosserial_client/CMakeFiles/clean_test_results_rosserial_client.dir/build
 .PHONY : clean_test_results_rosserial_client/fast
+
+# Convenience name for target.
+rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+.PHONY : rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+
+# Convenience name for target.
+_run_tests_rosserial_client_gtest_subscriber_test: rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule
+
+.PHONY : _run_tests_rosserial_client_gtest_subscriber_test
+
+# fast build rule for target.
+_run_tests_rosserial_client_gtest_subscriber_test/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/build
+.PHONY : _run_tests_rosserial_client_gtest_subscriber_test/fast
 
 test/float64_test.o: test/float64_test.cpp.o
 
@@ -395,19 +395,19 @@ help:
 	@echo "... install/local"
 	@echo "... list_install_components"
 	@echo "... install/strip"
-	@echo "... _run_tests_rosserial_client_gtest_subscriber_test"
+	@echo "... _run_tests_rosserial_client_gtest"
+	@echo "... run_tests_rosserial_client_gtest_subscriber_test"
 	@echo "... edit_cache"
 	@echo "... _run_tests_rosserial_client"
-	@echo "... run_tests_rosserial_client"
-	@echo "... float64_test"
 	@echo "... test"
 	@echo "... subscriber_test"
 	@echo "... run_tests_rosserial_client_gtest"
 	@echo "... _run_tests_rosserial_client_gtest_float64_test"
-	@echo "... _run_tests_rosserial_client_gtest"
-	@echo "... run_tests_rosserial_client_gtest_subscriber_test"
+	@echo "... float64_test"
+	@echo "... run_tests_rosserial_client"
 	@echo "... run_tests_rosserial_client_gtest_float64_test"
 	@echo "... clean_test_results_rosserial_client"
+	@echo "... _run_tests_rosserial_client_gtest_subscriber_test"
 	@echo "... test/float64_test.o"
 	@echo "... test/float64_test.i"
 	@echo "... test/float64_test.s"

@@ -101,6 +101,17 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -121,17 +132,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -196,21 +196,6 @@ rosserial_mbed_generate_messages_py/fast:
 .PHONY : rosserial_mbed_generate_messages_py/fast
 
 # Convenience name for target.
-rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule
-.PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule
-
-# Convenience name for target.
-rosserial_mbed_gennodejs: rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule
-
-.PHONY : rosserial_mbed_gennodejs
-
-# fast build rule for target.
-rosserial_mbed_gennodejs/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/build
-.PHONY : rosserial_mbed_gennodejs/fast
-
-# Convenience name for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/rule
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/rule
@@ -256,21 +241,6 @@ _rosserial_mbed_generate_messages_check_deps_Adc/fast:
 .PHONY : _rosserial_mbed_generate_messages_check_deps_Adc/fast
 
 # Convenience name for target.
-rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/rule
-.PHONY : rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/rule
-
-# Convenience name for target.
-_rosserial_mbed_generate_messages_check_deps_Test: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/rule
-
-.PHONY : _rosserial_mbed_generate_messages_check_deps_Test
-
-# fast build rule for target.
-_rosserial_mbed_generate_messages_check_deps_Test/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/build.make rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/build
-.PHONY : _rosserial_mbed_generate_messages_check_deps_Test/fast
-
-# Convenience name for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/rule
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/rule
@@ -301,6 +271,21 @@ rosserial_mbed_generate_messages_nodejs/fast:
 .PHONY : rosserial_mbed_generate_messages_nodejs/fast
 
 # Convenience name for target.
+rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/rule
+.PHONY : rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/rule
+
+# Convenience name for target.
+_rosserial_mbed_generate_messages_check_deps_Test: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/rule
+
+.PHONY : _rosserial_mbed_generate_messages_check_deps_Test
+
+# fast build rule for target.
+_rosserial_mbed_generate_messages_check_deps_Test/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/build.make rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/build
+.PHONY : _rosserial_mbed_generate_messages_check_deps_Test/fast
+
+# Convenience name for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_geneus.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_geneus.dir/rule
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_geneus.dir/rule
@@ -329,6 +314,21 @@ rosserial_mbed_generate_messages_lisp: rosserial/rosserial_mbed/CMakeFiles/rosse
 rosserial_mbed_generate_messages_lisp/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build
 .PHONY : rosserial_mbed_generate_messages_lisp/fast
+
+# Convenience name for target.
+rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule
+.PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule
+
+# Convenience name for target.
+rosserial_mbed_gennodejs: rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule
+
+.PHONY : rosserial_mbed_gennodejs
+
+# fast build rule for target.
+rosserial_mbed_gennodejs/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/build
+.PHONY : rosserial_mbed_gennodejs/fast
 
 # Convenience name for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gencpp.dir/rule:
@@ -371,19 +371,19 @@ help:
 	@echo "... edit_cache"
 	@echo "... rosserial_mbed_genpy"
 	@echo "... rosserial_mbed_generate_messages_py"
-	@echo "... rosserial_mbed_gennodejs"
 	@echo "... test"
 	@echo "... rosserial_mbed_generate_messages_cpp"
 	@echo "... rosserial_mbed_generate_messages_eus"
 	@echo "... _rosserial_mbed_generate_messages_check_deps_Adc"
-	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... _rosserial_mbed_generate_messages_check_deps_Test"
 	@echo "... rosserial_mbed_generate_messages"
 	@echo "... install/local"
 	@echo "... rosserial_mbed_generate_messages_nodejs"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... _rosserial_mbed_generate_messages_check_deps_Test"
 	@echo "... rosserial_mbed_geneus"
 	@echo "... rosserial_mbed_generate_messages_lisp"
+	@echo "... rosserial_mbed_gennodejs"
 	@echo "... rosserial_mbed_gencpp"
 	@echo "... rosserial_mbed_genlisp"
 .PHONY : help
