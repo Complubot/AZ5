@@ -2,7 +2,7 @@
 #include "PID.h"
 #include "i2c.h"
 
-#define VERSION 4
+#define VERSION 7
 #define BOARD_TYPE_STR "CuagaForce"
 
 void attinySetup();

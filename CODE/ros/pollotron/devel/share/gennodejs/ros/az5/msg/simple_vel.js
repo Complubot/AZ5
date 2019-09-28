@@ -27,19 +27,19 @@ class simple_vel {
         this.x = initObj.x
       }
       else {
-        this.x = 0;
+        this.x = 0.0;
       }
       if (initObj.hasOwnProperty('y')) {
         this.y = initObj.y
       }
       else {
-        this.y = 0;
+        this.y = 0.0;
       }
       if (initObj.hasOwnProperty('theta')) {
         this.theta = initObj.theta
       }
       else {
-        this.theta = 0;
+        this.theta = 0.0;
       }
     }
   }
@@ -47,11 +47,11 @@ class simple_vel {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type simple_vel
     // Serialize message field [x]
-    bufferOffset = _serializer.int32(obj.x, buffer, bufferOffset);
+    bufferOffset = _serializer.float64(obj.x, buffer, bufferOffset);
     // Serialize message field [y]
-    bufferOffset = _serializer.int32(obj.y, buffer, bufferOffset);
+    bufferOffset = _serializer.float64(obj.y, buffer, bufferOffset);
     // Serialize message field [theta]
-    bufferOffset = _serializer.int32(obj.theta, buffer, bufferOffset);
+    bufferOffset = _serializer.float64(obj.theta, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -60,16 +60,16 @@ class simple_vel {
     let len;
     let data = new simple_vel(null);
     // Deserialize message field [x]
-    data.x = _deserializer.int32(buffer, bufferOffset);
+    data.x = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [y]
-    data.y = _deserializer.int32(buffer, bufferOffset);
+    data.y = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [theta]
-    data.theta = _deserializer.int32(buffer, bufferOffset);
+    data.theta = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 12;
+    return 24;
   }
 
   static datatype() {
@@ -79,15 +79,15 @@ class simple_vel {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '2bff1127cd10ca02349c9c72c72be56e';
+    return '938fa65709584ad8e77d238529be13b8';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int32 x
-    int32 y
-    int32 theta
+    float64 x
+    float64 y
+    float64 theta
     `;
   }
 
@@ -101,21 +101,21 @@ class simple_vel {
       resolved.x = msg.x;
     }
     else {
-      resolved.x = 0
+      resolved.x = 0.0
     }
 
     if (msg.y !== undefined) {
       resolved.y = msg.y;
     }
     else {
-      resolved.y = 0
+      resolved.y = 0.0
     }
 
     if (msg.theta !== undefined) {
       resolved.theta = msg.theta;
     }
     else {
-      resolved.theta = 0
+      resolved.theta = 0.0
     }
 
     return resolved;

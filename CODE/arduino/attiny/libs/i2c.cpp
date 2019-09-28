@@ -46,7 +46,7 @@ void waitForData () {
   while(!Wire.available());
 }
 
-char readI2C () {
+unsigned char readI2C () {
   waitForData ();
   return Wire.read();
 }

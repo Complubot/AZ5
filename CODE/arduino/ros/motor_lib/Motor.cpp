@@ -1,13 +1,15 @@
 #include "Motor.h"
 
 
-Motor::Motor (unsigned char direction){
+Motor::Motor (unsigned char direction, double MP){
   this->direction = direction;
+  this->target_vel = 0;
   this->last_encoder = 0;
   this->last_encoder_t = millis();
   this->P_K = 0;
   this->P_I = 0;
   this->P_D = 0;
+  this->MP = MP;
 }
 
 void Motor::setBrake(int brake){
@@ -43,11 +45,15 @@ unsigned char Motor::getPI (){
 unsigned char Motor::getPD (){
   return this->readChar(Motor::GET_PD);
 }
-void Motor::setTargetVel (int vel){
-  return this->sendInt(Motor::SET_VEL, vel);
+void Motor::setTargetVel (double vel) {
+  this->target_vel = constrain(vel, -1, 1)/this->MP;
+  return this->sendInt(Motor::SET_VEL, this->target_vel);
 }
 int Motor::getTargetVel (){
   return this->readInt(Motor::GET_VEL);
+}
+int Motor::lastTargetVel(){
+  return this->target_vel;
 }
 
 long Motor::getLastEncoder (){
@@ -65,9 +71,8 @@ void Motor::setEncoder(long encoder){
   //POR IMPLEMENTAR
 }
 
-unsigned int Motor::getCurrentMilliamps(){
-  //POR IMPLEMENTAR
-  return 0;
+int Motor::getCurrentMilliamps(){
+  return this->readInt(Motor::GET_CS);
 }
 
 bool Motor::isAlive(){
@@ -114,8 +119,8 @@ void Motor::sendChar (const unsigned char type, unsigned char msg){
 void Motor::sendInt (const unsigned char type, int msg){
   Wire.beginTransmission(this->direction);
   Wire.write(type);
-  Wire.write(highByte(msg));
-  Wire.write(lowByte(msg));
+  Wire.write((int)(msg >> 8));
+  Wire.write((int)(msg));
   Wire.endTransmission();
 }
 unsigned char Motor::readChar (const unsigned char to_read){

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg;/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg;/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg"
+messages_str = "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg;/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg;/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg;/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg"
 services_str = ""
 pkg_name = "az5"
 dependencies_str = ""

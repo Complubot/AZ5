@@ -19,14 +19,14 @@
 (defmethod az5::simple_vel
   (:init
    (&key
-    ((:x __x) 0)
-    ((:y __y) 0)
-    ((:theta __theta) 0)
+    ((:x __x) 0.0)
+    ((:y __y) 0.0)
+    ((:theta __theta) 0.0)
     )
    (send-super :init)
-   (setq _x (round __x))
-   (setq _y (round __y))
-   (setq _theta (round __theta))
+   (setq _x (float __x))
+   (setq _y (float __y))
+   (setq _theta (float __theta))
    self)
   (:x
    (&optional __x)
@@ -40,47 +40,47 @@
   (:serialization-length
    ()
    (+
-    ;; int32 _x
-    4
-    ;; int32 _y
-    4
-    ;; int32 _theta
-    4
+    ;; float64 _x
+    8
+    ;; float64 _y
+    8
+    ;; float64 _theta
+    8
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int32 _x
-       (write-long _x s)
-     ;; int32 _y
-       (write-long _y s)
-     ;; int32 _theta
-       (write-long _theta s)
+     ;; float64 _x
+       (sys::poke _x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _y
+       (sys::poke _y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _theta
+       (sys::poke _theta (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int32 _x
-     (setq _x (sys::peek buf ptr- :integer)) (incf ptr- 4)
-   ;; int32 _y
-     (setq _y (sys::peek buf ptr- :integer)) (incf ptr- 4)
-   ;; int32 _theta
-     (setq _theta (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; float64 _x
+     (setq _x (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _y
+     (setq _y (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _theta
+     (setq _theta (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get az5::simple_vel :md5sum-) "2bff1127cd10ca02349c9c72c72be56e")
+(setf (get az5::simple_vel :md5sum-) "938fa65709584ad8e77d238529be13b8")
 (setf (get az5::simple_vel :datatype-) "az5/simple_vel")
 (setf (get az5::simple_vel :definition-)
-      "int32 x
-int32 y
-int32 theta
+      "float64 x
+float64 y
+float64 theta
 ")
 
 
 
-(provide :az5/simple_vel "2bff1127cd10ca02349c9c72c72be56e")
+(provide :az5/simple_vel "938fa65709584ad8e77d238529be13b8")
 
 

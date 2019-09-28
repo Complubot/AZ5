@@ -6,4 +6,4 @@ void send_l (long msg);
 void send_i (int msg);
 void send_c (char msg);
 void send_s (char* msg);
-char readI2C ();
+unsigned char readI2C ();

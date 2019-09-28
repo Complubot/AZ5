@@ -16,6 +16,8 @@
 #define FORWARD 0
 #define BACKWARDS 1
 
+#define V_TO_AMPS 0.13
+
 int dir = NONE;
 bool pwm_active = false;
 bool pwm_enabled = false;
@@ -51,7 +53,7 @@ void motorSetup () {
 }
 
 void updatePWM (char value) {
-  if (value > 1){
+  if (value > 1) {
     forward ();
     OCR0B = value;
   } else if (value < -1) {
@@ -85,4 +87,8 @@ bool isMotorActive(){
 }
 bool isMotorEnabled(){
   return pwm_enabled;
+}
+
+int readCS () {
+  return map(analogRead(CS), 0, 1023, 0, 5)*V_TO_AMPS;
 }

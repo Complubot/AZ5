@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "az5: 3 messages, 0 services")
+message(STATUS "az5: 4 messages, 0 services")
 
 set(MSG_I_FLAGS "-Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg")
 
@@ -16,6 +16,11 @@ add_custom_target(az5_generate_messages ALL)
 # verify that message/service dependencies have not changed since configure
 
 
+
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg" NAME_WE)
+add_custom_target(_az5_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "az5" "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg" ""
+)
 
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg" NAME_WE)
 add_custom_target(_az5_generate_messages_check_deps_${_filename}
@@ -38,6 +43,12 @@ add_custom_target(_az5_generate_messages_check_deps_${_filename}
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(az5
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/az5
+)
 _generate_msg_cpp(az5
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
@@ -71,6 +82,8 @@ add_custom_target(az5_generate_messages_cpp
 add_dependencies(az5_generate_messages az5_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg" NAME_WE)
+add_dependencies(az5_generate_messages_cpp _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(az5_generate_messages_cpp _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg" NAME_WE)
@@ -87,6 +100,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS az5_generate_messages_cpp)
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(az5
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/az5
+)
 _generate_msg_eus(az5
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
@@ -120,6 +139,8 @@ add_custom_target(az5_generate_messages_eus
 add_dependencies(az5_generate_messages az5_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg" NAME_WE)
+add_dependencies(az5_generate_messages_eus _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(az5_generate_messages_eus _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg" NAME_WE)
@@ -136,6 +157,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS az5_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(az5
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/az5
+)
 _generate_msg_lisp(az5
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
@@ -169,6 +196,8 @@ add_custom_target(az5_generate_messages_lisp
 add_dependencies(az5_generate_messages az5_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg" NAME_WE)
+add_dependencies(az5_generate_messages_lisp _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(az5_generate_messages_lisp _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg" NAME_WE)
@@ -185,6 +214,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS az5_generate_messages_lisp)
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(az5
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/az5
+)
 _generate_msg_nodejs(az5
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
@@ -218,6 +253,8 @@ add_custom_target(az5_generate_messages_nodejs
 add_dependencies(az5_generate_messages az5_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg" NAME_WE)
+add_dependencies(az5_generate_messages_nodejs _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(az5_generate_messages_nodejs _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg" NAME_WE)
@@ -234,6 +271,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS az5_generate_messages_nodejs)
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(az5
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/az5
+)
 _generate_msg_py(az5
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg"
   "${MSG_I_FLAGS}"
@@ -267,6 +310,8 @@ add_custom_target(az5_generate_messages_py
 add_dependencies(az5_generate_messages az5_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg" NAME_WE)
+add_dependencies(az5_generate_messages_py _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg" NAME_WE)
 add_dependencies(az5_generate_messages_py _az5_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg" NAME_WE)

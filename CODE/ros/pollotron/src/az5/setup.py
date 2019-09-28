@@ -33,8 +33,14 @@ laser_filter = generate_distutils_setup(
     package_dir={'': 'src'}
 )
 
+motor_replayer = generate_distutils_setup(
+    packages=['motor_replayer'],
+    package_dir={'': 'src'}
+)
+
 setup(**joystick_reader)
 setup(**us_filter)
 setup(**pollotron)
 setup(**robot_monitor)
 setup(**laser_filter)
+setup(**motor_replayer)

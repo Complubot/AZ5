@@ -24,26 +24,26 @@ struct simple_vel_
   typedef simple_vel_<ContainerAllocator> Type;
 
   simple_vel_()
-    : x(0)
-    , y(0)
-    , theta(0)  {
+    : x(0.0)
+    , y(0.0)
+    , theta(0.0)  {
     }
   simple_vel_(const ContainerAllocator& _alloc)
-    : x(0)
-    , y(0)
-    , theta(0)  {
+    : x(0.0)
+    , y(0.0)
+    , theta(0.0)  {
   (void)_alloc;
     }
 
 
 
-   typedef int32_t _x_type;
+   typedef double _x_type;
   _x_type x;
 
-   typedef int32_t _y_type;
+   typedef double _y_type;
   _y_type y;
 
-   typedef int32_t _theta_type;
+   typedef double _theta_type;
   _theta_type theta;
 
 
@@ -124,12 +124,12 @@ struct MD5Sum< ::az5::simple_vel_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "2bff1127cd10ca02349c9c72c72be56e";
+    return "938fa65709584ad8e77d238529be13b8";
   }
 
   static const char* value(const ::az5::simple_vel_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x2bff1127cd10ca02ULL;
-  static const uint64_t static_value2 = 0x349c9c72c72be56eULL;
+  static const uint64_t static_value1 = 0x938fa65709584ad8ULL;
+  static const uint64_t static_value2 = 0xe77d238529be13b8ULL;
 };
 
 template<class ContainerAllocator>
@@ -148,9 +148,9 @@ struct Definition< ::az5::simple_vel_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int32 x\n\
-int32 y\n\
-int32 theta\n\
+    return "float64 x\n\
+float64 y\n\
+float64 theta\n\
 ";
   }
 
@@ -191,11 +191,11 @@ struct Printer< ::az5::simple_vel_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::az5::simple_vel_<ContainerAllocator>& v)
   {
     s << indent << "x: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.x);
+    Printer<double>::stream(s, indent + "  ", v.x);
     s << indent << "y: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.y);
+    Printer<double>::stream(s, indent + "  ", v.y);
     s << indent << "theta: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.theta);
+    Printer<double>::stream(s, indent + "  ", v.theta);
   }
 };
 

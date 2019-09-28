@@ -1986,6 +1986,19 @@ az5_gennodejs/fast:
 .PHONY : az5_gennodejs/fast
 
 #=============================================================================
+# Target rules for targets named az5_generate_messages_nodejs
+
+# Build rule for target.
+az5_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 az5_generate_messages_nodejs
+.PHONY : az5_generate_messages_nodejs
+
+# fast build rule for target.
+az5_generate_messages_nodejs/fast:
+	$(MAKE) -f az5/CMakeFiles/az5_generate_messages_nodejs.dir/build.make az5/CMakeFiles/az5_generate_messages_nodejs.dir/build
+.PHONY : az5_generate_messages_nodejs/fast
+
+#=============================================================================
 # Target rules for targets named odometry_sender
 
 # Build rule for target.
@@ -2220,6 +2233,19 @@ move_base_msgs_generate_messages_py/fast:
 .PHONY : move_base_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named _az5_generate_messages_check_deps_motor_state
+
+# Build rule for target.
+_az5_generate_messages_check_deps_motor_state: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _az5_generate_messages_check_deps_motor_state
+.PHONY : _az5_generate_messages_check_deps_motor_state
+
+# fast build rule for target.
+_az5_generate_messages_check_deps_motor_state/fast:
+	$(MAKE) -f az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state.dir/build.make az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state.dir/build
+.PHONY : _az5_generate_messages_check_deps_motor_state/fast
+
+#=============================================================================
 # Target rules for targets named move_base_gencfg
 
 # Build rule for target.
@@ -2309,19 +2335,6 @@ az5_generate_messages_eus: cmake_check_build_system
 az5_generate_messages_eus/fast:
 	$(MAKE) -f az5/CMakeFiles/az5_generate_messages_eus.dir/build.make az5/CMakeFiles/az5_generate_messages_eus.dir/build
 .PHONY : az5_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named az5_generate_messages_nodejs
-
-# Build rule for target.
-az5_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 az5_generate_messages_nodejs
-.PHONY : az5_generate_messages_nodejs
-
-# fast build rule for target.
-az5_generate_messages_nodejs/fast:
-	$(MAKE) -f az5/CMakeFiles/az5_generate_messages_nodejs.dir/build.make az5/CMakeFiles/az5_generate_messages_nodejs.dir/build
-.PHONY : az5_generate_messages_nodejs/fast
 
 # Help Target
 help:
@@ -2476,6 +2489,7 @@ help:
 	@echo "... laser_point_cloud"
 	@echo "... az5_genpy"
 	@echo "... az5_gennodejs"
+	@echo "... az5_generate_messages_nodejs"
 	@echo "... odometry_sender"
 	@echo "... move_base_msgs_generate_messages_nodejs"
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
@@ -2494,6 +2508,7 @@ help:
 	@echo "... dynamic_reconfigure_generate_messages_cpp"
 	@echo "... dynamic_reconfigure_gencfg"
 	@echo "... move_base_msgs_generate_messages_py"
+	@echo "... _az5_generate_messages_check_deps_motor_state"
 	@echo "... move_base_gencfg"
 	@echo "... _az5_generate_messages_check_deps_bumpers"
 	@echo "... dynamic_reconfigure_generate_messages_eus"
@@ -2501,7 +2516,6 @@ help:
 	@echo "... _az5_generate_messages_check_deps_simple_vel"
 	@echo "... az5_gencpp"
 	@echo "... az5_generate_messages_eus"
-	@echo "... az5_generate_messages_nodejs"
 .PHONY : help
 
 

@@ -7,14 +7,14 @@ import struct
 
 
 class simple_vel(genpy.Message):
-  _md5sum = "2bff1127cd10ca02349c9c72c72be56e"
+  _md5sum = "938fa65709584ad8e77d238529be13b8"
   _type = "az5/simple_vel"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """int32 x
-int32 y
-int32 theta"""
+  _full_text = """float64 x
+float64 y
+float64 theta"""
   __slots__ = ['x','y','theta']
-  _slot_types = ['int32','int32','int32']
+  _slot_types = ['float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -34,15 +34,15 @@ int32 theta"""
       super(simple_vel, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.x is None:
-        self.x = 0
+        self.x = 0.
       if self.y is None:
-        self.y = 0
+        self.y = 0.
       if self.theta is None:
-        self.theta = 0
+        self.theta = 0.
     else:
-      self.x = 0
-      self.y = 0
-      self.theta = 0
+      self.x = 0.
+      self.y = 0.
+      self.theta = 0.
 
   def _get_types(self):
     """
@@ -57,7 +57,7 @@ int32 theta"""
     """
     try:
       _x = self
-      buff.write(_get_struct_3i().pack(_x.x, _x.y, _x.theta))
+      buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.theta))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -70,8 +70,8 @@ int32 theta"""
       end = 0
       _x = self
       start = end
-      end += 12
-      (_x.x, _x.y, _x.theta,) = _get_struct_3i().unpack(str[start:end])
+      end += 24
+      (_x.x, _x.y, _x.theta,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -85,7 +85,7 @@ int32 theta"""
     """
     try:
       _x = self
-      buff.write(_get_struct_3i().pack(_x.x, _x.y, _x.theta))
+      buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.theta))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -99,8 +99,8 @@ int32 theta"""
       end = 0
       _x = self
       start = end
-      end += 12
-      (_x.x, _x.y, _x.theta,) = _get_struct_3i().unpack(str[start:end])
+      end += 24
+      (_x.x, _x.y, _x.theta,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -109,9 +109,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3i = None
-def _get_struct_3i():
-    global _struct_3i
-    if _struct_3i is None:
-        _struct_3i = struct.Struct("<3i")
-    return _struct_3i
+_struct_3d = None
+def _get_struct_3d():
+    global _struct_3d
+    if _struct_3d is None:
+        _struct_3d = struct.Struct("<3d")
+    return _struct_3d

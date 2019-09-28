@@ -20,6 +20,7 @@ add_message_files(
   bumpers.msg
   simple_vel.msg
   ultrasounds.msg
+  motor_state.msg
 )
 
 generate_messages(
@@ -42,6 +43,7 @@ install(PROGRAMS
   scripts/pollotron
   scripts/robot_monitor
   scripts/laser_filter
+  scripts/motor_replayer
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

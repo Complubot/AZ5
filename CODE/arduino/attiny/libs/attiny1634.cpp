@@ -19,6 +19,7 @@
 #define GET_PK 10
 #define GET_PI 11
 #define GET_PD 12
+#define GET_CS 13
 
 #define MAX_LED_STATE 4
 #define LED1 8
@@ -33,9 +34,9 @@ char msg_to_send = 0;
 void i2CReciver (int request) {
   switch (readI2C()) {
     case SET_VEL:{
-      char first_vel = readI2C();
-      char second_vel = readI2C();
-      int target_vel  = (first_vel << 4) + second_vel;
+      unsigned char first_vel = readI2C();
+      unsigned char second_vel = readI2C();
+      int target_vel  = (first_vel << 8) + second_vel;
       setTargetVel(target_vel);
     }break;
     case CHANGE_MODE:{
@@ -79,6 +80,9 @@ void i2CSender () {
     case GET_PD:{
       send_c (getPD());
     }break;
+    case GET_CS:{
+      send_i (readCS ());
+    }
   }
 }
 

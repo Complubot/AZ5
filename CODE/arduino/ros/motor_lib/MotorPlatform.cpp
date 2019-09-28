@@ -7,7 +7,7 @@ MotorPlatform::MotorPlatform (double R, double LX, double LY, double MP) {
   this->MP = MP;
   Wire.begin();
   for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
-    this->motors[motor] = new Motor(MotorPlatform::FIRST_MOTOR+motor);
+    this->motors[motor] = new Motor(MotorPlatform::FIRST_MOTOR+motor, this->MP);
   }
 }
 
@@ -81,21 +81,25 @@ bool MotorPlatform::setPD (unsigned char P_D1, unsigned char P_D2, unsigned char
   return (this->motors[0]->getPD() == P_D1) && (this->motors[1]->getPD() == P_D2) && (this->motors[2]->getPD() == P_D3) && (this->motors[3]->getPD() == P_D4);
 }
 
-bool MotorPlatform::setTargetVel (int vel){
-  return this->setTargetVel(vel,vel,vel,vel);
+void MotorPlatform::setTargetVel (bool* motor_state, double vel){
+  return this->setTargetVel(motor_state, vel,vel,vel,vel);
 }
-bool MotorPlatform::setTargetVel (int x, int y, int theta){
-  return this->setTargetVel((x-y-this->L*theta)/this->R,
-                            (x+y+this->L*theta)/this->R,
-                            (x-y+this->L*theta)/this->R,
-                            (x+y-this->L*theta)/this->R);
+void MotorPlatform::setTargetVel (bool* motor_state, double x, double y, double theta){
+  return this->setTargetVel (motor_state, 
+                            ( x-y+this->L*theta)/this->R,
+                            (-x-y+this->L*theta)/this->R,
+                            (-x+y+this->L*theta)/this->R,
+                            ( x+y+this->L*theta)/this->R);
 }
-bool MotorPlatform::setTargetVel (int vel1, int vel2, int vel3, int vel4){
+void MotorPlatform::setTargetVel (bool* motor_state, double vel1, double vel2, double vel3, double vel4){
   this->motors[0]->setTargetVel(vel1);
   this->motors[1]->setTargetVel(vel2);
   this->motors[2]->setTargetVel(vel3);
   this->motors[3]->setTargetVel(vel4);
-  return (this->motors[0]->getTargetVel() == vel1) && (this->motors[1]->getTargetVel() == vel2) && (this->motors[2]->getTargetVel() == vel3) && (this->motors[3]->getTargetVel() == vel4);
+  motor_state[0] = (this->motors[0]->getTargetVel() == this->motors[0]->lastTargetVel());
+  motor_state[1] = (this->motors[1]->getTargetVel() == this->motors[1]->lastTargetVel());
+  motor_state[2] = (this->motors[2]->getTargetVel() == this->motors[2]->lastTargetVel());
+  motor_state[3] = (this->motors[3]->getTargetVel() == this->motors[3]->lastTargetVel());
 }
 
 void MotorPlatform::getEncoders(double *encoders){
@@ -106,9 +110,9 @@ void MotorPlatform::getEncoders(double *encoders){
 void MotorPlatform::getPlatformVel(double *encoders, double *wheel_vel, double *platform_vel) {
   double current_vel [MotorPlatform::MOTORS];
   getMotorVel (encoders, wheel_vel);
-  platform_vel[0] = ( wheel_vel[0]+wheel_vel[2]+wheel_vel[4]+wheel_vel[3])*this->R/4;
-  platform_vel[1] = (-wheel_vel[0]+wheel_vel[2]+wheel_vel[4]-wheel_vel[3])*this->R/4;
-  platform_vel[2] = (-wheel_vel[0]+wheel_vel[2]-wheel_vel[4]+wheel_vel[3])*this->R/(4*this->L);
+  platform_vel[0] = ( wheel_vel[0]-wheel_vel[1]-wheel_vel[2]+wheel_vel[3])*this->R/4;
+  platform_vel[1] = (-wheel_vel[0]-wheel_vel[1]+wheel_vel[2]+wheel_vel[3])*this->R/4;
+  platform_vel[2] = ( wheel_vel[0]+wheel_vel[1]+wheel_vel[2]+wheel_vel[3])*this->R/(4*this->L);
 }
 void MotorPlatform::getMotorVel(double *encoders, double *vel) {
   double last_encoder[MotorPlatform::MOTORS];
@@ -117,7 +121,7 @@ void MotorPlatform::getMotorVel(double *encoders, double *vel) {
     last_encoder[motor] = this->motors[motor]->getLastEncoder() * this->MP;
   }
   for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
-    last_t[motor] = this->motors[motor]->getLastT();
+    last_t[motor] = millis() - this->motors[motor]->getLastT();
   }
   this->getEncoders(encoders);
   for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
@@ -125,34 +129,29 @@ void MotorPlatform::getMotorVel(double *encoders, double *vel) {
   }
 }
 
-bool MotorPlatform::resetMotors(){
+void MotorPlatform::resetMotors(bool *motor_state){
   for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
     this->resetMotor(motor);
   }
-  return this->isAlive();
+  this->isAlive(motor_state);
 }
 
-unsigned int* MotorPlatform::getCurrentMilliamps(){
-  unsigned int amps [MotorPlatform::MOTORS];
+void MotorPlatform::getCurrentMilliamps(int *amps){
   for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
     amps[motor] = this->motors[motor]->getCurrentMilliamps();
   }
-  return amps;
 }
 
-bool MotorPlatform::isAlive (){
-  bool state = true;
+void MotorPlatform::isAlive (bool* motor_state){
   for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
-    state &= this->motors[motor]->isAlive();
+    motor_state[motor] = this->motors[motor]->isAlive();
   }
-  return state;
 }
-bool MotorPlatform::checkMotors (){
-  bool state = true;
+void MotorPlatform::checkMotors (bool* motor_state){
+  this->isAlive(motor_state);
   for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
-    state &= this->motors[motor]->checkMotor();
+    motor_state[motor] &= this->motors[motor]->checkMotor();
   }
-  return state && this->isAlive();
 }
 
 bool MotorPlatform::resetMotor (unsigned char motor){

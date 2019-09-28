@@ -89,6 +89,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -121,17 +132,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -224,6 +224,21 @@ az5_gennodejs: az5/CMakeFiles/az5_gennodejs.dir/rule
 az5_gennodejs/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f az5/CMakeFiles/az5_gennodejs.dir/build.make az5/CMakeFiles/az5_gennodejs.dir/build
 .PHONY : az5_gennodejs/fast
+
+# Convenience name for target.
+az5/CMakeFiles/az5_generate_messages_nodejs.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 az5/CMakeFiles/az5_generate_messages_nodejs.dir/rule
+.PHONY : az5/CMakeFiles/az5_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+az5_generate_messages_nodejs: az5/CMakeFiles/az5_generate_messages_nodejs.dir/rule
+
+.PHONY : az5_generate_messages_nodejs
+
+# fast build rule for target.
+az5_generate_messages_nodejs/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f az5/CMakeFiles/az5_generate_messages_nodejs.dir/build.make az5/CMakeFiles/az5_generate_messages_nodejs.dir/build
+.PHONY : az5_generate_messages_nodejs/fast
 
 # Convenience name for target.
 az5/CMakeFiles/odometry_sender.dir/rule:
@@ -496,6 +511,21 @@ move_base_msgs_generate_messages_py/fast:
 .PHONY : move_base_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state.dir/rule:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state.dir/rule
+.PHONY : az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state.dir/rule
+
+# Convenience name for target.
+_az5_generate_messages_check_deps_motor_state: az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state.dir/rule
+
+.PHONY : _az5_generate_messages_check_deps_motor_state
+
+# fast build rule for target.
+_az5_generate_messages_check_deps_motor_state/fast:
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state.dir/build.make az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state.dir/build
+.PHONY : _az5_generate_messages_check_deps_motor_state/fast
+
+# Convenience name for target.
 az5/CMakeFiles/move_base_gencfg.dir/rule:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 az5/CMakeFiles/move_base_gencfg.dir/rule
 .PHONY : az5/CMakeFiles/move_base_gencfg.dir/rule
@@ -599,21 +629,6 @@ az5_generate_messages_eus: az5/CMakeFiles/az5_generate_messages_eus.dir/rule
 az5_generate_messages_eus/fast:
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f az5/CMakeFiles/az5_generate_messages_eus.dir/build.make az5/CMakeFiles/az5_generate_messages_eus.dir/build
 .PHONY : az5_generate_messages_eus/fast
-
-# Convenience name for target.
-az5/CMakeFiles/az5_generate_messages_nodejs.dir/rule:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f CMakeFiles/Makefile2 az5/CMakeFiles/az5_generate_messages_nodejs.dir/rule
-.PHONY : az5/CMakeFiles/az5_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-az5_generate_messages_nodejs: az5/CMakeFiles/az5_generate_messages_nodejs.dir/rule
-
-.PHONY : az5_generate_messages_nodejs
-
-# fast build rule for target.
-az5_generate_messages_nodejs/fast:
-	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build && $(MAKE) -f az5/CMakeFiles/az5_generate_messages_nodejs.dir/build.make az5/CMakeFiles/az5_generate_messages_nodejs.dir/build
-.PHONY : az5_generate_messages_nodejs/fast
 
 src/laser_point_cloud/main.o: src/laser_point_cloud/main.cc.o
 
@@ -736,6 +751,8 @@ help:
 	@echo "... laser_point_cloud"
 	@echo "... az5_genpy"
 	@echo "... az5_gennodejs"
+	@echo "... test"
+	@echo "... az5_generate_messages_nodejs"
 	@echo "... odometry_sender"
 	@echo "... move_base_msgs_generate_messages_nodejs"
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
@@ -755,6 +772,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... dynamic_reconfigure_gencfg"
 	@echo "... move_base_msgs_generate_messages_py"
+	@echo "... _az5_generate_messages_check_deps_motor_state"
 	@echo "... move_base_gencfg"
 	@echo "... _az5_generate_messages_check_deps_bumpers"
 	@echo "... install/strip"
@@ -764,8 +782,6 @@ help:
 	@echo "... _az5_generate_messages_check_deps_simple_vel"
 	@echo "... az5_gencpp"
 	@echo "... az5_generate_messages_eus"
-	@echo "... test"
-	@echo "... az5_generate_messages_nodejs"
 	@echo "... src/laser_point_cloud/main.o"
 	@echo "... src/laser_point_cloud/main.i"
 	@echo "... src/laser_point_cloud/main.s"

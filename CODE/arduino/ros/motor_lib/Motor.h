@@ -7,7 +7,7 @@
 
 class Motor {
   public:
-    Motor (unsigned char direction);
+    Motor (unsigned char direction, double MP);
 
     void setBrake(int brake);
     void disable ();
@@ -20,15 +20,16 @@ class Motor {
     unsigned char getPK ();
     unsigned char getPI ();
     unsigned char getPD ();
-    void setTargetVel (int vel);
+    void setTargetVel (double vel);
     int getTargetVel ();
+    int lastTargetVel();
 
     long getEncoder();
     long getLastEncoder ();
     unsigned long getLastT ();
     void setEncoder(long encoder);
 
-    unsigned int getCurrentMilliamps();
+    int getCurrentMilliamps();
 
     bool isAlive();
     bool checkMotor ();
@@ -49,7 +50,7 @@ class Motor {
     bool checkVersion ();
     bool checkName ();
 
-    static const unsigned char VERSION = 4;
+    static const unsigned char VERSION = 7;
     static const unsigned char MAX_INDEX = 10;
 
     static const unsigned char ENCODER_READ = 0;
@@ -65,10 +66,14 @@ class Motor {
     static const unsigned char GET_PK = 10;
     static const unsigned char GET_PI = 11;
     static const unsigned char GET_PD = 12;
+    static const unsigned char GET_CS = 13;
 
     void sendChar (const unsigned char type, unsigned char msg);
     void sendInt (const unsigned char type, int msg);
     int readInt (const unsigned char to_read);
     unsigned char readChar (const unsigned char to_read);
     long readLong (const unsigned char to_read);
+
+    double MP;
+    int target_vel;
 };

@@ -7,9 +7,12 @@
 unsigned long last_time = time_m();
 long last_encoder = 0;
 int target_vel = 0;
-char P_K = 1;
-char P_I = 0;
-char P_D = 0;
+char C_P_K = 0;
+char C_P_I = 0;
+char C_P_D = 0;
+float P_K = 0;
+float P_I = 0;
+float P_D = 0;
 char update_cicle = 10;
 
 int acc_error = 0;
@@ -42,26 +45,29 @@ int getTargetVel () {
   return target_vel;
 }
 char getPK (){
-  return P_K;
+  return C_P_K;
 }
 char getPI (){
-  return P_I;
+  return C_P_I;
 }
 char getPD (){
-  return P_D;
+  return C_P_D;
 }
 
 void setTargetVel (int value) {
   target_vel = value;
 }
 void setPK (char value){
-  P_K = value;
+  P_K = value/10;
+  C_P_K = value;
 }
 void setPI (char value){
-  P_I = value;
+  P_K = value/10;
+  C_P_I = value;
 }
 void setPD (char value){
-  P_D = value;
+  P_K = value/10;
+  C_P_D = value;
 }
 
 unsigned long  time_u () {

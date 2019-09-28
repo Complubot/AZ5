@@ -7,3 +7,5 @@ bool isMotorActive();
 bool isMotorEnabled();
 
 void updatePWM (char value);
+
+int readCS ();

@@ -8,7 +8,7 @@
 
 class MotorPlatform {
   public:
-    MotorPlatform (double R=0.152, double LX=0.13725 , double LY=0.185, double MP=0.00004);
+    MotorPlatform (double R=0.076, double LX=0.13725 , double LY=0.185, double MP=0.00004);
     void setBrakes (int brake);
     void setBrakes (int brake1, int brake2, int brake3, int brake4);
     void disable ();
@@ -21,26 +21,27 @@ class MotorPlatform {
     bool setPD (unsigned char P_D);
     bool setPD (unsigned char P_D1, unsigned char P_D2, unsigned char P_D3, unsigned char P_D4);
     
-    bool setTargetVel (int direction);
-    bool setTargetVel (int x, int y, int theta);
-    bool setTargetVel (int vel1, int vel2, int vel3, int vel4);
+    void setTargetVel (bool* motor_state, double direction);
+    void setTargetVel (bool* motor_state, double x, double y, double theta);
+    void setTargetVel (bool* motor_state, double vel1, double vel2, double vel3, double vel4);
 
     void getEncoders(double *encoders);
     void getMotorVel(double *encoders, double *vel);
     void getPlatformVel(double *encoders, double *wheel_vel, double *platform_vel);
-    bool resetMotors();
+    void resetMotors(bool *motor_state);
 
-    unsigned int* getCurrentMilliamps();
+    void getCurrentMilliamps(int *amps);
 
-    bool isAlive ();
-    bool checkMotors ();
+    void isAlive (bool* motor_state);
+    void checkMotors (bool* motor_state);
 
     static const unsigned char FIRST_MOTOR = 1;
     static const unsigned char MOTORS = 4;
     static const unsigned char LAST_MOTOR = MotorPlatform::FIRST_MOTOR+MotorPlatform::MOTORS;
+    Motor* motors [MotorPlatform::MOTORS];
   private:
     bool resetMotor (unsigned char encoder);
-    Motor* motors [MotorPlatform::MOTORS];
+    //Motor* motors [MotorPlatform::MOTORS];
     double R;
     double L;
     double MP;

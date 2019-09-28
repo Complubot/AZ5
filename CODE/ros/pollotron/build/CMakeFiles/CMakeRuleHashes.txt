@@ -1,5 +1,6 @@
 # Hashes of file build rules.
 c32a8f3c8bc95bbfa22b2afd8e236b84 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/bumpers.h
+89261a7ee4f67c89117b01c34c650456 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/motor_state.h
 7a64f8538dad4b9acf1565c608f390ea /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/simple_vel.h
 f01fbce7b9db0a6c6eb8aafd611aaf0a /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/ultrasounds.h
 58772b08f0c1c66e967698e467645b02 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/rosserial_arduino/Adc.h
@@ -13,6 +14,7 @@ fb060ccd1074abc4382baf066b29be21 /home/complubot/Documents/POLLOTRON/CODE/ros/po
 9fffafcb91ca6f9104109366c41b0572 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/rosserial_msgs/TopicInfo.h
 b749ef6b53e98b7584aac19c15a63968 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/__init__.py
 a7b5223616efad9da2809409537a9838 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_bumpers.py
+11ee64bf07135cb1c593b6dc8e65e4ac /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_motor_state.py
 93805c06c6be458c92d5b4f4cd1138f5 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_vel.py
 065f35c2700754472bc27d91f462075f /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_ultrasounds.py
 1b39fee49501c9f54ecfedfc3365f657 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/rosserial_arduino/msg/_Adc.py
@@ -31,6 +33,7 @@ ecba5394e584e807f86bcde3a308cb50 /home/complubot/Documents/POLLOTRON/CODE/ros/po
 5031285efb48ced4fd19c05a388048eb /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestServiceInfo.py
 ba3601d145c48a4ef355a056a4c86b08 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/__init__.py
 fc104392d1127bfb9d5538c379e75f10 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/bumpers.lisp
+e2e6fc350de4bec8214e5e1b6ddc4b23 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/motor_state.lisp
 c0e1cbc718f07407e2d937df2c5cace9 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/simple_vel.lisp
 287812adcb658b5154535aa92821d005 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/ultrasounds.lisp
 04d5b220d9aca726174d2efab317651f /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/rosserial_arduino/msg/Adc.lisp
@@ -43,6 +46,7 @@ cd079d1329617e2d596e5fd7ba1ee6c8 /home/complubot/Documents/POLLOTRON/CODE/ros/po
 fe05ace2999f9f369b6d13f0c2654984 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/rosserial_msgs/srv/RequestParam.lisp
 92b9f621813c5c33647e4ed3ff6f2de1 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/rosserial_msgs/srv/RequestServiceInfo.lisp
 9feda18dd9f17dac490e084f96176e86 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/az5/msg/bumpers.js
+81a9aa67bfaa5d7c5d41989b0b62eb1d /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/az5/msg/motor_state.js
 a66371d6943a94bd9893466e9f51bb31 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/az5/msg/simple_vel.js
 01c79971c7050943090473aa6c15babd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/az5/msg/ultrasounds.js
 19356a65718ac4d23c49f3676f83d1f1 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/rosserial_arduino/msg/Adc.js
@@ -56,6 +60,7 @@ e1dcbb7eb8b0822e32eacdaa83fd074d /home/complubot/Documents/POLLOTRON/CODE/ros/po
 f83e11a2f08148facc052bddbb95079a /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/rosserial_msgs/srv/RequestServiceInfo.js
 ea639b05034ee28f821ebfdaf64bfa2a /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/manifest.l
 848c55a9129bc294aa4b60d502853a61 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/bumpers.l
+d6f1aaa79e097108bfbb67f03cf350bc /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/motor_state.l
 9e2fb3f8515cf4901bf456124a155105 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_vel.l
 db1c753300e58914022f8fd634065ee9 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/ultrasounds.l
 3fd4218a09cfbdc7f7f6f9b31b92aaab /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/rosserial_arduino/manifest.l
@@ -72,6 +77,7 @@ b0c40a76139af7cd873389c4de6510de /home/complubot/Documents/POLLOTRON/CODE/ros/po
 8279d106ebcff2020ad09dcfead7d8c5 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/rosserial_msgs/srv/RequestServiceInfo.l
 813421cc01b958e6b0b82570e57b81ee CMakeFiles/clean_test_results
 dab4105b0db87a70a281390c06ca321e az5/CMakeFiles/_az5_generate_messages_check_deps_bumpers
+caba0396b78f791580284d62cc312843 az5/CMakeFiles/_az5_generate_messages_check_deps_motor_state
 ce1de95f1c6bf622f934eaef553e91ef az5/CMakeFiles/_az5_generate_messages_check_deps_simple_vel
 99f932bbaa7650a976cfe549fd3586f5 az5/CMakeFiles/_az5_generate_messages_check_deps_ultrasounds
 0c7978c1febb341c831ed8aa785af535 az5/CMakeFiles/az5_generate_messages_cpp

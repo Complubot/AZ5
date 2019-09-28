@@ -41,6 +41,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg"
     )
 endif()
 
@@ -98,6 +99,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/pollotron"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/robot_monitor"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/laser_filter"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/motor_replayer"
     )
 endif()
 

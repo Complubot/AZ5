@@ -53,27 +53,34 @@ CMAKE_BINARY_DIR = /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build
 # Include the progress variables for this target.
 include az5/CMakeFiles/az5_generate_messages_lisp.dir/progress.make
 
+az5/CMakeFiles/az5_generate_messages_lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/motor_state.lisp
 az5/CMakeFiles/az5_generate_messages_lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/ultrasounds.lisp
 az5/CMakeFiles/az5_generate_messages_lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/simple_vel.lisp
 az5/CMakeFiles/az5_generate_messages_lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/bumpers.lisp
 
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/motor_state.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/motor_state.lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from az5/motor_state.msg"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg
+
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/ultrasounds.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/ultrasounds.lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from az5/ultrasounds.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from az5/ultrasounds.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/simple_vel.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/simple_vel.lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from az5/simple_vel.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from az5/simple_vel.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/bumpers.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/bumpers.lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from az5/bumpers.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from az5/bumpers.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg
 
 az5_generate_messages_lisp: az5/CMakeFiles/az5_generate_messages_lisp
+az5_generate_messages_lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/motor_state.lisp
 az5_generate_messages_lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/ultrasounds.lisp
 az5_generate_messages_lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/simple_vel.lisp
 az5_generate_messages_lisp: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/common-lisp/ros/az5/msg/bumpers.lisp
