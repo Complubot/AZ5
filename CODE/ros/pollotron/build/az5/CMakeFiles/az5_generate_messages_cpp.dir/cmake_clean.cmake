@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/az5_generate_messages_cpp"
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/simple_odom.h"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/motor_state.h"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/ultrasounds.h"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/simple_vel.h"

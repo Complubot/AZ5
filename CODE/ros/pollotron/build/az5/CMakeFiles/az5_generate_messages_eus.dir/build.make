@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build
 # Include the progress variables for this target.
 include az5/CMakeFiles/az5_generate_messages_eus.dir/progress.make
 
+az5/CMakeFiles/az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_odom.l
 az5/CMakeFiles/az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/motor_state.l
 az5/CMakeFiles/az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/ultrasounds.l
 az5/CMakeFiles/az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_vel.l
@@ -60,31 +61,37 @@ az5/CMakeFiles/az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CO
 az5/CMakeFiles/az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/manifest.l
 
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_odom.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_odom.l: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_odom.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from az5/simple_odom.msg"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_odom.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg
+
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/motor_state.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/motor_state.l: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from az5/motor_state.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from az5/motor_state.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/ultrasounds.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/ultrasounds.l: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from az5/ultrasounds.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from az5/ultrasounds.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_vel.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_vel.l: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from az5/simple_vel.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from az5/simple_vel.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/bumpers.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/bumpers.l: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from az5/bumpers.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from az5/bumpers.msg"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for az5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp manifest code for az5"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5 az5
 
 az5_generate_messages_eus: az5/CMakeFiles/az5_generate_messages_eus
+az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_odom.l
 az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/motor_state.l
 az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/ultrasounds.l
 az5_generate_messages_eus: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/roseus/ros/az5/msg/simple_vel.l

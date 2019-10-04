@@ -25,8 +25,6 @@ class Motor {
     int lastTargetVel();
 
     long getEncoder();
-    long getLastEncoder ();
-    unsigned long getLastT ();
     void setEncoder(long encoder);
 
     int getCurrentMilliamps();
@@ -40,8 +38,6 @@ class Motor {
     static const int STOP = 0;
   private:
     unsigned char direction;
-    long last_encoder;
-    unsigned long last_encoder_t;
     unsigned char P_K;
     unsigned char P_I;
     unsigned char P_D;

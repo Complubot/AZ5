@@ -53,15 +53,12 @@ void motorSetup () {
 }
 
 void updatePWM (char value) {
-  if (value > 1) {
-    forward ();
+  if (value > 0) {
+    forward();
     OCR0B = value;
-  } else if (value < -1) {
-    backwards ();
-    OCR0B = -value;  
   } else {
-    digitalWrite (INA, HIGH);
-    digitalWrite (INB, HIGH);
+    backwards();
+    OCR0B = -value;  
   }
 }
 

@@ -4,8 +4,6 @@
 Motor::Motor (unsigned char direction, double MP){
   this->direction = direction;
   this->target_vel = 0;
-  this->last_encoder = 0;
-  this->last_encoder_t = millis();
   this->P_K = 0;
   this->P_I = 0;
   this->P_D = 0;
@@ -56,16 +54,8 @@ int Motor::lastTargetVel(){
   return this->target_vel;
 }
 
-long Motor::getLastEncoder (){
-  return this->last_encoder;
-}
-unsigned long Motor::getLastT (){
-  return this->last_encoder_t;
-}
 long Motor::getEncoder(){
-  this->last_encoder = this->readLong(Motor::ENCODER_READ);
-  this->last_encoder_t = millis();
-  return this->last_encoder;
+  return this->readLong(Motor::ENCODER_READ);
 }
 void Motor::setEncoder(long encoder){
   //POR IMPLEMENTAR
@@ -82,7 +72,6 @@ bool Motor::checkMotor (){
   return this->isAlive() && this->checkName();
 }
 void Motor::reset (){
-  this->setEncoder(this->last_encoder);
   this->setPK(this->P_K);
   this->setPI(this->P_I);
   this->setPD(this->P_D);

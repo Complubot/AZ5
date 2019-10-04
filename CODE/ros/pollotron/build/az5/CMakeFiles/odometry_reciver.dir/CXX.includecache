@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include/az5/simple_odom.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/src/odometry_reciver/main.cc
 ros/ros.h
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/src/odometry_reciver/ros/ros.h
@@ -16,6 +32,8 @@ tf/transform_broadcaster.h
 sensor_msgs/JointState.h
 -
 nav_msgs/Odometry.h
+-
+az5/simple_odom.h
 -
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h

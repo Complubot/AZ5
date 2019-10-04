@@ -1,10 +1,16 @@
 
 #include "MotorPlatform.h"
 
+bool isValidVel (const double &vel){
+  return !isnan(vel) && abs(vel)<10;
+}
+
 MotorPlatform::MotorPlatform (double R, double LX, double LY, double MP) {
   this->R = R;
   this->L = LX+LY;
   this->MP = MP;
+  this->current_time = millis();
+  this->last_time = 0;
   Wire.begin();
   for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
     this->motors[motor] = new Motor(MotorPlatform::FIRST_MOTOR+motor, this->MP);
@@ -86,10 +92,10 @@ void MotorPlatform::setTargetVel (bool* motor_state, double vel){
 }
 void MotorPlatform::setTargetVel (bool* motor_state, double x, double y, double theta){
   return this->setTargetVel (motor_state, 
-                            ( x-y+this->L*theta)/this->R,
-                            (-x-y+this->L*theta)/this->R,
-                            (-x+y+this->L*theta)/this->R,
-                            ( x+y+this->L*theta)/this->R);
+                            ( x-y-this->L*theta)/this->R,
+                            (-x-y-this->L*theta)/this->R,
+                            (-x+y-this->L*theta)/this->R,
+                            ( x+y-this->L*theta)/this->R);
 }
 void MotorPlatform::setTargetVel (bool* motor_state, double vel1, double vel2, double vel3, double vel4){
   this->motors[0]->setTargetVel(vel1);
@@ -107,25 +113,45 @@ void MotorPlatform::getEncoders(double *encoders){
     encoders[motor] = this->motors[motor]->getEncoder()*this->MP;
   }
 }
-void MotorPlatform::getPlatformVel(double *encoders, double *wheel_vel, double *platform_vel) {
-  double current_vel [MotorPlatform::MOTORS];
-  getMotorVel (encoders, wheel_vel);
-  platform_vel[0] = ( wheel_vel[0]-wheel_vel[1]-wheel_vel[2]+wheel_vel[3])*this->R/4;
-  platform_vel[1] = (-wheel_vel[0]-wheel_vel[1]+wheel_vel[2]+wheel_vel[3])*this->R/4;
-  platform_vel[2] = ( wheel_vel[0]+wheel_vel[1]+wheel_vel[2]+wheel_vel[3])*this->R/(4*this->L);
+void MotorPlatform::getOdometry(double *platform_vel, double *position){
+  this->current_time = millis();
+  this->time_increment = (this->current_time-this->last_time)/1000;
+  this->last_time = millis();
+  getPlatformVel(platform_vel);
+  if (abs(this->time_increment) > 100){//Time between [2, 100) means motors are off
+    for (char i = 0; i < 3; ++i){
+      position[i] = this->pos[i];
+    }
+  }else{
+    for (char i = 0; i < 3; ++i){
+      this->pos[i] += (isnan(platform_vel[i])?0:platform_vel[i]*this->time_increment);
+      position[i] = this->pos[i];
+    }
+  }
 }
-void MotorPlatform::getMotorVel(double *encoders, double *vel) {
-  double last_encoder[MotorPlatform::MOTORS];
-  unsigned long last_t[MotorPlatform::MOTORS];
-  for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
-    last_encoder[motor] = this->motors[motor]->getLastEncoder() * this->MP;
-  }
-  for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
-    last_t[motor] = millis() - this->motors[motor]->getLastT();
-  }
+
+void MotorPlatform::getPlatformVel(double *platform_vel) {
+  double wheel_vel[MotorPlatform::MOTORS];
+  getMotorVel (wheel_vel);
+  double pvx = ( wheel_vel[0]-wheel_vel[1]-wheel_vel[2]+wheel_vel[3])*this->R/4;
+  double pvy = (-wheel_vel[0]-wheel_vel[1]+wheel_vel[2]+wheel_vel[3])*this->R/4;
+  double pvz = ( wheel_vel[0]+wheel_vel[1]+wheel_vel[2]+wheel_vel[3])*this->R/(4*this->L);
+  platform_vel[0] = (isValidVel(pvx)?pvx:0);
+  platform_vel[1] = (isValidVel(pvy)?pvy:0);
+  platform_vel[2] = (isValidVel(pvz)?pvz:0);
+}
+void MotorPlatform::getMotorVel(double *wheel_vel) {
+  double encoders[MotorPlatform::MOTORS];
   this->getEncoders(encoders);
-  for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
-    vel[motor] = (encoders[motor]-last_encoder[motor])/(last_t[motor]/1000);
+  if (abs(this->time_increment) > 100){//Time between [2, 100) means motors are off
+    for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
+      wheel_vel[motor] = 0;
+    }
+  }else{
+    for (unsigned char motor = 0; motor < MotorPlatform::MOTORS; ++motor){
+      wheel_vel[motor] = (encoders[motor]-this->last_encoders[motor])/(this->time_increment);
+      this->last_encoders[motor] = encoders[motor];
+    }
   }
 }
 

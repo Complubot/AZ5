@@ -42,6 +42,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_odom.msg"
     )
 endif()
 

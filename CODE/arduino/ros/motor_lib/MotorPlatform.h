@@ -25,9 +25,7 @@ class MotorPlatform {
     void setTargetVel (bool* motor_state, double x, double y, double theta);
     void setTargetVel (bool* motor_state, double vel1, double vel2, double vel3, double vel4);
 
-    void getEncoders(double *encoders);
-    void getMotorVel(double *encoders, double *vel);
-    void getPlatformVel(double *encoders, double *wheel_vel, double *platform_vel);
+    void getOdometry(double *platform_vel, double *position);
     void resetMotors(bool *motor_state);
 
     void getCurrentMilliamps(int *amps);
@@ -38,11 +36,21 @@ class MotorPlatform {
     static const unsigned char FIRST_MOTOR = 1;
     static const unsigned char MOTORS = 4;
     static const unsigned char LAST_MOTOR = MotorPlatform::FIRST_MOTOR+MotorPlatform::MOTORS;
-    Motor* motors [MotorPlatform::MOTORS];
   private:
     bool resetMotor (unsigned char encoder);
-    //Motor* motors [MotorPlatform::MOTORS];
+    void getEncoders(double *encoders);
+    void getMotorVel(double *wheel_vel);
+    void getPlatformVel(double *platform_vel);
+
+    Motor* motors [MotorPlatform::MOTORS];
     double R;
     double L;
     double MP;
+
+    double pos[3];
+
+    double last_encoders [MotorPlatform::MOTORS];
+    unsigned long current_time;
+    unsigned long last_time;
+    unsigned long time_increment;
 };

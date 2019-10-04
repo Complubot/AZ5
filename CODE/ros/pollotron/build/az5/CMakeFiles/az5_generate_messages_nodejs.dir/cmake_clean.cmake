@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/az5_generate_messages_nodejs"
+  "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/az5/msg/simple_odom.js"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/az5/msg/motor_state.js"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/az5/msg/ultrasounds.js"
   "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/share/gennodejs/ros/az5/msg/simple_vel.js"

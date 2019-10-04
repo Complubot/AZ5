@@ -21,6 +21,7 @@ add_message_files(
   simple_vel.msg
   ultrasounds.msg
   motor_state.msg
+  simple_odom.msg
 )
 
 generate_messages(

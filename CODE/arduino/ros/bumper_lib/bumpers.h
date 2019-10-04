@@ -3,10 +3,10 @@
 #include <ros.h>
 #include <az5/bumpers.h>
 
-#define LEFT_BUPMER 18
-#define RIGHT_BUPMER 20
-#define FRONT_BUPMER 21
-#define BACK_BUPMER 19
+#define LEFT_BUPMER 2
+#define RIGHT_BUPMER 19
+#define FRONT_BUPMER 18
+#define BACK_BUPMER 3
 
 az5::bumpers bumpers;
 ros::Publisher bumpers_pub("bumpers", &bumpers);

@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build
 # Include the progress variables for this target.
 include az5/CMakeFiles/az5_generate_messages_py.dir/progress.make
 
+az5/CMakeFiles/az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_odom.py
 az5/CMakeFiles/az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_motor_state.py
 az5/CMakeFiles/az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_ultrasounds.py
 az5/CMakeFiles/az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_vel.py
@@ -60,35 +61,42 @@ az5/CMakeFiles/az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/COD
 az5/CMakeFiles/az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/__init__.py
 
 
+/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_odom.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_odom.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_odom.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG az5/simple_odom"
+	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_odom.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg
+
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_motor_state.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_motor_state.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG az5/motor_state"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG az5/motor_state"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/motor_state.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_ultrasounds.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_ultrasounds.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG az5/ultrasounds"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG az5/ultrasounds"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/ultrasounds.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_vel.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_vel.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG az5/simple_vel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG az5/simple_vel"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/simple_vel.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_bumpers.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_bumpers.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG az5/bumpers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG az5/bumpers"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg/bumpers.msg -Iaz5:/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/msg -p az5 -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg
 
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/__init__.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_odom.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/__init__.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_motor_state.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/__init__.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_ultrasounds.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/__init__.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_vel.py
 /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/__init__.py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_bumpers.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python msg __init__.py for az5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python msg __init__.py for az5"
 	cd /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/build/az5 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg --initpy
 
 az5_generate_messages_py: az5/CMakeFiles/az5_generate_messages_py
+az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_odom.py
 az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_motor_state.py
 az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_ultrasounds.py
 az5_generate_messages_py: /home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/lib/python2.7/dist-packages/az5/msg/_simple_vel.py

@@ -29,7 +29,7 @@ void updatePID() {
     int error_increment = error - last_error;
     acc_error += error;
     int i_pwm_vel = error*P_K+acc_error*P_I+error_increment*P_D;
-    char c_pwm_vel = constrain(i_pwm_vel, -128, 128);
+    char c_pwm_vel = constrain(i_pwm_vel, -128, 127);
     updatePWM(c_pwm_vel);
     last_error = error;
     last_encoder = current_encoder; 
@@ -38,7 +38,8 @@ void updatePID() {
 }
 
 void updateSimple(){
-  updatePWM(target_vel);
+  char c_pwm_vel = constrain(target_vel, -128, 127);
+  updatePWM(c_pwm_vel);
 }
 
 int getTargetVel () {
