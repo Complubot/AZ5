@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/devel/include",
+                "/home/complubot/Documents/POLLOTRON/CODE/ros/intelrealsense/devel/include",
+                "/home/complubot/Documents/POLLOTRON/CODE/ros/tf_tutorial/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/include",
+                "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5_model/include",
+                "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/rosserial/rosserial_server/include",
+                "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/rosserial/rosserial_test/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

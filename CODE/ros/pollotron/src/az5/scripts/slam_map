@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+import sys
+from os.path import dirname
+sys.path.append(dirname('/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/src/slam_map'))
+from slam_map import main
+    
+if __name__ == '__main__':
+    main.main()

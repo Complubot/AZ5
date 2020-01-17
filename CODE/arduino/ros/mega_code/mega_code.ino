@@ -20,8 +20,12 @@ bool motor_state_bool [MotorPlatform::MOTORS];
 double x = 0;
 double y = 0;
 double z = 0;
-#define UPDATE_RATE 50
-unsigned long last_time = millis();
+#define ODOM_UPDATE_RATE 1000
+#define VEL_UPDATE_RATE 2000
+#define CUT_VEL_UPDATE_RATE 100
+unsigned long last_odom_t = millis();
+unsigned long last_vel_t = millis();
+bool force_vel_update = false;
 
 #if ROS//---------------------------------------------------------------------------------
 ros::NodeHandle nodeHandle;
@@ -35,6 +39,7 @@ void onVelocityMsg(const az5::simple_vel& target_vel){
   x = target_vel.x;
   y = target_vel.y;
   z = target_vel.theta;
+  force_vel_update = true;
 }
 
 void setupRos () {
@@ -56,33 +61,34 @@ void setup(){
   setupBumpers();
   #else
   Serial.begin(115200);
-  x = 0;
-  y = 0;
-  z = 0;
+  x = 0; y = 0; z = 0;
   #endif//----------------------------------------------------------------------------------
   motors.setTargetVel(motor_state_bool,0,0,0);
 }
 
 void loop(){
-  static long i = 0;
-  motors.getOdometry (vel, pos);
-  motors.setTargetVel(motor_state_bool, x,y,z);
   //motors.checkMotors (motor_state_bool);
   #if ROS//---------------------------------------------------------------------------------
-  if ((millis() - last_time) > UPDATE_RATE){
-    last_time = millis();
+  if ((millis() - last_odom_t) > ODOM_UPDATE_RATE){
+    last_odom_t = millis();
+    motors.getOdometry (vel, pos);
     publishBumpers();
-    ++i;
-    odom.x_vel = vel[0]+i;odom.y_vel = vel[1]+i;odom.z_vel = vel[2]+i;
-    odom.x_pos = pos[0]+i;odom.y_pos = pos[1]+i;odom.z_pos = pos[2]+i;
-    //odom.x_vel = odom.y_vel = odom.z_vel = odom.x_pos = odom.y_pos = odom.z_pos = ++i;   
+    odom.x_vel = vel[0];odom.y_vel = vel[1];odom.z_vel = vel[2];
+    odom.x_pos = pos[0];odom.y_pos = pos[1];odom.z_pos = pos[2]; 
     odom_pub.publish(&odom);
     motor_state.M1 = motor_state_bool[0];motor_state.M2 = motor_state_bool[1];
     motor_state.M3 = motor_state_bool[2];motor_state.M4 = motor_state_bool[3];
     motor_state_pub.publish(&motor_state);
   }
+  if ((((millis() - last_vel_t) > VEL_UPDATE_RATE)||force_vel_update)&&((millis() - last_vel_t) > CUT_VEL_UPDATE_RATE)){
+    last_vel_t = millis();
+    force_vel_update = false;
+    motors.setTargetVel(motor_state_bool, x,y,z);
+  }
   nodeHandle.spinOnce();
   #else//----------------------------------------------------------------------------------
+  motors.getOdometry (vel, pos);
+  motors.setTargetVel(motor_state_bool,x,y,z);
   Serial.println("Vel => X: "+String(vel[0],DEC)+" Y: "+String(vel[1],DEC)+" Z: "+String(vel[2],DEC));
   Serial.println("Pos => X: "+String(pos[0],DEC)+" Y: "+String(pos[1],DEC)+" Z: "+String(pos[2],DEC));
   Serial.println("--------------------------------------------------------------------------");

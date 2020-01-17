@@ -10,7 +10,6 @@
 
 ros::Publisher odom_pub;
 ros::Time  current_time;
-ros::Time  last_time;
 
 ros::Time  previous_time;
 ros::Publisher joint_pub;
@@ -25,7 +24,6 @@ void onOdom (const az5::simple_odom::ConstPtr& msg){
   odom_trans.header.stamp = current_time;
   odom_trans.header.frame_id = "odom";
   odom_trans.child_frame_id = "base_link";
-
   odom_trans.transform.translation.x = msg->x_pos;
   odom_trans.transform.translation.y = msg->y_pos;
   odom_trans.transform.translation.z = 0;
@@ -49,26 +47,20 @@ void onOdom (const az5::simple_odom::ConstPtr& msg){
   nav_msgs::Odometry odom;
   odom.header.stamp = current_time;
   odom.header.frame_id = "odom";
-
   odom.pose.pose.position.x = msg->x_pos;
   odom.pose.pose.position.y = msg->y_pos;
-  odom.pose.pose.position.z = 0;
   odom.pose.pose.orientation = odom_quat;
-
   odom.child_frame_id = "base_link";
   odom.twist.twist.linear.x = msg->x_vel;
   odom.twist.twist.linear.y = msg->y_vel;
   odom.twist.twist.angular.z = msg->z_vel;
-
   odom_pub.publish(odom);
-  last_time = current_time;
 }
 
 int main (int argc, char ** argv) {
   ros::init(argc, argv, "odom_reciver");
   ros::NodeHandle n;
   current_time = ros::Time::now();
-  last_time = ros::Time::now();
   previous_time = ros::Time::now();
   odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
   joint_pub = n.advertise<sensor_msgs::JointState>("joint_states", 1);

@@ -45,6 +45,8 @@ install(PROGRAMS
   scripts/robot_monitor
   scripts/laser_filter
   scripts/motor_replayer
+  scripts/slam_map
+  scripts/local_planner
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

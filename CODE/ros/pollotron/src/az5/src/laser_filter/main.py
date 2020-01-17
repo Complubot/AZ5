@@ -33,7 +33,10 @@ def callback_scan(data, pub):
       filtered_scan.append(DisperseFilter(0,4))
 
   for i in range(mast_start_index,mast_end_index):
-    filtered_scan[i-mast_start_index].addValue(data.ranges[i])
+    if data.ranges[i] > scan.range_max:
+      filtered_scan[i-mast_start_index].addValue(scan.range_max)
+    else:
+      filtered_scan[i-mast_start_index].addValue(data.ranges[i])
     values.append(filtered_scan[i-mast_start_index].getValue())
     scan.ranges = values
   pub.publish(scan)

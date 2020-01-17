@@ -38,9 +38,21 @@ motor_replayer = generate_distutils_setup(
     package_dir={'': 'src'}
 )
 
+slam_map = generate_distutils_setup(
+    packages=['slam_map'],
+    package_dir={'': 'src'}
+)
+
+local_planner = generate_distutils_setup(
+    packages=['local_planner'],
+    package_dir={'': 'src'}
+)
+
 setup(**joystick_reader)
 setup(**us_filter)
 setup(**pollotron)
 setup(**robot_monitor)
 setup(**laser_filter)
 setup(**motor_replayer)
+setup(**slam_map)
+setup(**local_planner)
