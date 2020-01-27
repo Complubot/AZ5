@@ -3,3 +3,5 @@
 *.pb
 *.prototxt
 *.caffemodel
+*.dat
+*.icloud
