@@ -47,6 +47,8 @@ install(PROGRAMS
   scripts/motor_replayer
   scripts/slam_map
   scripts/local_planner
+  scripts/global_planner
+  scripts/person_tracker
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

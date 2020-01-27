@@ -5,8 +5,8 @@ IP_LOCAL_MACHINE = "172.19.0.1";
 rosinit(URI,"NodeHost",IP_LOCAL_MACHINE);
 d = rosdevice('172.19.0.1','complubot','C0mplubot');
 
-maxLidarRange = 8;
-mapResolution = 10;
+maxLidarRange = 12;
+mapResolution = 20;
 slamAlg = robotics.LidarSLAM(mapResolution, maxLidarRange);
 slamAlg.LoopClosureThreshold = 200;
 slamAlg.LoopClosureSearchRadius = 8;

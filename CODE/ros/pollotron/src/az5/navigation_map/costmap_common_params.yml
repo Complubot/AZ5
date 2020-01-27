@@ -12,7 +12,7 @@ observation_sources: rplidar
 rplidar: 
   - sensor_frame: rplidar
   - data_type: LaserScan
-  - topic: /scan
+  - topic: /laser_filtered
   - marking: true
   - clearing: true
 

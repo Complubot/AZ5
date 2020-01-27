@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/devel
+
+Name: realsense_ros_person
+Description: Description of realsense_ros_person
+Version: 0.8.4
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/devel/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/devel/lib -lrealsense_ros_person
+Requires: nodelet roscpp std_msgs image_transport sensor_msgs message_filters roslib rostime cv_bridge roscpp_serialization rospy

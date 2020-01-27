@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/devel
+
+Name: realsense_ros_object
+Description: Description of realsense_ros_object
+Version: 0.8.4
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/devel/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/devel/lib -lrealsense_ros_object
+Requires: message_runtime std_msgs sensor_msgs geometry_msgs

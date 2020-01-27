@@ -1,7 +1,7 @@
 
 <launch>
-  <arg name="port_uno" value="/dev/ttyACM0"/>
-  <arg name="port_mega" value="/dev/ttyACM1"/>
+  <arg name="port_uno" value="/dev/ttyACM1"/>
+  <arg name="port_mega" value="/dev/ttyACM0"/>
 
   <param name="robot_description" command="xacro --inorder $(find az5_model)/urdf/robot.urdf"/>
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
@@ -12,8 +12,20 @@
   <include file="/home/complubot/Documents/POLLOTRON/CODE/ros/rplidar/src/rplidar_ros/launch/rplidar.launch" />
   <node pkg="az5" name="laser_filter" type="laser_filter" output="screen" respawn="true" />
 
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find az5)/maps/slam_map.yaml"/>
-  
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find az5)/maps/slam_map1.yaml"/>
+
+  <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" name="laser_scan_matcher_node" output="screen">
+    <param name="fixed_frame" value = "odom"/>                                                                 
+    <param name="use_odom" value="false"/>
+    <param name="use_imu" value="false"/>                                                                      
+    <param name="publish_odom" value = "true"/>                                                                
+    <param name="max_iterations" value="10"/>
+    <param name="kf_dist_linear" value="0.1"/>
+    <param name="kf_dist_angular" value="0.12"/>
+    <param name="publish_pose_stamped" value="true"/>                                                              
+  </node>
+
+
   <node pkg="amcl" type="amcl" name="amcl">
     <!-- Publish scans from best pose at a max of 10 Hz -->
     <param name="odom_model_type" value="omni"/>
@@ -21,8 +33,8 @@
     <param name="transform_tolerance" value="0.2" />
     <param name="gui_publish_rate" value="10.0"/>
     <param name="laser_max_beams" value="30"/>
-    <param name="min_particles" value="500"/>
-    <param name="max_particles" value="5000"/>
+    <param name="min_particles" value="1000"/>
+    <param name="max_particles" value="10000"/>
     <param name="kld_err" value="0.05"/>
     <param name="kld_z" value="0.99"/>
     <param name="odom_alpha1" value="0.2"/>
@@ -56,4 +68,5 @@
     <rosparam file="$(find az5)/navigation_map/global_costmap_params.yml" command="load" /> 
     <rosparam file="$(find az5)/navigation_map/base_local_planner_params.yml" command="load" />
   </node>
+
 </launch>

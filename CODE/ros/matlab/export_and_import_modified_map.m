@@ -3,7 +3,7 @@ clear all
 close all
 
 % GUARDAR EL MAP
-load /home/complubot/slam_map.mat
+load slam_map1.mat
 
 fig = figure(1);
 show(map)
@@ -14,7 +14,7 @@ ylabel('')
 xlabel('')
 
 
-imwrite((1.-map.occupancyMatrix),'map_original.png')
+imwrite((1.-map.occupancyMatrix),'slam_map1.png')
 
 
 axis('on')
@@ -22,7 +22,7 @@ axis('on')
 
 %Editar con un editor de imagen (GIMP...) sin cambiar la resolucion, ni el
 %tama�o
-
+%%
 image = imread('map_borrado.png');
 
 % Unknown areas (gray) should be removed and treated as free space. Create

@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/install
+
+Name: realsense_ros_camera
+Description: Description of realsense_ros_camera
+Version: 0.8.4
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/install/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/install/lib -lrealsense_ros_camera
+Requires: message_runtime roscpp sensor_msgs std_msgs nodelet cv_bridge image_transport

@@ -44,7 +44,7 @@ unsigned char Motor::getPD (){
   return this->readChar(Motor::GET_PD);
 }
 void Motor::setTargetVel (double vel) {
-  this->target_vel = constrain(vel, -1, 1)/this->MP;
+  this->target_vel = constrain(vel, -1, 1)*this->MP;
   return this->sendInt(Motor::SET_VEL, this->target_vel);
 }
 int Motor::getTargetVel (){

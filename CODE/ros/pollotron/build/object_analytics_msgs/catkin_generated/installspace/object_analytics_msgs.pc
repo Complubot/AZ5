@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install
+
+Name: object_analytics_msgs
+Description: Description of object_analytics_msgs
+Version: 0.3.0
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/install/lib 
+Requires: message_generation std_msgs sensor_msgs geometry_msgs

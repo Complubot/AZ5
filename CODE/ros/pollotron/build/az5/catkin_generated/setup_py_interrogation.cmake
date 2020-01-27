@@ -1,6 +1,6 @@
 set(az5_SETUP_PY_VERSION "0.0.0")
 set(az5_SETUP_PY_SCRIPTS "")
-set(az5_SETUP_PY_PACKAGES "local_planner")
-set(az5_SETUP_PY_PACKAGE_DIRS "src/local_planner")
+set(az5_SETUP_PY_PACKAGES "person_tracker")
+set(az5_SETUP_PY_PACKAGE_DIRS "src/person_tracker")
 set(az5_SETUP_PY_MODULES "")
 set(az5_SETUP_PY_MODULE_DIRS "")

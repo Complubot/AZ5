@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+import sys
+from os.path import dirname
+sys.path.append(dirname('/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/src/motor_replayer'))
+from motor_replayer import main
+    
+if __name__ == '__main__':
+    main.main()

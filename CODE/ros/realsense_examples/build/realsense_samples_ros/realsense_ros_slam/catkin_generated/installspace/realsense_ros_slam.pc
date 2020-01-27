@@ -1,0 +1,8 @@
+prefix=/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/install
+
+Name: realsense_ros_slam
+Description: Description of realsense_ros_slam
+Version: 0.8.4
+Cflags: -I/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/install/include
+Libs: -L/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/install/lib -lrealsense_ros_slam
+Requires: nodelet roscpp rospy sensor_msgs std_msgs geometry_msgs message_runtime

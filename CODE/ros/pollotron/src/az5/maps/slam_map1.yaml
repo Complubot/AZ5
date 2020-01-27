@@ -1,0 +1,6 @@
+image: slam_map1.png
+resolution: 0.1
+origin: [-14.8642, -8.7953, 0]
+occupied_thresh: 0.6
+free_thresh: 0.3
+negate: 0

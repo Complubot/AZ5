@@ -1,0 +1,2 @@
+realsense_samples_ros/realsense_ros_camera:realsense_samples_ros/realsense_ros_object:realsense_samples_ros/realsense_ros_person:realsense_samples_ros/realsense_ros_slam
+-DCATKIN_DEVEL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/devel -DCMAKE_INSTALL_PREFIX=/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/install -G Unix Makefiles

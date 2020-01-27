@@ -1,0 +1,273 @@
+;; Auto-generated. Do not edit!
+
+
+(when (boundp 'realsense_ros_person::FrameTest)
+  (if (not (find-package "REALSENSE_ROS_PERSON"))
+    (make-package "REALSENSE_ROS_PERSON"))
+  (shadow 'FrameTest (find-package "REALSENSE_ROS_PERSON")))
+(unless (find-package "REALSENSE_ROS_PERSON::FRAMETEST")
+  (make-package "REALSENSE_ROS_PERSON::FRAMETEST"))
+
+(in-package "ROS")
+;;//! \htmlinclude FrameTest.msg.html
+(if (not (find-package "SENSOR_MSGS"))
+  (ros::roseus-add-msgs "sensor_msgs"))
+
+
+(defclass realsense_ros_person::FrameTest
+  :super ros::object
+  :slots (_colorImage _frameData ))
+
+(defmethod realsense_ros_person::FrameTest
+  (:init
+   (&key
+    ((:colorImage __colorImage) (instance sensor_msgs::Image :init))
+    ((:frameData __frameData) (instance realsense_ros_person::Frame :init))
+    )
+   (send-super :init)
+   (setq _colorImage __colorImage)
+   (setq _frameData __frameData)
+   self)
+  (:colorImage
+   (&rest __colorImage)
+   (if (keywordp (car __colorImage))
+       (send* _colorImage __colorImage)
+     (progn
+       (if __colorImage (setq _colorImage (car __colorImage)))
+       _colorImage)))
+  (:frameData
+   (&rest __frameData)
+   (if (keywordp (car __frameData))
+       (send* _frameData __frameData)
+     (progn
+       (if __frameData (setq _frameData (car __frameData)))
+       _frameData)))
+  (:serialization-length
+   ()
+   (+
+    ;; sensor_msgs/Image _colorImage
+    (send _colorImage :serialization-length)
+    ;; realsense_ros_person/Frame _frameData
+    (send _frameData :serialization-length)
+    ))
+  (:serialize
+   (&optional strm)
+   (let ((s (if strm strm
+              (make-string-output-stream (send self :serialization-length)))))
+     ;; sensor_msgs/Image _colorImage
+       (send _colorImage :serialize s)
+     ;; realsense_ros_person/Frame _frameData
+       (send _frameData :serialize s)
+     ;;
+     (if (null strm) (get-output-stream-string s))))
+  (:deserialize
+   (buf &optional (ptr- 0))
+   ;; sensor_msgs/Image _colorImage
+     (send _colorImage :deserialize buf ptr-) (incf ptr- (send _colorImage :serialization-length))
+   ;; realsense_ros_person/Frame _frameData
+     (send _frameData :deserialize buf ptr-) (incf ptr- (send _frameData :serialization-length))
+   ;;
+   self)
+  )
+
+(setf (get realsense_ros_person::FrameTest :md5sum-) "758e664f737fbe3bbd452e73af9b8744")
+(setf (get realsense_ros_person::FrameTest :datatype-) "realsense_ros_person/FrameTest")
+(setf (get realsense_ros_person::FrameTest :definition-)
+      "sensor_msgs/Image colorImage
+Frame frameData
+
+================================================================================
+MSG: sensor_msgs/Image
+# This message contains an uncompressed image
+# (0, 0) is at top-left corner of image
+#
+
+Header header        # Header timestamp should be acquisition time of image
+                     # Header frame_id should be optical frame of camera
+                     # origin of frame should be optical center of camera
+                     # +x should point to the right in the image
+                     # +y should point down in the image
+                     # +z should point into to plane of the image
+                     # If the frame_id here and the frame_id of the CameraInfo
+                     # message associated with the image conflict
+                     # the behavior is undefined
+
+uint32 height         # image height, that is, number of rows
+uint32 width          # image width, that is, number of columns
+
+# The legal values for encoding are in file src/image_encodings.cpp
+# If you want to standardize a new string format, join
+# ros-users@lists.sourceforge.net and send an email proposing a new encoding.
+
+string encoding       # Encoding of pixels -- channel meaning, ordering, size
+                      # taken from the list of strings in include/sensor_msgs/image_encodings.h
+
+uint8 is_bigendian    # is this data bigendian?
+uint32 step           # Full row length in bytes
+uint8[] data          # actual matrix data, size is (step * rows)
+
+================================================================================
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+# 0: no frame
+# 1: global frame
+string frame_id
+
+================================================================================
+MSG: realsense_ros_person/Frame
+int32 numberOfUsers
+User[] usersData
+
+================================================================================
+MSG: realsense_ros_person/User
+UserInfo userInfo
+geometry_msgs/Point32 centerOfMassImage
+geometry_msgs/Point32 centerOfMassWorld
+RectWithConfidence userRect
+RectWithConfidence headBoundingBox
+LandmarksInfo landmarksInfo
+EulerAnglesWithConfidence headPose
+SkeletonJoint[] skeletonJoints
+Gestures gestures
+
+
+================================================================================
+MSG: realsense_ros_person/UserInfo
+int32 Id
+
+================================================================================
+MSG: geometry_msgs/Point32
+# This contains the position of a point in free space(with 32 bits of precision).
+# It is recommeded to use Point wherever possible instead of Point32.  
+# 
+# This recommendation is to promote interoperability.  
+#
+# This message is designed to take up less space when sending
+# lots of points at once, as in the case of a PointCloud.  
+
+float32 x
+float32 y
+float32 z
+================================================================================
+MSG: realsense_ros_person/RectWithConfidence
+int32 confidence
+geometry_msgs/Point32[2] rectCorners
+
+================================================================================
+MSG: realsense_ros_person/LandmarksInfo
+int32 confidence
+Landmark[] landmarks
+
+================================================================================
+MSG: realsense_ros_person/Landmark
+geometry_msgs/Point location
+geometry_msgs/Point32 realWorldCoordinates
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
+
+================================================================================
+MSG: realsense_ros_person/EulerAnglesWithConfidence
+EulerAngles angles
+int32 confidence
+
+================================================================================
+MSG: realsense_ros_person/EulerAngles
+float32 pitch
+float32 roll
+float32 yaw
+
+================================================================================
+MSG: realsense_ros_person/SkeletonJoint
+int32 type
+float32 confidence
+geometry_msgs/Point location
+geometry_msgs/Point32 realWorldCoordinates
+
+#joint types constants
+int32 JOINT_ANKLE_LEFT=0
+int32 JOINT_ANKLE_RIGHT=1
+int32 JOINT_ELBOW_LEFT=2
+int32 JOINT_ELBOW_RIGHT=3
+int32 JOINT_FOOT_LEFT=4
+int32 JOINT_FOOT_RIGHT=5
+int32 JOINT_HAND_LEFT=6
+int32 JOINT_HAND_RIGHT=7
+int32 JOINT_HAND_TIP_LEFT=8
+int32 JOINT_HAND_TIP_RIGHT=9
+int32 JOINT_HEAD=10
+int32 JOINT_HIP_LEFT=11
+int32 JOINT_HIP_RIGHT=12
+int32 JOINT_KNEE_LEFT=13
+int32 JOINT_KNEE_RIGHT=14
+int32 JOINT_NECK=15
+int32 JOINT_SHOULDER_LEFT=16
+int32 JOINT_SHOULDER_RIGHT=17
+int32 JOINT_SPINE_BASE=18
+int32 JOINT_SPINE_MID=19
+int32 JOINT_SPINE_SHOULDER=20
+int32 JOINT_THUMB_LEFT=21
+int32 JOINT_THUMB_RIGHT=22
+int32 JOINT_WRIST_LEFT=23
+int32 JOINT_WRIST_RIGHT=24
+int32 JOINT_UNKNOWN=25
+
+================================================================================
+MSG: realsense_ros_person/Gestures
+Pointing pointing
+Wave wave
+
+================================================================================
+MSG: realsense_ros_person/Pointing
+int32 confidence
+geometry_msgs/Point32 originColor
+geometry_msgs/Point32 originWorld
+geometry_msgs/Point32 orientationColor
+geometry_msgs/Vector3 orientationWorld
+
+================================================================================
+MSG: geometry_msgs/Vector3
+# This represents a vector in free space. 
+# It is only meant to represent a direction. Therefore, it does not
+# make sense to apply a translation to it (e.g., when applying a 
+# generic rigid transformation to a Vector3, tf2 will only apply the
+# rotation). If you want your data to be translatable too, use the
+# geometry_msgs/Point message instead.
+
+float64 x
+float64 y
+float64 z
+================================================================================
+MSG: realsense_ros_person/Wave
+int32 type
+
+#Wave gesture types
+int32 WAVE_NOT_DETECTED=-1 # Wave not detected 
+int32 WAVE_LEFT_LA=1       # Wave ended with hand motion to the left, in the left area
+int32 WAVE_RIGHT_LA=2      # Wave ended with hand motion to the right, in the left area
+int32 WAVE_LEFT_RA=3       # Wave ended with hand motion to the left, in the right area
+int32 WAVE_RIGHT_RA=4      # Wave ended with hand motion to the right, in the right area
+
+
+")
+
+
+
+(provide :realsense_ros_person/FrameTest "758e664f737fbe3bbd452e73af9b8744")
+
+

@@ -43,7 +43,7 @@ def main():
   motor_replayer = MotorReplayer(data_holder)
   motor_replayer.setDaemon(True)
   motor_replayer.start()
-  rate = rospy.Rate(10)
+  rate = rospy.Rate(20)
   while not rospy.is_shutdown():
     cmd_target_velocity = data_holder.get_cmd_vel()
     simple_target_velocity = simple_vel()

@@ -1,0 +1,3 @@
+#!/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/src/person_tracker/env/bin/python3
+from numba.pycc import main
+main()

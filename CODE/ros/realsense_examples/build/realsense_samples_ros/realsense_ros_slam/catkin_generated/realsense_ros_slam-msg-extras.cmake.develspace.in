@@ -1,0 +1,2 @@
+set(realsense_ros_slam_MESSAGE_FILES "/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/src/realsense_samples_ros/realsense_ros_slam/msg/TrackingAccuracy.msg")
+set(realsense_ros_slam_SERVICE_FILES "/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/src/realsense_samples_ros/realsense_ros_slam/srv/Reset.srv;/home/complubot/Documents/POLLOTRON/CODE/ros/realsense_examples/src/realsense_samples_ros/realsense_ros_slam/srv/SaveOutput.srv")

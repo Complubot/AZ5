@@ -103,6 +103,8 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/motor_replayer"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/slam_map"
     "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/local_planner"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/global_planner"
+    "/home/complubot/Documents/POLLOTRON/CODE/ros/pollotron/src/az5/scripts/person_tracker"
     )
 endif()
 

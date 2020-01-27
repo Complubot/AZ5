@@ -26,7 +26,8 @@
   <xacro:property name="bumper_sensor_separation" value="0.06"/>
   <xacro:property name="bumper_sensor_out" value="0.065"/>
   <xacro:property name="realsense_height" value="0.62"/>
-  <xacro:property name="realsense_out" value="0.075"/>
+  <xacro:property name="realsense_out" value="0.14"/>
+  <xacro:property name="realsense_angle" value="-0.4"/>
   <xacro:property name="realsense_rgb" value="0.0295"/>
   <xacro:property name="realsense_infrared" value="0.0145"/>
   <xacro:property name="realsense_x" value="0.0245"/>
@@ -295,7 +296,7 @@
     <joint name="${robot_name}_second_plate_2_${robot_name}_realsense" type="fixed">
       <parent link="${robot_name}_second_plate"/>
       <child link="${robot_name}_realsense"/>
-      <origin xyz="${realsense_out} 0 ${realsense_height+plate_z/2}" rpy="0 0 0"/>
+      <origin xyz="${realsense_out} 0 ${realsense_height+plate_z/2}" rpy="0 ${realsense_angle} 0"/>
     </joint>
 
     <link name="camera_link">
@@ -324,7 +325,7 @@
       </collision>
     </link>
 
-    <joint name="wheel_${number}" type="continuous">
+    <joint name="wheel_${number}" type="fixed">
       <parent link="${robot_name}_first_plate"/>
       <child link="${robot_name}_wheel_${number}"/>
       <origin xyz="${wheel_x*reflect_x} ${wheel_y*reflect_y} ${wheel_z}" rpy="${-pi/2} ${pi} ${pi}"/>

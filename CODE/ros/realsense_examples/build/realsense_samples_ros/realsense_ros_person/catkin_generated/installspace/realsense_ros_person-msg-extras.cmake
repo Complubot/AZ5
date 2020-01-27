@@ -1,0 +1,2 @@
+set(realsense_ros_person_MESSAGE_FILES "msg/Landmark.msg;msg/LandmarksInfo.msg;msg/SkeletonJoint.msg;msg/User.msg;msg/UserInfo.msg;msg/Gesture.msg;msg/Gestures.msg;msg/Pointing.msg;msg/Wave.msg;msg/Frame.msg;msg/FrameTest.msg;msg/RectWithConfidence.msg;msg/EulerAngles.msg;msg/EulerAnglesWithConfidence.msg;msg/PersonModuleState.msg")
+set(realsense_ros_person_SERVICE_FILES "srv/TrackingConfig.srv;srv/StartTracking.srv;srv/StopTracking.srv;srv/Recognition.srv;srv/RecognitionRegister.srv;srv/LoadRecognitionDB.srv;srv/SaveRecognitionDB.srv")

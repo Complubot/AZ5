@@ -8,7 +8,7 @@
 
 class MotorPlatform {
   public:
-    MotorPlatform (double R=0.076, double LX=0.13725 , double LY=0.185, double MP=0.00004);
+    MotorPlatform (double R=0.076, double LX=0.13725 , double LY=0.185, double MP=12000);
     void setBrakes (int brake);
     void setBrakes (int brake1, int brake2, int brake3, int brake4);
     void disable ();

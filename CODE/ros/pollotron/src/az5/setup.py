@@ -48,6 +48,16 @@ local_planner = generate_distutils_setup(
     package_dir={'': 'src'}
 )
 
+global_planner = generate_distutils_setup(
+    packages=['global_planner'],
+    package_dir={'': 'src'}
+)
+
+person_tracker = generate_distutils_setup(
+    packages=['person_tracker'],
+    package_dir={'': 'src'}
+)
+
 setup(**joystick_reader)
 setup(**us_filter)
 setup(**pollotron)
@@ -56,3 +66,5 @@ setup(**laser_filter)
 setup(**motor_replayer)
 setup(**slam_map)
 setup(**local_planner)
+setup(**global_planner)
+setup(**person_tracker)

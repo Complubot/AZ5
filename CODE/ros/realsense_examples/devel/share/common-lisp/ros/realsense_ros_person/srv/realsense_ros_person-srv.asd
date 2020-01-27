@@ -1,0 +1,21 @@
+
+(cl:in-package :asdf)
+
+(defsystem "realsense_ros_person-srv"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils )
+  :components ((:file "_package")
+    (:file "LoadRecognitionDB" :depends-on ("_package_LoadRecognitionDB"))
+    (:file "_package_LoadRecognitionDB" :depends-on ("_package"))
+    (:file "Recognition" :depends-on ("_package_Recognition"))
+    (:file "_package_Recognition" :depends-on ("_package"))
+    (:file "RecognitionRegister" :depends-on ("_package_RecognitionRegister"))
+    (:file "_package_RecognitionRegister" :depends-on ("_package"))
+    (:file "SaveRecognitionDB" :depends-on ("_package_SaveRecognitionDB"))
+    (:file "_package_SaveRecognitionDB" :depends-on ("_package"))
+    (:file "StartTracking" :depends-on ("_package_StartTracking"))
+    (:file "_package_StartTracking" :depends-on ("_package"))
+    (:file "StopTracking" :depends-on ("_package_StopTracking"))
+    (:file "_package_StopTracking" :depends-on ("_package"))
+    (:file "TrackingConfig" :depends-on ("_package_TrackingConfig"))
+    (:file "_package_TrackingConfig" :depends-on ("_package"))
+  ))
